@@ -1,10 +1,39 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Ana Sayfa";
+    var altKategoriSayisi = Model.UstKategoriler.Sum(k => k.AltKategoriler.Count);
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="sayfa-ust">
+    <div>
+        <h1 class="sayfa-baslik">Kategoriler</h1>
+        <p class="sayfa-aciklama">Bir kategori seçin; o kategorideki açık artırmalar listelensin.</p>
+    </div>
+    <p class="sayfa-ozet mono">@Model.UstKategoriler.Count ana kategori · @altKategoriSayisi alt kategori</p>
+</div>
+
+<div class="kategori-grid">
+    @for (var i = 0; i < Model.UstKategoriler.Count; i++)
+    {
+        var k = Model.UstKategoriler[i];
+        <section class="kategori-kart" aria-labelledby="kategori-@k.KategoriId">
+            <span class="kategori-no mono">@((i + 1).ToString("00"))</span>
+            <h2 class="kategori-baslik" id="kategori-@k.KategoriId">@k.KategoriAdi</h2>
+            <div class="alt-liste">
+                @if (k.AltKategoriler.Any())
+                {
+                    foreach (var alt in k.AltKategoriler)
+                    {
+                        <a class="alt-link" href="#">@alt.KategoriAdi</a>
+                    }
+                }
+                else
+                {
+                    <div class="alt-bos">Alt kategori yok</div>
+                }
+            </div>
+            <a class="tumu-link" href="#">Tüm @k.KategoriAdi ilanları</a>
+        </section>
+    }
 </div>

@@ -1,45 +1,54 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AcikArtirmaPazaryeri</title>
+    <title>@ViewData["Title"] - Açık Artırma Pazaryeri</title>
     <script type="importmap"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AcikArtirmaPazaryeri.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">AcikArtirmaPazaryeri</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    @{
+        var aktifSayfa = ViewContext.RouteData.Values["page"]?.ToString();
+    }
+    <header class="site-header">
+        <div class="site-container header-row">
+            <a class="logo" asp-page="/Index">
+                <span class="logo-beyaz">Açık Artırma</span>
+                <span class="logo-vurgu">Pazaryeri</span>
+            </a>
+            <nav class="ana-menu" aria-label="Ana menü">
+                <a class="menu-link @(aktifSayfa == "/Index" ? "aktif" : "")" asp-page="/Index"
+                   aria-current="@(aktifSayfa == "/Index" ? "page" : null)">Ana Sayfa</a>
+                <a class="menu-link" href="#">Müzayedeler</a>
+            </nav>
+        </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - AcikArtirmaPazaryeri - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <main class="site-main">
+        <div class="site-container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-container footer-row">
+            <div class="footer-sol">
+                <div class="logo logo-kucuk">
+                    <span class="logo-beyaz">Açık Artırma</span>
+                    <span class="logo-vurgu">Pazaryeri</span>
+                </div>
+                <div class="mono">BLM4581 Ağ Tabanlı Teknolojiler ve Uygulamaları — Dönem Projesi</div>
+            </div>
+            <div class="footer-sag mono">
+                <span>&copy; 2026 Kaan Yorgun</span>
+                <a class="footer-link" href="https://github.com/kaany43/AcikArtirmaPazaryeri">GitHub</a>
+            </div>
         </div>
     </footer>
 
