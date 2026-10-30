@@ -1,0 +1,21 @@
+﻿@page
+@model AcikArtirmaPazaryeri.Pages.Hesap.ErisimEngellendiModel
+@{
+    ViewData["Title"] = "Erişim Engellendi";
+}
+
+<div class="hata-sayfa">
+    <div class="hata-gorsel" aria-hidden="true">
+        <span class="hata-kod">403</span>
+        <div class="hata-serit"></div>
+    </div>
+    <div class="hata-metin">
+        <span class="ust-etiket">Hata 403</span>
+        <h1 class="hata-baslik">Erişim Engellendi</h1>
+        <p class="sayfa-aciklama">Bu sayfayı görüntülemek için yetkin yok. Farklı bir hesapla giriş yapmayı deneyebilirsin.</p>
+        <div class="dugme-grup">
+            <a class="dugme dugme-sari" asp-page="/Index">Ana sayfaya dön</a>
+            <a class="dugme dugme-cerceve" asp-page="/Hesap/Giris">Farklı hesapla giriş yap</a>
+        </div>
+    </div>
+</div>

@@ -3,37 +3,66 @@
 @{
     ViewData["Title"] = "Ana Sayfa";
     var altKategoriSayisi = Model.UstKategoriler.Sum(k => k.AltKategoriler.Count);
+    var oneCikan = Model.UstKategoriler.FirstOrDefault(k => k.AracKategorisiMi);
 }
 
-<div class="sayfa-ust">
-    <div>
-        <h1 class="sayfa-baslik">Kategoriler</h1>
-        <p class="sayfa-aciklama">Bir kategori seçin; o kategorideki açık artırmalar listelensin.</p>
+<div class="sayfa sayfa-ana">
+    <div class="sayfa-basi-satir">
+        <div class="sayfa-basi">
+            <h1 class="sayfa-baslik">Kategoriler</h1>
+            <p class="sayfa-aciklama">Bir kategori seçin; o kategorideki açık artırmalar listelensin.</p>
+        </div>
+        <p class="sayfa-ozet mono">@Model.UstKategoriler.Count ana kategori · @altKategoriSayisi alt kategori</p>
     </div>
-    <p class="sayfa-ozet mono">@Model.UstKategoriler.Count ana kategori · @altKategoriSayisi alt kategori</p>
-</div>
 
-<div class="kategori-grid">
-    @for (var i = 0; i < Model.UstKategoriler.Count; i++)
+    @if (oneCikan != null)
     {
-        var k = Model.UstKategoriler[i];
-        <section class="kategori-kart" aria-labelledby="kategori-@k.KategoriId">
-            <span class="kategori-no mono">@((i + 1).ToString("00"))</span>
-            <h2 class="kategori-baslik" id="kategori-@k.KategoriId">@k.KategoriAdi</h2>
-            <div class="alt-liste">
-                @if (k.AltKategoriler.Any())
+        <section class="one-cikan" aria-labelledby="kategori-@oneCikan.KategoriId">
+            <div class="one-cikan-bilgi">
+                <div class="one-cikan-ust">
+                    <span class="kategori-no mono">@((Model.UstKategoriler.IndexOf(oneCikan) + 1).ToString("00"))</span>
+                    <span class="rozet rozet-sari">Öncelikli kategori</span>
+                </div>
+                <h2 class="one-cikan-baslik" id="kategori-@oneCikan.KategoriId">@oneCikan.KategoriAdi</h2>
+                <p class="one-cikan-aciklama">Araç ilanları marka, model, yıl, kilometre ve parça bazlı ekspertiz bilgisiyle listelenir.</p>
+                <a class="tumu-link" href="#">Tüm ilanları gör</a>
+                <span class="mono sayfa-ozet">@oneCikan.AltKategoriler.Count alt kategori</span>
+            </div>
+            <div class="one-cikan-liste">
+                @foreach (var alt in oneCikan.AltKategoriler.OrderBy(a => a.KategoriId))
                 {
-                    foreach (var alt in k.AltKategoriler)
-                    {
-                        <a class="alt-link" href="#">@alt.KategoriAdi</a>
-                    }
-                }
-                else
-                {
-                    <div class="alt-bos">Alt kategori yok</div>
+                    <a class="alt-link" href="#">@alt.KategoriAdi</a>
                 }
             </div>
-            <a class="tumu-link" href="#">Tüm @k.KategoriAdi ilanları</a>
         </section>
     }
+
+    <div class="kategori-sutunlar">
+        @for (var i = 0; i < Model.UstKategoriler.Count; i++)
+        {
+            var k = Model.UstKategoriler[i];
+            if (k == oneCikan)
+            {
+                continue;
+            }
+            <section class="kategori-kart" aria-labelledby="kategori-@k.KategoriId">
+                <span class="kategori-no mono">@((i + 1).ToString("00"))</span>
+                <h2 class="kategori-baslik" id="kategori-@k.KategoriId">@k.KategoriAdi</h2>
+                <div class="alt-liste">
+                    @if (k.AltKategoriler.Any())
+                    {
+                        foreach (var alt in k.AltKategoriler.OrderBy(a => a.KategoriId))
+                        {
+                            <a class="alt-link" href="#">@alt.KategoriAdi</a>
+                        }
+                    }
+                    else
+                    {
+                        <div class="alt-bos">Alt kategori yok</div>
+                    }
+                </div>
+                <a class="tumu-link" href="#">Tüm ilanları gör</a>
+            </section>
+        }
+    </div>
 </div>

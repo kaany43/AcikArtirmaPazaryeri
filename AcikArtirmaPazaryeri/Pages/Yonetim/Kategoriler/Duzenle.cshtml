@@ -1,0 +1,87 @@
+﻿@page "{id:int}"
+@model AcikArtirmaPazaryeri.Pages.Yonetim.Kategoriler.DuzenleModel
+@{
+    ViewData["Title"] = "Kategoriyi Düzenle";
+}
+
+@section AltMenu {
+    <partial name="_YonetimMenu" />
+}
+
+<div class="sayfa">
+    <div class="sayfa-basi">
+        <a class="geri-link" asp-page="Index">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M19 12H5" /><path d="M11 6l-6 6 6 6" /></svg>
+            Kategoriler
+        </a>
+        <h1 class="sayfa-baslik">Kategoriyi Düzenle</h1>
+        <p class="sayfa-aciklama">#@Model.Kategori.KategoriId numaralı kategoriyi düzenliyorsun.</p>
+    </div>
+
+    <div class="iki-sutun">
+        <form method="post" class="form-blok form-blok-genis" novalidate>
+            <div asp-validation-summary="ModelOnly" class="form-hata-ozet" role="alert"></div>
+
+            <div class="alan">
+                <label asp-for="Kategori.KategoriAdi" class="alan-etiket">Kategori adı</label>
+                <input asp-for="Kategori.KategoriAdi" class="girdi" maxlength="100" autocomplete="off" />
+                <span asp-validation-for="Kategori.KategoriAdi" class="alan-hata"></span>
+            </div>
+
+            <div class="alan">
+                <label asp-for="Kategori.UstKategoriId" class="alan-etiket">Üst kategori</label>
+                <select asp-for="Kategori.UstKategoriId" asp-items="Model.UstKategoriSecenekleri" class="girdi">
+                    <option value="">— Yok (ana kategori) —</option>
+                </select>
+                <span asp-validation-for="Kategori.UstKategoriId" class="alan-hata"></span>
+            </div>
+
+            <fieldset class="ayar-grup">
+                <legend>Ayarlar</legend>
+                <label class="ayar-satir">
+                    <input asp-for="Kategori.AracKategorisiMi" class="onay-kutu" />
+                    <span class="ayar-yazi">
+                        <span class="ayar-baslik">Araç kategorisi</span>
+                        <span class="ayar-not">İlan formunda marka, model, yıl, kilometre ve parça bazlı ekspertiz alanları açılır.</span>
+                    </span>
+                </label>
+                <label class="ayar-satir">
+                    <input asp-for="Kategori.OtomatikOnayAcikMi" class="onay-kutu" />
+                    <span class="ayar-yazi">
+                        <span class="ayar-baslik">Otomatik onay</span>
+                        <span class="ayar-not">Kontrolleri geçen ilanlar yönetici onayı beklemeden yayına alınır.</span>
+                    </span>
+                </label>
+            </fieldset>
+
+            <div class="dugme-grup">
+                <button type="submit" class="dugme dugme-sari">Kaydet</button>
+                <a class="dugme dugme-cerceve" asp-page="Index">Vazgeç</a>
+            </div>
+        </form>
+
+        <aside class="yan-panel yan-panel-sik" aria-labelledby="bu-kategori">
+            <h2 class="bolum-baslik" id="bu-kategori">Bu kategori</h2>
+            <dl class="bilgi-listesi">
+                <div class="ozet-satir">
+                    <dt>Kayıt no</dt>
+                    <dd class="deger-mono">#@Model.Kategori.KategoriId</dd>
+                </div>
+                <div class="ozet-satir">
+                    <dt>Şu anki üst kategori</dt>
+                    <dd>@Model.MevcutUstKategori</dd>
+                </div>
+                <div class="ozet-satir">
+                    <dt>Alt kategori</dt>
+                    <dd class="deger-mono">@Model.AltKategoriSayisi</dd>
+                </div>
+            </dl>
+            <p class="not-kutu">Alt kategorisi olan bir kategori başka bir kategorinin altına taşınamaz.</p>
+            <a class="sil-link" asp-page="Sil" asp-route-id="@Model.Kategori.KategoriId">Bu kategoriyi sil</a>
+        </aside>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

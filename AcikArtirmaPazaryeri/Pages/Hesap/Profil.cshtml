@@ -2,49 +2,78 @@
 @model AcikArtirmaPazaryeri.Pages.Hesap.ProfilModel
 @{
     ViewData["Title"] = "Profilim";
+    var yoneticiMi = User.IsInRole("Yonetici");
 }
 
-<div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
-        <h1 class="sayfa-baslik">Profilim</h1>
-        <p class="sayfa-aciklama">Hesap bilgilerin ve satıcı durumun.</p>
+<div class="sayfa">
+    <div class="sayfa-basi">
+        <span class="ust-etiket">Profilim</span>
+        <h1 class="sayfa-baslik">@Model.AktifKullanici.Ad @Model.AktifKullanici.Soyad</h1>
+        <div class="rozet-grup">
+            @if (yoneticiMi)
+            {
+                <span class="rozet rozet-siyah">Yönetici</span>
+            }
+            else
+            {
+                <span class="rozet">Alıcı</span>
+            }
+            @if (Model.SaticiMi)
+            {
+                <span class="rozet rozet-sari">Satıcı</span>
+            }
+        </div>
+    </div>
 
-        <dl class="row mb-4">
-            <dt class="col-sm-4">Ad Soyad</dt>
-            <dd class="col-sm-8">@Model.AktifKullanici.Ad @Model.AktifKullanici.Soyad</dd>
-            <dt class="col-sm-4">E-posta</dt>
-            <dd class="col-sm-8">@Model.AktifKullanici.Email</dd>
-            <dt class="col-sm-4">Firma</dt>
-            <dd class="col-sm-8">@(Model.AktifKullanici.FirmaAdi ?? "—")</dd>
-            <dt class="col-sm-4">Hesap türü</dt>
-            <dd class="col-sm-8">
-                @if (Model.SaticiMi)
-                {
-                    <span class="badge bg-warning text-dark">Satıcı</span>
-                }
-                else
-                {
-                    <span class="badge bg-secondary">Alıcı</span>
-                }
-            </dd>
-        </dl>
-
-        @if (Model.SaticiMi)
-        {
-            <div class="alert alert-success" role="alert">Satıcı hesabın aktif. Müzayede açma özelliği eklendiğinde buradan ilan verebileceksin.</div>
-        }
-        else
-        {
-            <h2 class="h5 mb-2">Satıcı ol</h2>
-            <p class="text-muted small">Satıcı olduğunda kendi ürünlerin için müzayede açabilirsin. Firma adı isteğe bağlıdır.</p>
-
-            <form method="post" asp-page-handler="SaticiOl">
-                <div class="mb-3">
-                    <label asp-for="FirmaAdi" class="form-label">Firma adı (isteğe bağlı)</label>
-                    <input asp-for="FirmaAdi" class="form-control" maxlength="100" autocomplete="organization" />
+    <div class="iki-sutun">
+        <section class="profil-bilgi" aria-labelledby="hesap-bilgileri">
+            <h2 class="bolum-baslik" id="hesap-bilgileri">Hesap bilgileri</h2>
+            <dl class="bilgi-listesi">
+                <div class="bilgi-satir">
+                    <dt>Ad Soyad</dt>
+                    <dd>@Model.AktifKullanici.Ad @Model.AktifKullanici.Soyad</dd>
                 </div>
-                <button type="submit" class="btn btn-warning fw-semibold">Satıcı Ol</button>
-            </form>
-        }
+                <div class="bilgi-satir">
+                    <dt>E-posta</dt>
+                    <dd>@Model.AktifKullanici.Email</dd>
+                </div>
+                <div class="bilgi-satir">
+                    <dt>Firma</dt>
+                    <dd>@(Model.AktifKullanici.FirmaAdi ?? "—")</dd>
+                </div>
+                <div class="bilgi-satir">
+                    <dt>Hesap türü</dt>
+                    <dd>@(yoneticiMi ? "Yönetici" : Model.SaticiMi ? "Alıcı ve satıcı" : "Alıcı")</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="satici-panel" aria-labelledby="satici-baslik">
+            @if (Model.SaticiMi)
+            {
+                <h2 class="yan-baslik" id="satici-baslik">Satıcı hesabın aktif</h2>
+                <p class="yan-metin">Müzayede açma özelliği eklendiğinde buradan ilan verebileceksin. Alıcı hesabın da açık kalır.</p>
+                @if (Model.AktifKullanici.GuvenilirSaticiMi)
+                {
+                    <div>
+                        <span class="guvenilir-evet">Güvenilir satıcı</span>
+                    </div>
+                }
+            }
+            else
+            {
+                <h2 class="yan-baslik" id="satici-baslik">Satıcı ol</h2>
+                <p class="yan-metin">Satıcı olduğunda kendi ürünlerin için müzayede açabilirsin. Alıcı hesabın da açık kalır.</p>
+
+                <form method="post" asp-page-handler="SaticiOl">
+                    <div class="alan">
+                        <label asp-for="FirmaAdi" class="alan-etiket">Firma adı <span class="alan-etiket-not">(isteğe bağlı)</span></label>
+                        <input asp-for="FirmaAdi" class="girdi" maxlength="100" autocomplete="organization" aria-describedby="firma-not" />
+                        <span class="alan-not" id="firma-not">Galeri veya mağazaysan yaz; bireysel satıcıysan boş bırak.</span>
+                    </div>
+                    <button type="submit" class="dugme dugme-sari">Satıcı Ol</button>
+                </form>
+            }
+        </section>
     </div>
 </div>

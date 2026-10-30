@@ -1,0 +1,65 @@
+﻿@page "{id:int}"
+@model AcikArtirmaPazaryeri.Pages.Yonetim.Kategoriler.SilModel
+@{
+    ViewData["Title"] = "Kategoriyi Sil";
+    var altSayisi = Model.Kategori.AltKategoriler.Count;
+}
+
+@section AltMenu {
+    <partial name="_YonetimMenu" />
+}
+
+<div class="sayfa sayfa-sik">
+    <div class="sayfa-basi">
+        <a class="geri-link" asp-page="Index">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M19 12H5" /><path d="M11 6l-6 6 6 6" /></svg>
+            Kategoriler
+        </a>
+        <h1 class="sayfa-baslik">Kategoriyi Sil</h1>
+    </div>
+
+    <div class="silme-alan">
+        <section class="silme-kart" aria-labelledby="silinecek">
+            <span class="mono sayfa-ozet">#@Model.Kategori.KategoriId</span>
+            <h2 class="silme-baslik" id="silinecek">@Model.Kategori.KategoriAdi</h2>
+            <dl class="m-0">
+                <div class="ozet-satir">
+                    <dt>Üst kategori</dt>
+                    <dd>@(Model.Kategori.UstKategori?.KategoriAdi ?? "—")</dd>
+                </div>
+                <div class="ozet-satir">
+                    <dt>Alt kategori sayısı</dt>
+                    <dd class="deger-mono">@altSayisi</dd>
+                </div>
+            </dl>
+        </section>
+
+        <div class="silme-onay">
+            <div asp-validation-summary="ModelOnly" class="form-hata-ozet" role="alert"></div>
+            <p class="silme-uyari">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v6" /><path d="M12 16.5v.5" /></svg>
+                @if (altSayisi > 0)
+                {
+                    <span>Bu kategorinin @altSayisi alt kategorisi var. Silmeden önce onları silmeli ya da başka bir kategoriye taşımalısın.</span>
+                }
+                else
+                {
+                    <span>Bu kategoriyi silmek istediğine emin misin? Bu işlem geri alınamaz.</span>
+                }
+            </p>
+            @if (altSayisi > 0)
+            {
+                <div class="dugme-grup">
+                    <a class="dugme dugme-cerceve" asp-page="Index">Listeye dön</a>
+                </div>
+            }
+            else
+            {
+                <form method="post" class="dugme-grup">
+                    <button type="submit" class="dugme dugme-kirmizi">Evet, sil</button>
+                    <a class="dugme dugme-cerceve" asp-page="Index">Vazgeç</a>
+                </form>
+            }
+        </div>
+    </div>
+</div>

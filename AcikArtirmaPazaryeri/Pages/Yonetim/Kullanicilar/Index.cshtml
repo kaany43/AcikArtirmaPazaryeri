@@ -1,0 +1,113 @@
+﻿@page
+@model AcikArtirmaPazaryeri.Pages.Yonetim.Kullanicilar.IndexModel
+@using System.Globalization
+@{
+    ViewData["Title"] = "Kullanıcılar";
+    var tr = CultureInfo.GetCultureInfo("tr-TR");
+    var saticiSayisi = Model.Satirlar.Count(s => s.Roller.Contains("Satici"));
+    var guvenilirSayisi = Model.Satirlar.Count(s => s.Roller.Contains("Satici") && s.Kullanici.GuvenilirSaticiMi);
+    var yoneticiSayisi = Model.Satirlar.Count(s => s.Roller.Contains("Yonetici"));
+}
+
+@section AltMenu {
+    <partial name="_YonetimMenu" />
+}
+
+<div class="sayfa sayfa-sik">
+    <div class="sayfa-basi">
+        <h1 class="sayfa-baslik">Kullanıcılar</h1>
+        <p class="sayfa-aciklama">Satıcıları güvenilir olarak işaretle; güvenilir satıcıların kurallara uyan ilanları otomatik yayına alınır.</p>
+    </div>
+
+    @if (TempData["Mesaj"] is not null)
+    {
+        <div class="bildirim" role="status">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5" /></svg>
+            <span>@TempData["Mesaj"]</span>
+        </div>
+    }
+
+    <div class="istatistikler">
+        <div class="istatistik">
+            <span class="istatistik-sayi">@Model.Satirlar.Count</span>
+            <span class="istatistik-etiket">Kayıtlı kullanıcı</span>
+        </div>
+        <div class="istatistik">
+            <span class="istatistik-sayi">@saticiSayisi</span>
+            <span class="istatistik-etiket">Satıcı</span>
+        </div>
+        <div class="istatistik">
+            <span class="istatistik-sayi">@guvenilirSayisi</span>
+            <span class="istatistik-etiket">Güvenilir satıcı</span>
+        </div>
+        <div class="istatistik">
+            <span class="istatistik-sayi">@yoneticiSayisi</span>
+            <span class="istatistik-etiket">Yönetici</span>
+        </div>
+    </div>
+
+    <div class="tablo-kap">
+        <table class="veri-tablosu kullanici-tablosu">
+            <thead>
+                <tr>
+                    <th>Kullanıcı</th>
+                    <th>Roller</th>
+                    <th>Firma</th>
+                    <th style="width: 150px">Güvenilir</th>
+                    <th class="sutun-sag" style="width: 170px">İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var satir in Model.Satirlar)
+                {
+                    var k = satir.Kullanici;
+                    var saticiMi = satir.Roller.Contains("Satici");
+                    var basHarfler = $"{k.Ad.FirstOrDefault()}{k.Soyad.FirstOrDefault()}".ToUpper(tr);
+                    <tr>
+                        <td>
+                            <span class="kullanici-hucre">
+                                <span class="avatar avatar-gri" aria-hidden="true">@basHarfler</span>
+                                <span class="kullanici-hucre-yazi">
+                                    <span class="kullanici-hucre-ad">@k.Ad @k.Soyad</span>
+                                    <span class="kullanici-hucre-eposta">@k.Email</span>
+                                </span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="rozet-grup">
+                                @foreach (var rol in satir.Roller.OrderBy(r => r == "Yonetici" ? 0 : r == "Alici" ? 1 : 2))
+                                {
+                                    var rozetSinifi = rol == "Yonetici" ? "rozet rozet-siyah" : rol == "Satici" ? "rozet rozet-sari" : "rozet";
+                                    <span class="@rozetSinifi">@(rol switch { "Yonetici" => "Yönetici", "Satici" => "Satıcı", "Alici" => "Alıcı", _ => rol })</span>
+                                }
+                            </span>
+                        </td>
+                        <td>@(k.FirmaAdi ?? "—")</td>
+                        <td>
+                            @if (!saticiMi)
+                            {
+                                <span class="bos-deger" aria-label="Satıcı değil">—</span>
+                            }
+                            else if (k.GuvenilirSaticiMi)
+                            {
+                                <span class="guvenilir-evet">Evet</span>
+                            }
+                            else
+                            {
+                                <span class="soluk-yazi">Hayır</span>
+                            }
+                        </td>
+                        <td class="sutun-sag">
+                            @if (saticiMi)
+                            {
+                                <form method="post" asp-page-handler="Guvenilir" asp-route-id="@k.Id" class="tablo-form">
+                                    <button type="submit" class="tablo-dugme @(k.GuvenilirSaticiMi ? "tablo-dugme-sade" : "")">@(k.GuvenilirSaticiMi ? "Geri al" : "Güvenilir yap")</button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

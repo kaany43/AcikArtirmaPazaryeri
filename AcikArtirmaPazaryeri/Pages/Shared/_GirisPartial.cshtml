@@ -1,20 +1,48 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Identity
 @using AcikArtirmaPazaryeri.Models
 @inject SignInManager<Kullanici> SignInManager
 @inject UserManager<Kullanici> UserManager
 
-<div class="hesap-menu d-flex align-items-center gap-2">
+@{
+    var sayfa = ViewContext.RouteData.Values["page"]?.ToString() ?? "";
+}
+
+<div class="hesap-menu">
     @if (SignInManager.IsSignedIn(User))
     {
         var kullanici = await UserManager.GetUserAsync(User);
-        <a class="menu-link" asp-page="/Hesap/Profil" title="Profilim">@kullanici?.Ad @kullanici?.Soyad</a>
-        <form method="post" asp-page="/Hesap/Cikis" class="d-inline m-0">
-            <button type="submit" class="btn btn-sm btn-outline-light">Çıkış</button>
-        </form>
+        var tr = CultureInfo.GetCultureInfo("tr-TR");
+        var basHarfler = kullanici == null ? "" :
+            $"{kullanici.Ad.FirstOrDefault()}{kullanici.Soyad.FirstOrDefault()}".ToUpper(tr);
+        var rol = User.IsInRole("Yonetici") ? "Yönetici" : User.IsInRole("Satici") ? "Satıcı" : "Alıcı";
+        var yonetimAktif = sayfa.StartsWith("/Yonetim");
+        var profilAktif = sayfa == "/Hesap/Profil";
+
+        if (User.IsInRole("Yonetici"))
+        {
+            <a class="menu-link @(yonetimAktif ? "aktif" : "")" asp-page="/Yonetim/Kategoriler/Index"
+               aria-current="@(yonetimAktif ? "page" : null)">Yönetim</a>
+        }
+        <a class="kullanici-link @(profilAktif ? "aktif" : "")" asp-page="/Hesap/Profil" title="Profilim"
+           aria-current="@(profilAktif ? "page" : null)">
+            <span class="avatar" aria-hidden="true">@basHarfler</span>
+            <span class="kullanici-yazi">
+                <span class="kullanici-ad">@kullanici?.Ad @kullanici?.Soyad</span>
+                <span class="kullanici-rol">@rol</span>
+            </span>
+        </a>
+        <div class="hesap-dugme-kutu">
+            <form method="post" asp-page="/Hesap/Cikis" class="cikis-form">
+                <button type="submit" class="cikis-dugme">Çıkış</button>
+            </form>
+        </div>
     }
     else
     {
-        <a class="menu-link" asp-page="/Hesap/Giris">Giriş Yap</a>
-        <a class="btn btn-sm btn-warning fw-semibold" asp-page="/Hesap/Kayit">Kayıt Ol</a>
+        <a class="menu-link @(sayfa == "/Hesap/Giris" ? "aktif" : "")" asp-page="/Hesap/Giris">Giriş Yap</a>
+        <div class="hesap-dugme-kutu">
+            <a class="ust-kayit-dugme" asp-page="/Hesap/Kayit">Kayıt Ol</a>
+        </div>
     }
 </div>

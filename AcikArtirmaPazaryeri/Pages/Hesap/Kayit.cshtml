@@ -4,46 +4,74 @@
     ViewData["Title"] = "Kayıt Ol";
 }
 
-<div class="row justify-content-center">
-    <div class="col-md-6 col-lg-5">
+<div class="sayfa">
+    <div class="sayfa-basi">
         <h1 class="sayfa-baslik">Kayıt Ol</h1>
         <p class="sayfa-aciklama">Hesabını oluştur; teklif vermeye hemen başla.</p>
+    </div>
 
-        <form method="post" novalidate>
-            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+    <div class="iki-sutun">
+        <form method="post" class="form-blok" novalidate>
+            <div asp-validation-summary="ModelOnly" class="form-hata-ozet" role="alert"></div>
 
-            <div class="row g-3">
-                <div class="col-sm-6">
-                    <label asp-for="Girdi.Ad" class="form-label"></label>
-                    <input asp-for="Girdi.Ad" class="form-control" autocomplete="given-name" />
-                    <span asp-validation-for="Girdi.Ad" class="text-danger small"></span>
+            <div class="alan-ikili">
+                <div class="alan">
+                    <label asp-for="Girdi.Ad" class="alan-etiket"></label>
+                    <input asp-for="Girdi.Ad" class="girdi" autocomplete="given-name" />
+                    <span asp-validation-for="Girdi.Ad" class="alan-hata"></span>
                 </div>
-                <div class="col-sm-6">
-                    <label asp-for="Girdi.Soyad" class="form-label"></label>
-                    <input asp-for="Girdi.Soyad" class="form-control" autocomplete="family-name" />
-                    <span asp-validation-for="Girdi.Soyad" class="text-danger small"></span>
-                </div>
-                <div class="col-12">
-                    <label asp-for="Girdi.Eposta" class="form-label"></label>
-                    <input asp-for="Girdi.Eposta" class="form-control" autocomplete="email" />
-                    <span asp-validation-for="Girdi.Eposta" class="text-danger small"></span>
-                </div>
-                <div class="col-12">
-                    <label asp-for="Girdi.Sifre" class="form-label"></label>
-                    <input asp-for="Girdi.Sifre" class="form-control" autocomplete="new-password" />
-                    <div class="form-text">En az 8 karakter; en az bir rakam ve bir küçük harf.</div>
-                    <span asp-validation-for="Girdi.Sifre" class="text-danger small"></span>
-                </div>
-                <div class="col-12">
-                    <label asp-for="Girdi.SifreTekrar" class="form-label"></label>
-                    <input asp-for="Girdi.SifreTekrar" class="form-control" autocomplete="new-password" />
-                    <span asp-validation-for="Girdi.SifreTekrar" class="text-danger small"></span>
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-warning w-100 fw-semibold">Kayıt Ol</button>
+                <div class="alan">
+                    <label asp-for="Girdi.Soyad" class="alan-etiket"></label>
+                    <input asp-for="Girdi.Soyad" class="girdi" autocomplete="family-name" />
+                    <span asp-validation-for="Girdi.Soyad" class="alan-hata"></span>
                 </div>
             </div>
+
+            <div class="alan">
+                <label asp-for="Girdi.Eposta" class="alan-etiket"></label>
+                <input asp-for="Girdi.Eposta" type="email" class="girdi" autocomplete="email" />
+                <span asp-validation-for="Girdi.Eposta" class="alan-hata"></span>
+            </div>
+
+            <div class="alan">
+                <label asp-for="Girdi.Sifre" class="alan-etiket"></label>
+                <input asp-for="Girdi.Sifre" class="girdi" autocomplete="new-password"
+                       aria-describedby="sifre-kurallari" data-sifre-kurallari="sifre-kurallari" />
+                <ul class="sifre-kurallar" id="sifre-kurallari">
+                    <li data-kural="uzunluk">En az 8 karakter</li>
+                    <li data-kural="rakam">En az bir rakam</li>
+                    <li data-kural="kucuk">En az bir küçük harf</li>
+                </ul>
+                <span asp-validation-for="Girdi.Sifre" class="alan-hata"></span>
+            </div>
+
+            <div class="alan">
+                <label asp-for="Girdi.SifreTekrar" class="alan-etiket"></label>
+                <input asp-for="Girdi.SifreTekrar" class="girdi" autocomplete="new-password" />
+                <span asp-validation-for="Girdi.SifreTekrar" class="alan-hata"></span>
+            </div>
+
+            <button type="submit" class="dugme dugme-sari dugme-tam">Kayıt Ol</button>
+            <p class="form-alt-yazi">Zaten hesabın var mı? <a class="metin-link" asp-page="/Hesap/Giris">Giriş yap</a></p>
         </form>
+
+        <aside class="yan-panel hesap-turleri" aria-labelledby="hesap-turleri">
+            <h2 class="yan-baslik" id="hesap-turleri">Hesap türleri</h2>
+            <div class="hesap-turu">
+                <div class="hesap-turu-ust">
+                    <span class="rozet">Alıcı</span>
+                    <span>Kayıt olunca</span>
+                </div>
+                <p>Müzayedelere teklif verir, ilgilendiğin ilanları takip listene eklersin.</p>
+            </div>
+            <div class="hesap-turu">
+                <div class="hesap-turu-ust">
+                    <span class="rozet rozet-sari">Satıcı</span>
+                    <span>Profilinden açılır</span>
+                </div>
+                <p>Bireysel, galeri veya mağaza olarak ilan açar, rezerv fiyat belirlersin. Alıcı hesabın da açık kalır.</p>
+            </div>
+        </aside>
     </div>
 </div>
 

@@ -1,0 +1,17 @@
+﻿@{
+    var sayfa = ViewContext.RouteData.Values["page"]?.ToString() ?? "";
+    var kategorilerAktif = sayfa.StartsWith("/Yonetim/Kategoriler");
+    var kullanicilarAktif = sayfa.StartsWith("/Yonetim/Kullanicilar");
+}
+
+<div class="alt-menu-bar">
+    <div class="site-container alt-menu-row">
+        <span class="alt-menu-baslik">Yönetim paneli</span>
+        <nav class="alt-menu" aria-label="Yönetim menüsü">
+            <a class="alt-menu-link @(kategorilerAktif ? "aktif" : "")" asp-page="/Yonetim/Kategoriler/Index"
+               aria-current="@(kategorilerAktif ? "page" : null)">Kategoriler</a>
+            <a class="alt-menu-link @(kullanicilarAktif ? "aktif" : "")" asp-page="/Yonetim/Kullanicilar/Index"
+               aria-current="@(kullanicilarAktif ? "page" : null)">Kullanıcılar</a>
+        </nav>
+    </div>
+</div>

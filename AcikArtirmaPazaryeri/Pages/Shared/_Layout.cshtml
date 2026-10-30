@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Açık Artırma Pazaryeri</title>
+    <link rel="icon" href="~/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="~/favicon.ico" sizes="16x16 32x32 48x48" />
     <script type="importmap"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,10 +20,14 @@
     }
     <header class="site-header">
         <div class="site-container header-row">
-            <a class="logo" asp-page="/Index">
-                <span class="logo-beyaz">Açık Artırma</span>
-                <span class="logo-vurgu">Pazaryeri</span>
+            <a class="logo" asp-page="/Index" aria-label="Açık Artırma Pazaryeri, ana sayfa">
+                <svg class="logo-delik" aria-hidden="true" viewBox="0 0 24 60"><path fill-rule="evenodd" d="M24 0H9L0 9V51L9 60H24ZM9 30a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0Z" /></svg>
+                <span class="logo-govde" aria-hidden="true">Açık Artırma</span>
+                <span class="logo-kocan" aria-hidden="true">Pazaryeri</span>
             </a>
+            <button type="button" class="menu-ac" aria-label="Menüyü aç" aria-expanded="false">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></svg>
+            </button>
             <nav class="ana-menu" aria-label="Ana menü">
                 <a class="menu-link @(aktifSayfa == "/Index" ? "aktif" : "")" asp-page="/Index"
                    aria-current="@(aktifSayfa == "/Index" ? "page" : null)">Ana Sayfa</a>
@@ -31,6 +37,8 @@
         </div>
     </header>
 
+    @await RenderSectionAsync("AltMenu", required: false)
+
     <main class="site-main">
         <div class="site-container">
             @RenderBody()
@@ -38,15 +46,23 @@
     </main>
 
     <footer class="site-footer">
-        <div class="site-container footer-row">
-            <div class="footer-sol">
-                <div class="logo logo-kucuk">
-                    <span class="logo-beyaz">Açık Artırma</span>
-                    <span class="logo-vurgu">Pazaryeri</span>
+        <div class="site-container footer-ic">
+            <div class="footer-ust">
+                <div class="footer-sol">
+                    <div class="logo logo-kucuk" role="img" aria-label="Açık Artırma Pazaryeri">
+                        <svg class="logo-delik" aria-hidden="true" viewBox="0 0 24 60"><path fill-rule="evenodd" d="M24 0H9L0 9V51L9 60H24ZM9 30a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0Z" /></svg>
+                        <span class="logo-govde" aria-hidden="true">Açık Artırma</span>
+                        <span class="logo-kocan" aria-hidden="true">Pazaryeri</span>
+                    </div>
+                    <div class="mono">BLM4581 Ağ Tabanlı Teknolojiler ve Uygulamaları — Dönem Projesi</div>
                 </div>
-                <div class="mono">BLM4581 Ağ Tabanlı Teknolojiler ve Uygulamaları — Dönem Projesi</div>
+                <nav class="footer-menu" aria-label="Alt menü">
+                    <a asp-page="/Index">Ana Sayfa</a>
+                    <a href="#">Müzayedeler</a>
+                    <a asp-page="/Hesap/Profil">Profilim</a>
+                </nav>
             </div>
-            <div class="footer-sag mono">
+            <div class="footer-alt mono">
                 <span>&copy; 2026 Kaan Yorgun</span>
                 <a class="footer-link" href="https://github.com/kaany43/AcikArtirmaPazaryeri">GitHub</a>
             </div>
