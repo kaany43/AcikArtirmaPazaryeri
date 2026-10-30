@@ -1,0 +1,52 @@
+﻿@page
+@model AcikArtirmaPazaryeri.Pages.Hesap.KayitModel
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <h1 class="sayfa-baslik">Kayıt Ol</h1>
+        <p class="sayfa-aciklama">Hesabını oluştur; teklif vermeye hemen başla.</p>
+
+        <form method="post" novalidate>
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+            <div class="row g-3">
+                <div class="col-sm-6">
+                    <label asp-for="Girdi.Ad" class="form-label"></label>
+                    <input asp-for="Girdi.Ad" class="form-control" autocomplete="given-name" />
+                    <span asp-validation-for="Girdi.Ad" class="text-danger small"></span>
+                </div>
+                <div class="col-sm-6">
+                    <label asp-for="Girdi.Soyad" class="form-label"></label>
+                    <input asp-for="Girdi.Soyad" class="form-control" autocomplete="family-name" />
+                    <span asp-validation-for="Girdi.Soyad" class="text-danger small"></span>
+                </div>
+                <div class="col-12">
+                    <label asp-for="Girdi.Eposta" class="form-label"></label>
+                    <input asp-for="Girdi.Eposta" class="form-control" autocomplete="email" />
+                    <span asp-validation-for="Girdi.Eposta" class="text-danger small"></span>
+                </div>
+                <div class="col-12">
+                    <label asp-for="Girdi.Sifre" class="form-label"></label>
+                    <input asp-for="Girdi.Sifre" class="form-control" autocomplete="new-password" />
+                    <div class="form-text">En az 8 karakter; en az bir rakam ve bir küçük harf.</div>
+                    <span asp-validation-for="Girdi.Sifre" class="text-danger small"></span>
+                </div>
+                <div class="col-12">
+                    <label asp-for="Girdi.SifreTekrar" class="form-label"></label>
+                    <input asp-for="Girdi.SifreTekrar" class="form-control" autocomplete="new-password" />
+                    <span asp-validation-for="Girdi.SifreTekrar" class="text-danger small"></span>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-warning w-100 fw-semibold">Kayıt Ol</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
