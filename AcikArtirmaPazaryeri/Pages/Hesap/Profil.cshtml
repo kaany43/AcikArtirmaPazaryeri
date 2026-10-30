@@ -1,0 +1,50 @@
+﻿@page
+@model AcikArtirmaPazaryeri.Pages.Hesap.ProfilModel
+@{
+    ViewData["Title"] = "Profilim";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <h1 class="sayfa-baslik">Profilim</h1>
+        <p class="sayfa-aciklama">Hesap bilgilerin ve satıcı durumun.</p>
+
+        <dl class="row mb-4">
+            <dt class="col-sm-4">Ad Soyad</dt>
+            <dd class="col-sm-8">@Model.AktifKullanici.Ad @Model.AktifKullanici.Soyad</dd>
+            <dt class="col-sm-4">E-posta</dt>
+            <dd class="col-sm-8">@Model.AktifKullanici.Email</dd>
+            <dt class="col-sm-4">Firma</dt>
+            <dd class="col-sm-8">@(Model.AktifKullanici.FirmaAdi ?? "—")</dd>
+            <dt class="col-sm-4">Hesap türü</dt>
+            <dd class="col-sm-8">
+                @if (Model.SaticiMi)
+                {
+                    <span class="badge bg-warning text-dark">Satıcı</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">Alıcı</span>
+                }
+            </dd>
+        </dl>
+
+        @if (Model.SaticiMi)
+        {
+            <div class="alert alert-success" role="alert">Satıcı hesabın aktif. Müzayede açma özelliği eklendiğinde buradan ilan verebileceksin.</div>
+        }
+        else
+        {
+            <h2 class="h5 mb-2">Satıcı ol</h2>
+            <p class="text-muted small">Satıcı olduğunda kendi ürünlerin için müzayede açabilirsin. Firma adı isteğe bağlıdır.</p>
+
+            <form method="post" asp-page-handler="SaticiOl">
+                <div class="mb-3">
+                    <label asp-for="FirmaAdi" class="form-label">Firma adı (isteğe bağlı)</label>
+                    <input asp-for="FirmaAdi" class="form-control" maxlength="100" autocomplete="organization" />
+                </div>
+                <button type="submit" class="btn btn-warning fw-semibold">Satıcı Ol</button>
+            </form>
+        }
+    </div>
+</div>
