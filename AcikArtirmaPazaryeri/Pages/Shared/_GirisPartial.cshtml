@@ -17,12 +17,18 @@
             $"{kullanici.Ad.FirstOrDefault()}{kullanici.Soyad.FirstOrDefault()}".ToUpper(tr);
         var rol = User.IsInRole("Yonetici") ? "Yönetici" : User.IsInRole("Satici") ? "Satıcı" : "Alıcı";
         var yonetimAktif = sayfa.StartsWith("/Yonetim");
+        var saticiAktif = sayfa.StartsWith("/Satici");
         var profilAktif = sayfa == "/Hesap/Profil";
 
         if (User.IsInRole("Yonetici"))
         {
             <a class="menu-link @(yonetimAktif ? "aktif" : "")" asp-page="/Yonetim/Kategoriler/Index"
                aria-current="@(yonetimAktif ? "page" : null)">Yönetim</a>
+        }
+        if (User.IsInRole("Satici"))
+        {
+            <a class="menu-link @(saticiAktif ? "aktif" : "")" asp-page="/Satici/Index"
+               aria-current="@(saticiAktif ? "page" : null)">Satıcı Paneli</a>
         }
         <a class="kullanici-link @(profilAktif ? "aktif" : "")" asp-page="/Hesap/Profil" title="Profilim"
            aria-current="@(profilAktif ? "page" : null)">

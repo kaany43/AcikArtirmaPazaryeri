@@ -21,6 +21,8 @@ builder.Services.AddIdentity<Kullanici, IdentityRole>(options =>
     options.Password.RequireUppercase = false;
     options.Password.RequireNonAlphanumeric = false;
     options.User.RequireUniqueEmail = true;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+    options.Lockout.MaxFailedAccessAttempts = 5;
 })
     .AddEntityFrameworkStores<AcikArtirmaPazaryeriDbContext>()
     .AddDefaultTokenProviders();
@@ -46,8 +48,6 @@ using (var scope = app.Services.CreateScope())
         ?? throw new InvalidOperationException("Yönetici şifresi bulunamadı: User Secrets'a Yonetici:Sifre ekleyin.");
     context.Database.Migrate();
 
-    // Kategori ağacı: (ana kategori, araç kategorisi mi, alt kategoriler).
-    // Eksik olan eklenir, var olana dokunulmaz; bu yüzden uygulama her açıldığında güvenle çalışır.
     var kategoriAgaci = new (string Ad, bool Arac, string[] Altlar)[]
     {
         ("Vasıta", true, new[] { "Otomobil", "Arazi, SUV & Pickup", "Elektrikli Araçlar", "Motosiklet",
@@ -63,9 +63,9 @@ using (var scope = app.Services.CreateScope())
         ("Diğer Her Şey", false, Array.Empty<string>())
     };
 
-    // 1. haftanın seed'inden kalan adlar yeni adlara taşınır (eski dosya Windows-1254 kaydedildiği için
-    // "Vasıta" ve "Hasarlı" veritabanına bozuk karakterle yazılmış olabilir; baş harflerinden yakalıyoruz).
-    foreach (var k in context.Kategoriler.ToList())
+// 1. haftanın seed'inden kalan adlar yeni adlara taşınır (eski dosya Windows-1254 kaydedildiği için
+// "Vasıta" ve "Hasarlı" veritabanına bozuk karakterle yazılmış olabilir; baş harflerinden yakalıyoruz).
+foreach (var k in context.Kategoriler.ToList())
     {
         if (k.UstKategoriId == null && k.KategoriAdi.StartsWith("Vas") && k.KategoriAdi != "Vasıta")
             k.KategoriAdi = "Vasıta";
@@ -85,7 +85,7 @@ using (var scope = app.Services.CreateScope())
         {
             ust = new Kategori { KategoriAdi = ad, AracKategorisiMi = arac };
             context.Kategoriler.Add(ust);
-            context.SaveChanges();   // KategoriId oluşsun, alt kategoriler buna bağlanacak
+            context.SaveChanges();
         }
         foreach (var altAd in altlar)
         {
@@ -96,6 +96,12 @@ using (var scope = app.Services.CreateScope())
         }
     }
     context.SaveChanges();
+
+    if (!context.Markalar.Any())
+    {
+        context.Markalar.AddRange(MarkaSeed.Getir());
+        context.SaveChanges();
+    }
 
     var roller = new List<string> { "Yonetici", "Satici", "Alici" };
     foreach (var rol in roller)

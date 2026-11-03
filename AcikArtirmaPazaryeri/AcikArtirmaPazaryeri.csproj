@@ -20,4 +20,12 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\KuruU Bilgisayar\source\repos\AcikArtirmaPazaryeri\AcikArtirmaPazaryeri\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\KuruU Bilgisayar\source\repos\AcikArtirmaPazaryeri\AcikArtirmaPazaryeri\.editorconfig" />
+  </ItemGroup>
+
 </Project>

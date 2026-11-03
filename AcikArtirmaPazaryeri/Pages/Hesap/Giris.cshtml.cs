@@ -36,10 +36,22 @@ namespace AcikArtirmaPazaryeri.Pages.Hesap
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid) return Page();
-            var sonuc = await _signInManager.PasswordSignInAsync(Girdi.Eposta, Girdi.Sifre, Girdi.BeniHatirla, lockoutOnFailure: false);
+            var sonuc = await _signInManager.PasswordSignInAsync(Girdi.Eposta, Girdi.Sifre, Girdi.BeniHatirla, lockoutOnFailure: true);
             if (sonuc.Succeeded)
             {
-                return LocalRedirect(ReturnUrl ?? "/");
+                if (Url.IsLocalUrl(ReturnUrl))
+                {
+                    return LocalRedirect(ReturnUrl);
+                }
+                else
+                {
+                    return RedirectToPage("/Index");
+                }
+            }
+            else if (sonuc.IsLockedOut)
+            {
+                ModelState.AddModelError(string.Empty, "Hesabınız geçici olarak kilitlendi. Lütfen daha sonra tekrar deneyin.");
+                return Page();
             }
             else
             {

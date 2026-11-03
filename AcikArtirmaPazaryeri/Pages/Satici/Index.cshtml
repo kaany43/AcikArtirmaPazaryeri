@@ -1,0 +1,74 @@
+﻿@page
+@model AcikArtirmaPazaryeri.Pages.Satici.IndexModel
+@using System.Globalization
+@using AcikArtirmaPazaryeri.Models
+@{
+    ViewData["Title"] = "İlanlarım";
+    var tr = CultureInfo.GetCultureInfo("tr-TR");
+}
+
+<div class="sayfa sayfa-sik">
+    <div class="sayfa-basi-satir">
+        <div class="sayfa-basi">
+            <h1 class="sayfa-baslik">İlanlarım</h1>
+        </div>
+        <a class="dugme dugme-sari" asp-page="/Satici/Ekle">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
+            Yeni İlan
+        </a>
+    </div>
+
+    @if (TempData["Mesaj"] is not null)
+    {
+        <div class="bildirim" role="status">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5" /></svg>
+            <span>@TempData["Mesaj"]</span>
+        </div>
+    }
+
+    @if (Model.Ilanlar.Count == 0)
+    {
+        <div class="sayfa-basi">
+            <p class="not-kutu">Henüz ilanın yok.</p>
+            <a class="dugme dugme-sari" asp-page="/Satici/Ekle">Yeni İlan</a>
+        </div>
+    }
+    else
+    {
+        <div class="tablo-kap">
+            <table class="veri-tablosu">
+                <thead>
+                    <tr>
+                        <th>Başlık</th>
+                        <th>Kategori</th>
+                        <th class="sutun-sag">Başlangıç fiyatı</th>
+                        <th>Bitiş</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ilan in Model.Ilanlar)
+                    {
+                        var (durumYazi, durumSinif) = ilan.Durum switch
+                        {
+                            MuzayedeDurumu.Taslak => ("Taslak", "rozet"),
+                            MuzayedeDurumu.OnayBekliyor => ("Onay bekliyor", "rozet"),
+                            MuzayedeDurumu.Aktif => ("Aktif", "rozet rozet-sari"),
+                            MuzayedeDurumu.Reddedildi => ("Reddedildi", "rozet"),
+                            MuzayedeDurumu.Satildi => ("Satıldı", "rozet rozet-siyah"),
+                            MuzayedeDurumu.Satilmadi => ("Satılmadı", "rozet"),
+                            _ => (ilan.Durum.ToString(), "rozet")
+                        };
+                        <tr>
+                            <td>@ilan.Baslik</td>
+                            <td>@ilan.Kategori.KategoriAdi</td>
+                            <td class="sutun-sag hucre-mono">@(ilan.BaslangicFiyati.ToString("N2", tr)) ₺</td>
+                            <td class="hucre-mono">@ilan.BitisZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</td>
+                            <td><span class="@durumSinif">@durumYazi</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
