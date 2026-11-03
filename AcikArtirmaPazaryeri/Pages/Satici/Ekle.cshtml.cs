@@ -10,16 +10,20 @@ using Microsoft.EntityFrameworkCore;
 namespace AcikArtirmaPazaryeri.Pages.Satici
 {
     [Authorize(Roles = "Satici")]
+    [RequestSizeLimit(60_000_000)]
+    [RequestFormLimits(MultipartBodyLengthLimit = 60_000_000)]
     public class EkleModel : PageModel
     {
         private readonly AcikArtirmaPazaryeriDbContext _context;
         private readonly UserManager<Kullanici> _userManager;
+        private readonly IWebHostEnvironment _env;
 
-        public EkleModel(AcikArtirmaPazaryeriDbContext context, UserManager<Kullanici> userManager)
+        public EkleModel(AcikArtirmaPazaryeriDbContext context, UserManager<Kullanici> userManager, IWebHostEnvironment env)
         {
 
             _context = context;
             _userManager = userManager;
+            _env = env;
         }
 
         public static readonly string[] Parcalar = { "Kaput", "Tavan", "Bagaj", "Ön tampon", "Arka tampon", "Sol ön çamurluk", "Sağ ön çamurluk", "Sol ön kapı", "Sağ ön kapı", "Sol arka kapı", "Sağ arka kapı", "Sol arka çamurluk", "Sağ arka çamurluk" };
@@ -29,6 +33,8 @@ namespace AcikArtirmaPazaryeri.Pages.Satici
         public List<SelectListItem> Kategoriler { get; set; } = new();
         public List<SelectListItem> Markalar { get; set; } = new();
         public List<int> AracKategoriIdleri { get; set; } = new();
+        [BindProperty]
+        public List<IFormFile> Fotograflar { get; set; } = new();
         public class IlanGirdi
         {
             // Ortak alanlar
@@ -66,6 +72,27 @@ namespace AcikArtirmaPazaryeri.Pages.Satici
 
         public async Task<IActionResult> OnPostAsync()
         {
+            if (Fotograflar.Count == 0)
+            {
+                ModelState.AddModelError("Fotograflar", "En az bir fotoğraf yükleyin.");
+            }
+            if (Fotograflar.Count > 10)
+            {
+                ModelState.AddModelError("Fotograflar", "En fazla 10 fotoğraf yükleyebilirsiniz.");
+            }
+            List<string> allowedExtensions = new List<string> { ".jpg", ".jpeg", ".png", ".webp" };
+            foreach (var foto in Fotograflar)
+            {
+                if (foto.Length > 5 * 1024 * 1024)
+                {
+                    ModelState.AddModelError("Fotograflar", $"{foto.FileName} 5 MB'tan büyük.");
+                }
+                var ext = Path.GetExtension(foto.FileName).ToLowerInvariant();
+                if (!allowedExtensions.Contains(ext))
+                {
+                    ModelState.AddModelError("Fotograflar", $"{foto.FileName}: sadece JPG, PNG veya WEBP.");
+                }
+            }
             if (!ModelState.IsValid)
             {
                 await ListeleriDoldurAsync();
@@ -116,6 +143,26 @@ namespace AcikArtirmaPazaryeri.Pages.Satici
                 };
             }
             _context.Muzayedeler.Add(muzayede);
+            await _context.SaveChangesAsync();
+            var klasor = Path.Combine(_env.WebRootPath, "uploads", "muzayede", muzayede.MuzayedeId.ToString());
+            Directory.CreateDirectory(klasor);
+            for(int i = 0; i < Fotograflar.Count; i++)
+            {
+                var foto = Fotograflar[i];
+                var uzanti = Path.GetExtension(foto.FileName).ToLowerInvariant();
+                var ad = Guid.NewGuid() + uzanti;
+                using (var akis = new FileStream(Path.Combine(klasor, ad), FileMode.Create))
+                {
+                    await foto.CopyToAsync(akis);
+                }
+                _context.MuzayedeResimleri.Add(new MuzayedeResmi
+                {
+                    MuzayedeId = muzayede.MuzayedeId,
+                    DosyaYolu = $"/uploads/muzayede/{muzayede.MuzayedeId}/{ad}",
+                    Sira = i,
+                    KapakMi = i == 0
+                });
+            }
             await _context.SaveChangesAsync();
             TempData["Mesaj"] = "İlan taslak olarak kaydedildi.";
             return RedirectToPage("/Satici/Index");

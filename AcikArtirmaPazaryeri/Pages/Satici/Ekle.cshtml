@@ -17,7 +17,7 @@
     </div>
 
     @* data-arac-idleri: araç kategorilerinin virgülle ayrılmış id'leri. *@
-    <form method="post" class="form-blok form-blok-genis" novalidate data-arac-idleri="@string.Join(",", Model.AracKategoriIdleri)">
+    <form method="post" enctype="multipart/form-data" class="form-blok form-blok-genis" novalidate data-arac-idleri="@string.Join(",", Model.AracKategoriIdleri)">
         <div asp-validation-summary="ModelOnly" class="form-hata-ozet" role="alert"></div>
 
         <h2 class="bolum-baslik">İlan bilgileri</h2>
@@ -90,6 +90,16 @@
                        value="@(Model.Girdi.BitisZamani == default ? "" : Model.Girdi.BitisZamani.ToString("yyyy-MM-ddTHH:mm"))" />
                 <span asp-validation-for="Girdi.BitisZamani" class="alan-hata"></span>
             </div>
+        </div>
+
+        <h2 class="bolum-baslik">Fotoğraflar</h2>
+
+        <div class="alan">
+            <label asp-for="Fotograflar" class="alan-etiket">Fotoğraflar</label>
+            <input asp-for="Fotograflar" type="file" multiple accept=".jpg,.jpeg,.png,.webp" class="girdi" />
+            <span class="alan-not">En fazla 10 fotoğraf, her biri en fazla 5 MB. İlk fotoğraf kapak olur.</span>
+            <span asp-validation-for="Fotograflar" class="alan-hata"></span>
+            <div id="foto-onizleme" class="foto-onizleme"></div>
         </div>
 
         <div id="arac-bolumu" class="form-blok form-blok-genis" hidden>
@@ -208,6 +218,8 @@
         const azKullanilmis = urunDurumu.querySelector(`option[value="${urunDurumu.dataset.azKullanilmis}"]`);
         const marka = document.getElementById("marka");
         const model = document.getElementById("model");
+        const fotograflar = document.getElementById("Fotograflar");
+        const fotoOnizleme = document.getElementById("foto-onizleme");
 
         function kategoriyeGoreGuncelle() {
             const aracMi = aracIdleri.includes(kategori.value);
@@ -244,8 +256,29 @@
             model.disabled = false;
         }
 
+        function onizlemeyiGuncelle() {
+            fotoOnizleme.replaceChildren();
+            Array.from(fotograflar.files).forEach((dosya, i) => {
+                const kutu = document.createElement("div");
+                kutu.className = "foto-kutu";
+                const resim = document.createElement("img");
+                resim.alt = dosya.name;
+                resim.src = URL.createObjectURL(dosya);
+                resim.addEventListener("load", () => URL.revokeObjectURL(resim.src));
+                kutu.append(resim);
+                if (i === 0) {
+                    const rozet = document.createElement("span");
+                    rozet.className = "rozet rozet-sari foto-kapak";
+                    rozet.textContent = "Kapak";
+                    kutu.append(rozet);
+                }
+                fotoOnizleme.append(kutu);
+            });
+        }
+
         kategori.addEventListener("change", kategoriyeGoreGuncelle);
         marka.addEventListener("change", modelleriGetir);
+        fotograflar.addEventListener("change", onizlemeyiGuncelle);
         kategoriyeGoreGuncelle();
     </script>
 }
