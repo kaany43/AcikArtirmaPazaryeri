@@ -1,5 +1,6 @@
 ﻿using AcikArtirmaPazaryeri.Data;
 using AcikArtirmaPazaryeri.Models;
+using AcikArtirmaPazaryeri.Servisler;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,6 +34,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/Hesap/Giris";
     options.AccessDeniedPath = "/Hesap/ErisimEngellendi";
 });
+
+builder.Services.AddHttpClient<VinServisi>();
 
 var app = builder.Build();
 

@@ -52,7 +52,7 @@
 
         <div class="alan">
             <label asp-for="Girdi.Sehir" class="alan-etiket">Şehir</label>
-            <input asp-for="Girdi.Sehir" class="girdi" maxlength="100" />
+            <input asp-for="Girdi.Sehir" class="girdi" maxlength="50" />
             <span asp-validation-for="Girdi.Sehir" class="alan-hata"></span>
         </div>
 
@@ -110,6 +110,8 @@
                     <label asp-for="Girdi.SasiNo" class="alan-etiket">Şasi numarası</label>
                     <input asp-for="Girdi.SasiNo" class="girdi" maxlength="17" autocomplete="off" />
                     <span asp-validation-for="Girdi.SasiNo" class="alan-hata"></span>
+                    <button type="button" id="vin-doldur" class="dugme dugme-cerceve">Şasi no ile doldur</button>
+                    <span id="vin-durum" class="alan-not" role="status"></span>
                 </div>
                 <div class="alan">
                     <label asp-for="Girdi.Plaka" class="alan-etiket">Plaka</label>
@@ -121,14 +123,15 @@
             <div class="alan-ikili">
                 <div class="alan">
                     <label for="marka" class="alan-etiket">Marka</label>
-                    <select id="marka" asp-items="Model.Markalar" class="girdi">
+                    <select asp-for="Girdi.MarkaId" id="marka" asp-items="Model.Markalar" class="girdi">
                         <option value="">Marka seçin</option>
                     </select>
+                    <span asp-validation-for="Girdi.MarkaId" class="alan-hata"></span>
                 </div>
                 <div class="alan">
                     <label for="model" class="alan-etiket">Model</label>
-                    <select asp-for="Girdi.AracModeliId" id="model" class="girdi" disabled>
-                        <option value="">Önce marka seçin</option>
+                    <select asp-for="Girdi.AracModeliId" id="model" asp-items="Model.Modeller" class="girdi" disabled="@(Model.Girdi.MarkaId == null)">
+                        <option value="">@(Model.Girdi.MarkaId == null ? "Önce marka seçin" : "Model seçin")</option>
                     </select>
                     <span asp-validation-for="Girdi.AracModeliId" class="alan-hata"></span>
                 </div>
@@ -220,10 +223,15 @@
         const model = document.getElementById("model");
         const fotograflar = document.getElementById("Fotograflar");
         const fotoOnizleme = document.getElementById("foto-onizleme");
+        const sasiNo = document.getElementById("Girdi_SasiNo");
+        const vinDoldur = document.getElementById("vin-doldur");
+        const vinDurum = document.getElementById("vin-durum");
 
         function kategoriyeGoreGuncelle() {
             const aracMi = aracIdleri.includes(kategori.value);
             aracBolumu.hidden = !aracMi;
+            // Gizli bölümdeki şasi no gönderilmez; araç dışı ilanda görünmeyen bir hataya yol açmasın.
+            sasiNo.disabled = !aracMi;
             azKullanilmis.hidden = aracMi;
             azKullanilmis.disabled = aracMi;
             if (aracMi && urunDurumu.value === azKullanilmis.value) {
@@ -256,6 +264,48 @@
             model.disabled = false;
         }
 
+        // GetEnumSelectList seçeneklerin değerini sayı yazar; sunucudan gelen ad, seçeneğin yazısıyla eşleştirilir.
+        function secenegiYazidanSec(liste, yazi) {
+            const secenek = Array.from(liste.options).find(o => o.text === yazi);
+            if (secenek) {
+                liste.value = secenek.value;
+            }
+        }
+
+        async function sasiNoIleDoldur() {
+            vinDoldur.disabled = true;
+            vinDurum.textContent = "Sorgulanıyor...";
+            try {
+                const yanit = await fetch(`?handler=VinCoz&sasiNo=${encodeURIComponent(sasiNo.value)}`);
+                const sonuc = await yanit.json();
+                if (!sonuc.basarili) {
+                    vinDurum.textContent = sonuc.mesaj;
+                    return;
+                }
+                if (sonuc.yil) {
+                    document.getElementById("Girdi_Yil").value = sonuc.yil;
+                }
+                secenegiYazidanSec(document.getElementById("Girdi_YakitTuru"), sonuc.yakit);
+                secenegiYazidanSec(document.getElementById("Girdi_VitesTuru"), sonuc.vites);
+                marka.value = sonuc.markaId ?? "";
+                await modelleriGetir();
+                if (sonuc.modelId) {
+                    model.value = sonuc.modelId;
+                }
+                if (!sonuc.markaId) {
+                    vinDurum.textContent = `Marka listede yok: ${sonuc.marka}`;
+                } else if (!sonuc.modelId) {
+                    vinDurum.textContent = `Model listede yok: ${sonuc.marka} ${sonuc.model ?? ""}`;
+                } else {
+                    vinDurum.textContent = `Bulundu: ${sonuc.yil ?? ""} ${sonuc.marka} ${sonuc.model}`;
+                }
+            } catch {
+                vinDurum.textContent = "Şasi numarası çözülemedi, bilgileri elle girin.";
+            } finally {
+                vinDoldur.disabled = false;
+            }
+        }
+
         function onizlemeyiGuncelle() {
             fotoOnizleme.replaceChildren();
             Array.from(fotograflar.files).forEach((dosya, i) => {
@@ -279,6 +329,7 @@
         kategori.addEventListener("change", kategoriyeGoreGuncelle);
         marka.addEventListener("change", modelleriGetir);
         fotograflar.addEventListener("change", onizlemeyiGuncelle);
+        vinDoldur.addEventListener("click", sasiNoIleDoldur);
         kategoriyeGoreGuncelle();
     </script>
 }
