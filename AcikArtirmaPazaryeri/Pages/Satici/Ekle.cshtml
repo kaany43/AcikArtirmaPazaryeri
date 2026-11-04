@@ -7,207 +7,246 @@
     var parcaDurumlari = Html.GetEnumSelectList<ParcaDurumu>();
 }
 
-<div class="sayfa sayfa-sik">
+<div class="sayfa sayfa-sik sayfa-yeni-ilan">
     <div class="sayfa-basi">
         <a class="geri-link" asp-page="/Satici/Index">
             <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M19 12H5" /><path d="M11 6l-6 6 6 6" /></svg>
             İlanlarım
         </a>
         <h1 class="sayfa-baslik">Yeni İlan</h1>
+        <p class="sayfa-aciklama">Yazdıkça sağdaki fiş dolar. Kaydedince taslak olur; onaya göndermeden önce düzenleyebilirsin.</p>
     </div>
 
-    @* data-arac-idleri: araç kategorilerinin virgülle ayrılmış id'leri. *@
-    <form method="post" enctype="multipart/form-data" class="form-blok form-blok-genis" novalidate data-arac-idleri="@string.Join(",", Model.AracKategoriIdleri)">
-        <div asp-validation-summary="ModelOnly" class="form-hata-ozet" role="alert"></div>
+    <div class="ilan-duzen">
+        @* data-arac-idleri: araç kategorilerinin virgülle ayrılmış id'leri. *@
+        <form method="post" enctype="multipart/form-data" class="ilan-form" novalidate data-arac-idleri="@string.Join(",", Model.AracKategoriIdleri)">
+            <div asp-validation-summary="ModelOnly" class="form-hata-ozet" role="alert"></div>
 
-        <h2 class="bolum-baslik">İlan bilgileri</h2>
+            <h2 class="bolum-baslik">İlan bilgileri</h2>
 
-        <div class="alan">
-            <label asp-for="Girdi.Baslik" class="alan-etiket">Başlık</label>
-            <input asp-for="Girdi.Baslik" class="girdi" maxlength="100" autocomplete="off" />
-            <span asp-validation-for="Girdi.Baslik" class="alan-hata"></span>
-        </div>
-
-        <div class="alan">
-            <label asp-for="Girdi.Aciklama" class="alan-etiket">Açıklama</label>
-            <textarea asp-for="Girdi.Aciklama" class="girdi" rows="5"></textarea>
-            <span asp-validation-for="Girdi.Aciklama" class="alan-hata"></span>
-        </div>
-
-        <div class="alan-ikili">
             <div class="alan">
-                <label for="kategori" class="alan-etiket">Kategori</label>
-                <select asp-for="Girdi.KategoriId" asp-items="Model.Kategoriler" id="kategori" class="girdi">
-                    <option value="">Kategori seçin</option>
-                </select>
-                <span asp-validation-for="Girdi.KategoriId" class="alan-hata"></span>
+                <label asp-for="Girdi.Baslik" class="alan-etiket">Başlık</label>
+                <input asp-for="Girdi.Baslik" class="girdi" maxlength="100" autocomplete="off" />
+                <span asp-validation-for="Girdi.Baslik" class="alan-hata"></span>
             </div>
+
             <div class="alan">
-                <label for="urun-durumu" class="alan-etiket">Ürün durumu</label>
-                <select asp-for="Girdi.UrunDurumu" asp-items="Html.GetEnumSelectList<UrunDurumu>()" id="urun-durumu" class="girdi"
-                        data-az-kullanilmis="@((int)UrunDurumu.AzKullanilmis)"></select>
-                <span asp-validation-for="Girdi.UrunDurumu" class="alan-hata"></span>
-            </div>
-        </div>
-
-        <div class="alan">
-            <label asp-for="Girdi.Sehir" class="alan-etiket">Şehir</label>
-            <input asp-for="Girdi.Sehir" class="girdi" maxlength="50" />
-            <span asp-validation-for="Girdi.Sehir" class="alan-hata"></span>
-        </div>
-
-        <h2 class="bolum-baslik">Fiyat ve süre</h2>
-
-        <div class="alan-ikili">
-            <div class="alan">
-                <label asp-for="Girdi.BaslangicFiyati" class="alan-etiket">Başlangıç fiyatı (₺)</label>
-                <input asp-for="Girdi.BaslangicFiyati" type="number" min="0" step="1" class="girdi" />
-                <span asp-validation-for="Girdi.BaslangicFiyati" class="alan-hata"></span>
-            </div>
-            <div class="alan">
-                <label asp-for="Girdi.MinimumArtis" class="alan-etiket">Minimum artış (₺)</label>
-                <input asp-for="Girdi.MinimumArtis" type="number" min="0" step="1" class="girdi" />
-                <span asp-validation-for="Girdi.MinimumArtis" class="alan-hata"></span>
-            </div>
-        </div>
-
-        <div class="alan">
-            <label asp-for="Girdi.RezervFiyati" class="alan-etiket">Rezerv fiyatı (₺) <span class="alan-etiket-not">boş bırakılabilir</span></label>
-            <input asp-for="Girdi.RezervFiyati" type="number" min="0" step="1" class="girdi" />
-            <span asp-validation-for="Girdi.RezervFiyati" class="alan-hata"></span>
-        </div>
-
-        <div class="alan-ikili">
-            <div class="alan">
-                <label asp-for="Girdi.BaslangicZamani" class="alan-etiket">Başlangıç zamanı</label>
-                <input asp-for="Girdi.BaslangicZamani" type="datetime-local" class="girdi"
-                       value="@(Model.Girdi.BaslangicZamani == default ? "" : Model.Girdi.BaslangicZamani.ToString("yyyy-MM-ddTHH:mm"))" />
-                <span asp-validation-for="Girdi.BaslangicZamani" class="alan-hata"></span>
-            </div>
-            <div class="alan">
-                <label asp-for="Girdi.BitisZamani" class="alan-etiket">Bitiş zamanı</label>
-                <input asp-for="Girdi.BitisZamani" type="datetime-local" class="girdi"
-                       value="@(Model.Girdi.BitisZamani == default ? "" : Model.Girdi.BitisZamani.ToString("yyyy-MM-ddTHH:mm"))" />
-                <span asp-validation-for="Girdi.BitisZamani" class="alan-hata"></span>
-            </div>
-        </div>
-
-        <h2 class="bolum-baslik">Fotoğraflar</h2>
-
-        <div class="alan">
-            <label asp-for="Fotograflar" class="alan-etiket">Fotoğraflar</label>
-            <input asp-for="Fotograflar" type="file" multiple accept=".jpg,.jpeg,.png,.webp" class="girdi" />
-            <span class="alan-not">En fazla 10 fotoğraf, her biri en fazla 5 MB. İlk fotoğraf kapak olur.</span>
-            <span asp-validation-for="Fotograflar" class="alan-hata"></span>
-            <div id="foto-onizleme" class="foto-onizleme"></div>
-        </div>
-
-        <div id="arac-bolumu" class="form-blok form-blok-genis" hidden>
-            <h2 class="bolum-baslik">Araç bilgileri</h2>
-
-            <div class="alan-ikili">
-                <div class="alan">
-                    <label asp-for="Girdi.SasiNo" class="alan-etiket">Şasi numarası</label>
-                    <input asp-for="Girdi.SasiNo" class="girdi" maxlength="17" autocomplete="off" />
-                    <span asp-validation-for="Girdi.SasiNo" class="alan-hata"></span>
-                    <button type="button" id="vin-doldur" class="dugme dugme-cerceve">Şasi no ile doldur</button>
-                    <span id="vin-durum" class="alan-not" role="status"></span>
-                </div>
-                <div class="alan">
-                    <label asp-for="Girdi.Plaka" class="alan-etiket">Plaka</label>
-                    <input asp-for="Girdi.Plaka" class="girdi" maxlength="10" autocomplete="off" />
-                    <span asp-validation-for="Girdi.Plaka" class="alan-hata"></span>
-                </div>
+                <label asp-for="Girdi.Aciklama" class="alan-etiket">Açıklama</label>
+                <textarea asp-for="Girdi.Aciklama" class="girdi" rows="5"></textarea>
+                <span asp-validation-for="Girdi.Aciklama" class="alan-hata"></span>
             </div>
 
             <div class="alan-ikili">
                 <div class="alan">
-                    <label for="marka" class="alan-etiket">Marka</label>
-                    <select asp-for="Girdi.MarkaId" id="marka" asp-items="Model.Markalar" class="girdi">
-                        <option value="">Marka seçin</option>
+                    <label for="kategori" class="alan-etiket">Kategori</label>
+                    <select asp-for="Girdi.KategoriId" asp-items="Model.Kategoriler" id="kategori" class="girdi">
+                        <option value="">Kategori seçin</option>
                     </select>
-                    <span asp-validation-for="Girdi.MarkaId" class="alan-hata"></span>
+                    <span asp-validation-for="Girdi.KategoriId" class="alan-hata"></span>
                 </div>
                 <div class="alan">
-                    <label for="model" class="alan-etiket">Model</label>
-                    <select asp-for="Girdi.AracModeliId" id="model" asp-items="Model.Modeller" class="girdi" disabled="@(Model.Girdi.MarkaId == null)">
-                        <option value="">@(Model.Girdi.MarkaId == null ? "Önce marka seçin" : "Model seçin")</option>
-                    </select>
-                    <span asp-validation-for="Girdi.AracModeliId" class="alan-hata"></span>
-                </div>
-            </div>
-
-            <div class="alan-ikili">
-                <div class="alan">
-                    <label asp-for="Girdi.Yil" class="alan-etiket">Yıl</label>
-                    <input asp-for="Girdi.Yil" class="girdi" />
-                    <span asp-validation-for="Girdi.Yil" class="alan-hata"></span>
-                </div>
-                <div class="alan">
-                    <label asp-for="Girdi.Km" class="alan-etiket">Kilometre</label>
-                    <input asp-for="Girdi.Km" class="girdi" />
-                    <span asp-validation-for="Girdi.Km" class="alan-hata"></span>
-                </div>
-            </div>
-
-            <div class="alan-ikili">
-                <div class="alan">
-                    <label asp-for="Girdi.YakitTuru" class="alan-etiket">Yakıt türü</label>
-                    <select asp-for="Girdi.YakitTuru" asp-items="Html.GetEnumSelectList<YakitTuru>()" class="girdi">
-                        <option value="">Seçin</option>
-                    </select>
-                    <span asp-validation-for="Girdi.YakitTuru" class="alan-hata"></span>
-                </div>
-                <div class="alan">
-                    <label asp-for="Girdi.VitesTuru" class="alan-etiket">Vites türü</label>
-                    <select asp-for="Girdi.VitesTuru" asp-items="Html.GetEnumSelectList<VitesTuru>()" class="girdi">
-                        <option value="">Seçin</option>
-                    </select>
-                    <span asp-validation-for="Girdi.VitesTuru" class="alan-hata"></span>
-                </div>
-            </div>
-
-            <div class="alan-ikili">
-                <div class="alan">
-                    <label asp-for="Girdi.KasaTipi" class="alan-etiket">Kasa tipi</label>
-                    <select asp-for="Girdi.KasaTipi" asp-items="Html.GetEnumSelectList<KasaTipi>()" class="girdi">
-                        <option value="">Seçin</option>
-                    </select>
-                    <span asp-validation-for="Girdi.KasaTipi" class="alan-hata"></span>
-                </div>
-                <div class="alan">
-                    <label asp-for="Girdi.Renk" class="alan-etiket">Renk</label>
-                    <input asp-for="Girdi.Renk" class="girdi" maxlength="50" />
-                    <span asp-validation-for="Girdi.Renk" class="alan-hata"></span>
+                    <label for="urun-durumu" class="alan-etiket">Ürün durumu</label>
+                    <select asp-for="Girdi.UrunDurumu" asp-items="Html.GetEnumSelectList<UrunDurumu>()" id="urun-durumu" class="girdi"
+                            data-az-kullanilmis="@((int)UrunDurumu.AzKullanilmis)"></select>
+                    <span asp-validation-for="Girdi.UrunDurumu" class="alan-hata"></span>
                 </div>
             </div>
 
             <div class="alan">
-                <label asp-for="Girdi.Paket" class="alan-etiket">Paket</label>
-                <input asp-for="Girdi.Paket" class="girdi" />
-                <span asp-validation-for="Girdi.Paket" class="alan-hata"></span>
+                <label asp-for="Girdi.Sehir" class="alan-etiket">Şehir</label>
+                <input asp-for="Girdi.Sehir" class="girdi" maxlength="50" />
+                <span asp-validation-for="Girdi.Sehir" class="alan-hata"></span>
             </div>
 
-            <h2 class="bolum-baslik">Ekspertiz</h2>
+            <h2 class="bolum-baslik">Fiyat ve süre</h2>
 
             <div class="alan-ikili">
-                @for (var i = 0; i < parcalar.Length; i++)
-                {
-                    var secili = i < Model.Girdi.Ekspertiz.Count ? Model.Girdi.Ekspertiz[i] : ParcaDurumu.Orijinal;
-                    var secenekler = new SelectList(parcaDurumlari, "Value", "Text", ((int)secili).ToString());
+                <div class="alan">
+                    <label asp-for="Girdi.BaslangicFiyati" class="alan-etiket">Başlangıç fiyatı (₺)</label>
+                    <input asp-for="Girdi.BaslangicFiyati" type="number" min="0" step="1" class="girdi" />
+                    <span asp-validation-for="Girdi.BaslangicFiyati" class="alan-hata"></span>
+                </div>
+                <div class="alan">
+                    <label asp-for="Girdi.MinimumArtis" class="alan-etiket">Minimum artış (₺)</label>
+                    <input asp-for="Girdi.MinimumArtis" type="number" min="0" step="1" class="girdi" />
+                    <span asp-validation-for="Girdi.MinimumArtis" class="alan-hata"></span>
+                </div>
+            </div>
+
+            <div class="alan">
+                <label asp-for="Girdi.RezervFiyati" class="alan-etiket">Rezerv fiyatı (₺) <span class="alan-etiket-not">boş bırakılabilir · alıcılar görmez</span></label>
+                <input asp-for="Girdi.RezervFiyati" type="number" min="0" step="1" class="girdi" />
+                <span asp-validation-for="Girdi.RezervFiyati" class="alan-hata"></span>
+            </div>
+
+            <div class="alan-ikili">
+                <div class="alan">
+                    <label asp-for="Girdi.BaslangicZamani" class="alan-etiket">Başlangıç zamanı</label>
+                    <input asp-for="Girdi.BaslangicZamani" type="datetime-local" class="girdi"
+                           value="@(Model.Girdi.BaslangicZamani == default ? "" : Model.Girdi.BaslangicZamani.ToString("yyyy-MM-ddTHH:mm"))" />
+                    <span asp-validation-for="Girdi.BaslangicZamani" class="alan-hata"></span>
+                </div>
+                <div class="alan">
+                    <label asp-for="Girdi.BitisZamani" class="alan-etiket">Bitiş zamanı</label>
+                    <input asp-for="Girdi.BitisZamani" type="datetime-local" class="girdi"
+                           value="@(Model.Girdi.BitisZamani == default ? "" : Model.Girdi.BitisZamani.ToString("yyyy-MM-ddTHH:mm"))" />
+                    <span asp-validation-for="Girdi.BitisZamani" class="alan-hata"></span>
+                </div>
+            </div>
+
+            <h2 class="bolum-baslik">Fotoğraflar</h2>
+
+            <div class="alan">
+                <div class="foto-satiri">
+                    <div id="foto-onizleme" class="foto-onizleme"></div>
+                    <label for="Fotograflar" class="foto-ekle">+ Fotoğraf</label>
+                </div>
+                <input asp-for="Fotograflar" type="file" multiple accept=".jpg,.jpeg,.png,.webp" class="foto-girdi" />
+                <span class="alan-not">En fazla 10 fotoğraf, her biri en fazla 5 MB. İlk fotoğraf kapak olur.</span>
+                <span asp-validation-for="Fotograflar" class="alan-hata"></span>
+            </div>
+
+            <div id="arac-bolumu" class="ilan-form-bolum" hidden>
+                <h2 class="bolum-baslik">Araç bilgileri</h2>
+
+                <div class="alan-ikili">
                     <div class="alan">
-                        <label for="ekspertiz-@i" class="alan-etiket">@parcalar[i]</label>
-                        <select id="ekspertiz-@i" name="Girdi.Ekspertiz[@i]" asp-items="secenekler" class="girdi"></select>
+                        <label asp-for="Girdi.SasiNo" class="alan-etiket">Şasi numarası</label>
+                        <input asp-for="Girdi.SasiNo" class="girdi" maxlength="17" autocomplete="off" />
+                        <span asp-validation-for="Girdi.SasiNo" class="alan-hata"></span>
+                        <button type="button" id="vin-doldur" class="dugme dugme-cerceve">Şasi no ile doldur</button>
+                        <span id="vin-durum" class="alan-not" role="status"></span>
                     </div>
-                }
-            </div>
-        </div>
+                    <div class="alan">
+                        <label asp-for="Girdi.Plaka" class="alan-etiket">Plaka</label>
+                        <input asp-for="Girdi.Plaka" class="girdi" maxlength="10" autocomplete="off" />
+                        <span asp-validation-for="Girdi.Plaka" class="alan-hata"></span>
+                    </div>
+                </div>
 
-        <div class="dugme-grup">
-            <button type="submit" class="dugme dugme-sari">Taslak olarak kaydet</button>
-            <a class="dugme dugme-cerceve" asp-page="/Satici/Index">Vazgeç</a>
-        </div>
-    </form>
+                <div class="alan-ikili">
+                    <div class="alan">
+                        <label for="marka" class="alan-etiket">Marka</label>
+                        <select asp-for="Girdi.MarkaId" id="marka" asp-items="Model.Markalar" class="girdi">
+                            <option value="">Marka seçin</option>
+                        </select>
+                        <span asp-validation-for="Girdi.MarkaId" class="alan-hata"></span>
+                    </div>
+                    <div class="alan">
+                        <label for="model" class="alan-etiket">Model</label>
+                        <select asp-for="Girdi.AracModeliId" id="model" asp-items="Model.Modeller" class="girdi" disabled="@(Model.Girdi.MarkaId == null)">
+                            <option value="">@(Model.Girdi.MarkaId == null ? "Önce marka seçin" : "Model seçin")</option>
+                        </select>
+                        <span asp-validation-for="Girdi.AracModeliId" class="alan-hata"></span>
+                    </div>
+                </div>
+
+                <div class="alan-ikili">
+                    <div class="alan">
+                        <label asp-for="Girdi.Yil" class="alan-etiket">Yıl</label>
+                        <input asp-for="Girdi.Yil" class="girdi" />
+                        <span asp-validation-for="Girdi.Yil" class="alan-hata"></span>
+                    </div>
+                    <div class="alan">
+                        <label asp-for="Girdi.Km" class="alan-etiket">Kilometre</label>
+                        <input asp-for="Girdi.Km" class="girdi" />
+                        <span asp-validation-for="Girdi.Km" class="alan-hata"></span>
+                    </div>
+                </div>
+
+                <div class="alan-ikili">
+                    <div class="alan">
+                        <label asp-for="Girdi.YakitTuru" class="alan-etiket">Yakıt türü</label>
+                        <select asp-for="Girdi.YakitTuru" asp-items="Html.GetEnumSelectList<YakitTuru>()" class="girdi">
+                            <option value="">Seçin</option>
+                        </select>
+                        <span asp-validation-for="Girdi.YakitTuru" class="alan-hata"></span>
+                    </div>
+                    <div class="alan">
+                        <label asp-for="Girdi.VitesTuru" class="alan-etiket">Vites türü</label>
+                        <select asp-for="Girdi.VitesTuru" asp-items="Html.GetEnumSelectList<VitesTuru>()" class="girdi">
+                            <option value="">Seçin</option>
+                        </select>
+                        <span asp-validation-for="Girdi.VitesTuru" class="alan-hata"></span>
+                    </div>
+                </div>
+
+                <div class="alan-ikili">
+                    <div class="alan">
+                        <label asp-for="Girdi.KasaTipi" class="alan-etiket">Kasa tipi</label>
+                        <select asp-for="Girdi.KasaTipi" asp-items="Html.GetEnumSelectList<KasaTipi>()" class="girdi">
+                            <option value="">Seçin</option>
+                        </select>
+                        <span asp-validation-for="Girdi.KasaTipi" class="alan-hata"></span>
+                    </div>
+                    <div class="alan">
+                        <label asp-for="Girdi.Renk" class="alan-etiket">Renk</label>
+                        <input asp-for="Girdi.Renk" class="girdi" maxlength="50" />
+                        <span asp-validation-for="Girdi.Renk" class="alan-hata"></span>
+                    </div>
+                </div>
+
+                <div class="alan">
+                    <label asp-for="Girdi.Paket" class="alan-etiket">Paket</label>
+                    <input asp-for="Girdi.Paket" class="girdi" />
+                    <span asp-validation-for="Girdi.Paket" class="alan-hata"></span>
+                </div>
+
+                <h2 class="bolum-baslik">Ekspertiz</h2>
+
+                <div class="alan-ikili">
+                    @for (var i = 0; i < parcalar.Length; i++)
+                    {
+                        var secili = i < Model.Girdi.Ekspertiz.Count ? Model.Girdi.Ekspertiz[i] : ParcaDurumu.Orijinal;
+                        var secenekler = new SelectList(parcaDurumlari, "Value", "Text", ((int)secili).ToString());
+                        <div class="alan">
+                            <label for="ekspertiz-@i" class="alan-etiket">@parcalar[i]</label>
+                            <select id="ekspertiz-@i" name="Girdi.Ekspertiz[@i]" asp-items="secenekler" class="girdi"></select>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <button type="submit" id="kaydet-dugme" class="bas-dugme">
+                <span id="kaydet-yazi">Taslak olarak kaydet</span>
+                <span class="bas-serit" aria-hidden="true"></span>
+            </button>
+        </form>
+
+        <aside class="fis-onizleme" aria-label="Fiş önizlemesi">
+            <span class="fis-onizleme-etiket">FİŞ ÖNİZLEMESİ</span>
+            <div class="fis-yazici" aria-hidden="true"><span id="fis-isik" class="fis-isik"></span></div>
+            <div class="fis-cikis">
+                <div id="fis-govde" class="fis-govde">
+                    <div id="fis-kapak" class="fis-kapak">
+                        <span id="fis-kapak-yazi" class="fis-kapak-yazi">Fotoğraf yok</span>
+                        <span class="fis-taslak-etiket">TASLAK</span>
+                    </div>
+                    <div class="fis-bilgi">
+                        <span id="fis-kategori" class="fis-kategori">LOT ---- · KATEGORİ</span>
+                        <span id="fis-baslik" class="fis-baslik bos">________</span>
+                        <span id="fis-arac" class="fis-arac" hidden></span>
+                        <dl class="fis-ozet">
+                            <div><dt>DURUM</dt><dd id="fis-durum"></dd></div>
+                            <div><dt>ŞEHİR</dt><dd id="fis-sehir" class="bos">____</dd></div>
+                            <div><dt>BİTİŞ</dt><dd id="fis-bitis">—</dd></div>
+                        </dl>
+                    </div>
+                    <div class="fis-alt">
+                        <div class="fis-acilis">
+                            <span>AÇILIŞ</span>
+                            <span id="fis-fiyat" class="fis-fiyat bos">₺____</span>
+                        </div>
+                        <div class="fis-sag">
+                            <span id="fis-artis" class="fis-artis">+₺— adım</span>
+                            <span id="fis-rezerv" class="fis-rezerv">REZERVSİZ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="fis-onizleme-not">Değişen alan fişte bir an siyah-sarı yanar. Rezervin rakamı fişe hiç yazılmaz, sadece var olduğu görünür.</p>
+        </aside>
+    </div>
 </div>
 
 @section Scripts {
@@ -237,6 +276,7 @@
             if (aracMi && urunDurumu.value === azKullanilmis.value) {
                 urunDurumu.selectedIndex = 0;
             }
+            fisiGuncelle();
         }
 
         function modelSecenegiEkle(deger, yazi) {
@@ -303,33 +343,142 @@
                 vinDurum.textContent = "Şasi numarası çözülemedi, bilgileri elle girin.";
             } finally {
                 vinDoldur.disabled = false;
+                fisiGuncelle();
+                isaretle(fis("fis-arac"));
             }
+        }
+
+        // Seçilen fotoğraflar birikir: "+ Fotoğraf" her basışta listeye ekler (en fazla 10).
+        let secilenFotolar = [];
+
+        function fotograflariEkle() {
+            secilenFotolar = secilenFotolar.concat(Array.from(fotograflar.files)).slice(0, 10);
+            const aktarim = new DataTransfer();
+            secilenFotolar.forEach(dosya => aktarim.items.add(dosya));
+            fotograflar.files = aktarim.files;
+            onizlemeyiGuncelle();
+            isaretle(document.getElementById("fis-kapak"));
         }
 
         function onizlemeyiGuncelle() {
             fotoOnizleme.replaceChildren();
-            Array.from(fotograflar.files).forEach((dosya, i) => {
+            secilenFotolar.forEach((dosya, i) => {
                 const kutu = document.createElement("div");
                 kutu.className = "foto-kutu";
                 const resim = document.createElement("img");
                 resim.alt = dosya.name;
                 resim.src = URL.createObjectURL(dosya);
-                resim.addEventListener("load", () => URL.revokeObjectURL(resim.src));
                 kutu.append(resim);
                 if (i === 0) {
-                    const rozet = document.createElement("span");
-                    rozet.className = "rozet rozet-sari foto-kapak";
-                    rozet.textContent = "Kapak";
-                    kutu.append(rozet);
+                    const kapak = document.createElement("span");
+                    kapak.className = "foto-kapak";
+                    kapak.textContent = "KAPAK";
+                    kutu.append(kapak);
                 }
+                const no = document.createElement("span");
+                no.className = "foto-no";
+                no.textContent = i + 1;
+                kutu.append(no);
                 fotoOnizleme.append(kutu);
             });
+            fisiGuncelle();
         }
+
+        // ---------- Fiş önizlemesi ----------
+        const para = new Intl.NumberFormat("tr-TR");
+        const fis = id => document.getElementById(id);
+
+        // Değişen alanı fişte bir an siyah-sarı yakar.
+        function isaretle(oge) {
+            oge.classList.remove("isaret");
+            void oge.offsetWidth;
+            oge.classList.add("isaret");
+        }
+
+        function secilenYazi(liste) {
+            const secenek = liste.options[liste.selectedIndex];
+            return secenek && secenek.value ? secenek.text : "";
+        }
+
+        function tarihYazi(deger) {
+            if (!deger) return "—";
+            const [gun, saat] = deger.split("T");
+            const [y, a, g] = gun.split("-");
+            return `${g}.${a} ${saat ?? ""}`;
+        }
+
+        function yaz(id, metin, bosMu) {
+            const oge = fis(id);
+            oge.textContent = metin;
+            if (bosMu !== undefined) oge.classList.toggle("bos", bosMu);
+        }
+
+        function fisiGuncelle() {
+            const deger = id => (document.getElementById(id)?.value ?? "").trim();
+            const baslik = deger("Girdi_Baslik");
+            const sehir = deger("Girdi_Sehir");
+            const fiyat = Number(deger("Girdi_BaslangicFiyati"));
+            const artis = Number(deger("Girdi_MinimumArtis"));
+            const rezerv = Number(deger("Girdi_RezervFiyati"));
+
+            yaz("fis-kategori", `LOT ---- · ${(secilenYazi(kategori) || "KATEGORİ").toLocaleUpperCase("tr-TR")}`);
+            yaz("fis-baslik", baslik || "________", !baslik);
+            yaz("fis-durum", secilenYazi(urunDurumu));
+            yaz("fis-sehir", sehir || "____", !sehir);
+            yaz("fis-bitis", tarihYazi(deger("Girdi_BitisZamani")));
+            yaz("fis-fiyat", fiyat ? `₺${para.format(fiyat)}` : "₺____", !fiyat);
+            yaz("fis-artis", `+${artis ? "₺" + para.format(artis) : "₺—"} adım`);
+            yaz("fis-rezerv", rezerv ? "REZERVLİ" : "REZERVSİZ");
+            fis("fis-rezerv").classList.toggle("var", !!rezerv);
+
+            const km = Number(deger("Girdi_Km"));
+            const arac = [deger("Girdi_Yil"), km ? `${para.format(km)} km` : "", secilenYazi(marka), secilenYazi(model)].filter(Boolean).join(" · ");
+            fis("fis-arac").textContent = arac;
+            fis("fis-arac").hidden = aracBolumu.hidden || !arac;
+
+            const kapak = fis("fis-kapak");
+            if (secilenFotolar.length) {
+                const adres = URL.createObjectURL(secilenFotolar[0]);
+                kapak.style.backgroundImage = `url("${adres}")`;
+                kapak.classList.add("dolu");
+            } else {
+                kapak.style.backgroundImage = "";
+                kapak.classList.remove("dolu");
+            }
+        }
+
+        // Her alan, fişte karşılık geldiği yeri işaretler.
+        const fisAlanlari = {
+            "Girdi_Baslik": "fis-baslik", "kategori": "fis-kategori", "urun-durumu": "fis-durum",
+            "Girdi_Sehir": "fis-sehir", "Girdi_BitisZamani": "fis-bitis", "Girdi_BaslangicFiyati": "fis-fiyat",
+            "Girdi_MinimumArtis": "fis-artis", "Girdi_RezervFiyati": "fis-rezerv",
+            "Girdi_Yil": "fis-arac", "Girdi_Km": "fis-arac", "marka": "fis-arac", "model": "fis-arac"
+        };
+        Object.entries(fisAlanlari).forEach(([alanId, fisId]) => {
+            const alan = document.getElementById(alanId);
+            if (!alan) return;
+            ["input", "change"].forEach(olay => alan.addEventListener(olay, () => {
+                fisiGuncelle();
+                isaretle(fis(fisId));
+            }));
+        });
+
+        // Kaydet: form geçerliyse fiş "basılır".
+        $(form).on("submit", function () {
+            if (!$(form).valid()) return;
+            const dugme = document.getElementById("kaydet-dugme");
+            dugme.classList.add("basiliyor");
+            dugme.setAttribute("aria-disabled", "true");
+            document.getElementById("kaydet-yazi").textContent = "Fiş basılıyor…";
+            fis("fis-isik").classList.add("basiliyor");
+            fis("fis-govde").classList.add("basiliyor");
+        });
 
         kategori.addEventListener("change", kategoriyeGoreGuncelle);
         marka.addEventListener("change", modelleriGetir);
-        fotograflar.addEventListener("change", onizlemeyiGuncelle);
+        fotograflar.addEventListener("change", fotograflariEkle);
         vinDoldur.addEventListener("click", sasiNoIleDoldur);
         kategoriyeGoreGuncelle();
+        fisiGuncelle();
     </script>
 }

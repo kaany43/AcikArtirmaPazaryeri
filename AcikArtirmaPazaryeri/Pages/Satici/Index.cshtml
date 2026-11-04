@@ -5,38 +5,55 @@
 @{
     ViewData["Title"] = "İlanlarım";
     var tr = CultureInfo.GetCultureInfo("tr-TR");
+    var mesaj = TempData["Mesaj"] as string;
 }
 
-<div class="sayfa sayfa-sik">
+<div class="sayfa sayfa-sik sayfa-ilanlar">
     <div class="sayfa-basi-satir">
-        <div class="sayfa-basi">
-            <h1 class="sayfa-baslik">İlanlarım</h1>
-        </div>
+        <h1 class="sayfa-baslik">İlanlarım</h1>
         <a class="dugme dugme-sari" asp-page="/Satici/Ekle">
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
             Yeni İlan
         </a>
     </div>
 
-    @if (TempData["Mesaj"] is not null)
+    @if (mesaj is not null)
     {
-        <div class="bildirim" role="status">
-            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5" /></svg>
-            <span>@TempData["Mesaj"]</span>
+        <div class="fis-bildirim" role="status">
+            <svg aria-hidden="true" width="64" height="48" viewBox="0 0 64 56">
+                <path d="M18 8 H64 V48 H18 L8 38 V18 Z" fill="#ffc400" />
+                <path d="M22 28 q8 -10 16 0" fill="none" stroke="#111111" stroke-width="2.8" stroke-linecap="round" />
+                <path d="M12 38 q6 7 13 0" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" />
+            </svg>
+            <span><strong>@mesaj</strong> <span class="fis-bildirim-not">Hazır olunca onaya gönderebilirsin.</span></span>
         </div>
     }
 
     @if (Model.Ilanlar.Count == 0)
     {
-        <div class="sayfa-basi">
-            <p class="not-kutu">Henüz ilanın yok.</p>
-            <a class="dugme dugme-sari" asp-page="/Satici/Ekle">Yeni İlan</a>
+        <div class="bos-ilan">
+            <svg aria-hidden="true" width="190" height="134" viewBox="-10 -30 270 190">
+                <rect x="78" y="108" width="9" height="24" fill="#111111" /><rect x="70" y="128" width="22" height="7" fill="#111111" />
+                <rect x="152" y="108" width="9" height="24" fill="#111111" /><rect x="144" y="128" width="22" height="7" fill="#111111" />
+                <path d="M34 28H236V112H34L20 98V42Z" fill="#ffc400" />
+                <path d="M204 38V102" stroke="#111111" stroke-width="3" stroke-dasharray="6 5" />
+                <circle cx="204" cy="28" r="7" fill="#ffffff" /><circle cx="204" cy="112" r="7" fill="#ffffff" />
+                <path d="M42 60 q10 7 20 0" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round" />
+                <path d="M30 86 q5 3 10 0" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round" />
+                <text x="66" y="8" class="bos-ilan-z">z</text>
+                <text x="80" y="-6" class="bos-ilan-z bos-ilan-z-buyuk">z</text>
+            </svg>
+            <div class="bos-ilan-metin">
+                <h2 class="bos-ilan-baslik">Henüz ilanın yok</h2>
+                <p>İlk fişini bas; taslak olarak kaydedilir, hazır olunca onaya gönderirsin.</p>
+                <a class="dugme dugme-sari dugme-kucuk" asp-page="/Satici/Ekle">Yeni İlan</a>
+            </div>
         </div>
     }
     else
     {
         <div class="tablo-kap">
-            <table class="veri-tablosu">
+            <table class="ilan-tablosu">
                 <thead>
                     <tr>
                         <th>Başlık</th>
@@ -47,24 +64,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var ilan in Model.Ilanlar)
+                    @for (var i = 0; i < Model.Ilanlar.Count; i++)
                     {
+                        var ilan = Model.Ilanlar[i];
                         var (durumYazi, durumSinif) = ilan.Durum switch
                         {
-                            MuzayedeDurumu.Taslak => ("Taslak", "rozet"),
-                            MuzayedeDurumu.OnayBekliyor => ("Onay bekliyor", "rozet"),
-                            MuzayedeDurumu.Aktif => ("Aktif", "rozet rozet-sari"),
-                            MuzayedeDurumu.Reddedildi => ("Reddedildi", "rozet"),
-                            MuzayedeDurumu.Satildi => ("Satıldı", "rozet rozet-siyah"),
-                            MuzayedeDurumu.Satilmadi => ("Satılmadı", "rozet"),
-                            _ => (ilan.Durum.ToString(), "rozet")
+                            MuzayedeDurumu.Taslak => ("Taslak", "fis-taslak"),
+                            MuzayedeDurumu.OnayBekliyor => ("Onay bekliyor", "fis-onay"),
+                            MuzayedeDurumu.Aktif => ("Aktif", "fis-aktif"),
+                            MuzayedeDurumu.Reddedildi => ("Reddedildi", "fis-red"),
+                            MuzayedeDurumu.Satildi => ("Satıldı", "fis-satildi"),
+                            MuzayedeDurumu.Satilmadi => ("Satılmadı", "fis-taslak"),
+                            _ => (ilan.Durum.ToString(), "fis-taslak")
                         };
-                        <tr>
-                            <td>@ilan.Baslik</td>
-                            <td>@ilan.Kategori.KategoriAdi</td>
+                        var kategori = ilan.Kategori.UstKategori is null
+                            ? ilan.Kategori.KategoriAdi
+                            : $"{ilan.Kategori.UstKategori.KategoriAdi} › {ilan.Kategori.KategoriAdi}";
+                        <tr class="@(mesaj is not null && i == 0 ? "yeni-satir" : null)">
+                            <td class="hucre-baslik">@ilan.Baslik</td>
+                            <td class="hucre-kategori">@kategori</td>
                             <td class="sutun-sag hucre-mono">@(ilan.BaslangicFiyati.ToString("N2", tr)) ₺</td>
                             <td class="hucre-mono">@ilan.BitisZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</td>
-                            <td><span class="@durumSinif">@durumYazi</span></td>
+                            <td><span class="fis-rozet @durumSinif"><span class="fis-rozet-uc" aria-hidden="true"></span><span class="fis-rozet-yazi">@durumYazi</span></span></td>
                         </tr>
                     }
                 </tbody>

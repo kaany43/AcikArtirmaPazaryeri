@@ -5,14 +5,13 @@
 }
 
 <div class="hata-sayfa">
-    <div class="hata-gorsel" aria-hidden="true">
-        <span class="hata-kod">500</span>
-        <div class="hata-serit hata-serit-beyaz"></div>
+    <div class="hata-gorsel">
+        <partial name="_HataCentik" model="@("500")" />
     </div>
     <div class="hata-metin">
-        <span class="ust-etiket">Sunucu hatası</span>
-        <h1 class="hata-baslik">Bir şeyler ters gitti</h1>
-        <p class="sayfa-aciklama">İsteğin işlenirken bir hata oluştu. Sayfayı yenilemeyi dene; sorun sürerse aşağıdaki istek numarasıyla bildir.</p>
+        <span class="hata-etiket">HATA 500</span>
+        <h1 class="hata-baslik">Çekiç biraz sert indi</h1>
+        <p class="sayfa-aciklama">Bizim tarafta bir şey kırıldı. Birkaç dakika sonra tekrar dene; sorun sürerse istek numarasıyla bildir.</p>
         @if (Model.ShowRequestId)
         {
             <div class="istek-kutu">
@@ -21,7 +20,7 @@
             </div>
         }
         <div class="dugme-grup">
-            <a class="dugme dugme-sari" asp-page="/Index">Ana sayfaya dön</a>
+            <a class="dugme dugme-sari" href="">Tekrar dene</a>
         </div>
     </div>
 </div>
