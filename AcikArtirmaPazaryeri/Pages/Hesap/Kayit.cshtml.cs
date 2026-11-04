@@ -57,6 +57,7 @@ namespace AcikArtirmaPazaryeri.Pages.Hesap
             {
                 await _userManager.AddToRoleAsync(kullanici, "Alici");
                 await _signInManager.SignInAsync(kullanici, isPersistent: false);
+                TempData["Karsilama"] = kullanici.Ad; // ana sayfadaki "Hoş geldin" bandı için
                 return RedirectToPage("/Index");
             }
 

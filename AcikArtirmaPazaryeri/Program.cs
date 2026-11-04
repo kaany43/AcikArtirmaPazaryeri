@@ -152,6 +152,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Olmayan bir adrese gidilince tasarımdaki 404 sayfası gösterilir.
+app.UseStatusCodePagesWithReExecute("/Bulunamadi");
+
 app.UseRouting();
 
 app.UseAuthentication();

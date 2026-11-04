@@ -1,0 +1,19 @@
+﻿@page
+@{
+    ViewData["Title"] = "Sayfa Bulunamadı";
+}
+
+<div class="hata-sayfa">
+    <div class="hata-gorsel">
+        <partial name="_HataCentik" model="@("404")" />
+    </div>
+    <div class="hata-metin">
+        <span class="hata-etiket">HATA 404</span>
+        <h1 class="hata-baslik">Bu sayfa koptu</h1>
+        <p class="sayfa-aciklama">Aradığın sayfa koçanıyla birlikte kopmuş. Taşınmış ya da hiç var olmamış olabilir.</p>
+        <div class="dugme-grup">
+            <a class="dugme dugme-sari" asp-page="/Index">Ana sayfaya dön</a>
+            <a class="dugme dugme-cerceve" asp-page="/Index">Kategorilere bak</a>
+        </div>
+    </div>
+</div>

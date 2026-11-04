@@ -29,6 +29,7 @@ namespace AcikArtirmaPazaryeri.Pages.Satici
             Ilanlar = await _context.Muzayedeler
                 .Where(m => m.SaticiId == saticiId)
                 .Include(m => m.Kategori)
+                    .ThenInclude(k => k.UstKategori) // tasarımda "Vasıta › Otomobil" gibi gösteriliyor
                 .OrderByDescending(m => m.OlusturmaZamani)
                 .ToListAsync();
         }

@@ -339,8 +339,9 @@ namespace AcikArtirmaPazaryeri.Pages.Satici
         {
             Kategoriler = await _context.Kategoriler
                 .Where(k => k.UstKategoriId != null)
-                .OrderBy(k => k.KategoriAdi)
-                .Select(k => new SelectListItem(k.KategoriAdi, k.KategoriId.ToString()))
+                .OrderBy(k => k.UstKategori!.KategoriAdi).ThenBy(k => k.KategoriAdi)
+                // tasarımdaki gibi "Vasıta › Otomobil"
+                .Select(k => new SelectListItem(k.UstKategori!.KategoriAdi + " › " + k.KategoriAdi, k.KategoriId.ToString()))
                 .ToListAsync();
             Markalar = await _context.Markalar
                 .OrderBy(m => m.MarkaAdi)

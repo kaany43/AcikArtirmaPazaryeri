@@ -38,3 +38,10 @@ document.querySelectorAll('[data-sifre-kurallari]').forEach(function (girdi) {
     girdi.addEventListener('input', guncelle);
     guncelle();
 });
+
+// Ana sayfadaki "Hoş geldin" bandini kapat
+document.querySelectorAll('.karsilama-kapat').forEach(function (dugme) {
+    dugme.addEventListener('click', function () {
+        dugme.closest('.karsilama').hidden = true;
+    });
+});
