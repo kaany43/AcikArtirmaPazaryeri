@@ -139,6 +139,32 @@ foreach (var k in context.Kategoriler.ToList())
             throw new Exception($"Yönetici oluşturulamadı: {string.Join(", ", sonuc.Errors.Select(e => e.Description))}");
         }
     }
+
+    // Örnek ilanlar bu satıcıya ait; şifresi olmadığı için bu hesapla giriş yapılamaz.
+    var ornekSatici = await userManager.FindByEmailAsync("ornek.satici@acikartirma.local");
+    if (ornekSatici == null)
+    {
+        ornekSatici = new Kullanici
+        {
+            UserName = "ornek.satici@acikartirma.local",
+            Email = "ornek.satici@acikartirma.local",
+            Ad = "Örnek",
+            Soyad = "Satıcı",
+            FirmaAdi = "Örnek Galeri",
+            EmailConfirmed = true
+        };
+        var sonuc = await userManager.CreateAsync(ornekSatici);
+        if (!sonuc.Succeeded)
+        {
+            throw new Exception($"Örnek satıcı oluşturulamadı: {string.Join(", ", sonuc.Errors.Select(e => e.Description))}");
+        }
+        await userManager.AddToRolesAsync(ornekSatici, new[] { "Alici", "Satici" });
+    }
+    if (!context.Muzayedeler.Any(m => m.SaticiId == ornekSatici.Id))
+    {
+        context.Muzayedeler.AddRange(OrnekIlanSeed.Getir(ornekSatici.Id, context));
+        context.SaveChanges();
+    }
 }
 
 
