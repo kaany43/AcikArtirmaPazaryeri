@@ -29,7 +29,7 @@
 
             <div class="alan">
                 <label for="kategori" class="alan-etiket">Kategori</label>
-                <select id="kategori" name="KategoriId" asp-items="Model.Kategoriler" class="girdi" data-otomatik-gonder>
+                <select id="kategori" name="KategoriId" asp-for="KategoriId" asp-items="Model.Kategoriler" class="girdi" data-otomatik-gonder>
                     <option value="">Tüm kategoriler</option>
                 </select>
             </div>
@@ -44,7 +44,7 @@
 
             <div class="alan">
                 <label for="sehir" class="alan-etiket">Şehir</label>
-                <select id="sehir" name="Sehir" asp-items="Model.Sehirler" class="girdi">
+                <select id="sehir" name="Sehir" asp-for="Sehir" asp-items="Model.Sehirler" class="girdi">
                     <option value="">Tüm şehirler</option>
                 </select>
             </div>
