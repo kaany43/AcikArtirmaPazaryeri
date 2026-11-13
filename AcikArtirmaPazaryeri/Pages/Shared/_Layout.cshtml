@@ -31,7 +31,8 @@
             <nav class="ana-menu" aria-label="Ana menü">
                 <a class="menu-link @(aktifSayfa == "/Index" ? "aktif" : "")" asp-page="/Index"
                    aria-current="@(aktifSayfa == "/Index" ? "page" : null)">Ana Sayfa</a>
-                <a class="menu-link" href="#">Müzayedeler</a>
+                <a class="menu-link @(aktifSayfa?.StartsWith("/Muzayedeler") == true ? "aktif" : "")" asp-page="/Muzayedeler/Index"
+                   aria-current="@(aktifSayfa == "/Muzayedeler/Index" ? "page" : null)">Müzayedeler</a>
             </nav>
             <partial name="_GirisPartial" />
         </div>
@@ -58,7 +59,7 @@
                 </div>
                 <nav class="footer-menu" aria-label="Alt menü">
                     <a asp-page="/Index">Ana Sayfa</a>
-                    <a href="#">Müzayedeler</a>
+                    <a asp-page="/Muzayedeler/Index">Müzayedeler</a>
                     <a asp-page="/Hesap/Profil">Profilim</a>
                 </nav>
             </div>

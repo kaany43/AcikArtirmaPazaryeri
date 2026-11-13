@@ -48,13 +48,13 @@
                 </div>
                 <h2 class="one-cikan-baslik" id="kategori-@oneCikan.KategoriId">@oneCikan.KategoriAdi</h2>
                 <p class="one-cikan-aciklama">Araç ilanları marka, model, yıl, kilometre ve parça bazlı ekspertiz bilgisiyle listelenir.</p>
-                <a class="tumu-link" href="#">Tüm ilanları gör</a>
+                <a class="tumu-link" asp-page="/Muzayedeler/Index" asp-route-KategoriId="@oneCikan.KategoriId">Tüm ilanları gör</a>
                 <span class="mono sayfa-ozet">@oneCikan.AltKategoriler.Count alt kategori</span>
             </div>
             <div class="one-cikan-liste">
                 @foreach (var alt in oneCikan.AltKategoriler.OrderBy(a => a.KategoriId))
                 {
-                    <a class="alt-link" href="#">@alt.KategoriAdi</a>
+                    <a class="alt-link" asp-page="/Muzayedeler/Index" asp-route-KategoriId="@alt.KategoriId">@alt.KategoriAdi</a>
                 }
             </div>
         </section>
@@ -76,7 +76,7 @@
                     {
                         foreach (var alt in k.AltKategoriler.OrderBy(a => a.KategoriId))
                         {
-                            <a class="alt-link" href="#">@alt.KategoriAdi</a>
+                            <a class="alt-link" asp-page="/Muzayedeler/Index" asp-route-KategoriId="@alt.KategoriId">@alt.KategoriAdi</a>
                         }
                     }
                     else
@@ -84,7 +84,7 @@
                         <div class="alt-bos">Alt kategori yok</div>
                     }
                 </div>
-                <a class="tumu-link" href="#">Tüm ilanları gör</a>
+                <a class="tumu-link" asp-page="/Muzayedeler/Index" asp-route-KategoriId="@k.KategoriId">Tüm ilanları gör</a>
             </section>
         }
     </div>

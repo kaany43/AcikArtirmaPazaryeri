@@ -1,0 +1,193 @@
+﻿@page
+@model AcikArtirmaPazaryeri.Pages.Muzayedeler.IndexModel
+@using System.Globalization
+@using AcikArtirmaPazaryeri.Models
+@{
+    ViewData["Title"] = Model.SeciliKategori?.KategoriAdi ?? "Müzayedeler";
+    var tr = CultureInfo.GetCultureInfo("tr-TR");
+    // Sayfa linkleri seçili filtreleri korusun diye adresteki parametreler taşınır.
+    var filtreler = Request.Query
+        .Where(q => q.Key != "Sayfa" && !string.IsNullOrEmpty(q.Value))
+        .ToDictionary(q => q.Key, q => q.Value.ToString());
+}
+
+<div class="sayfa sayfa-sik sayfa-liste">
+    <div class="sayfa-basi-satir">
+        <div class="sayfa-basi">
+            <h1 class="sayfa-baslik">@(Model.SeciliKategori?.KategoriAdi ?? "Müzayedeler")</h1>
+            <p class="sayfa-aciklama">Yayındaki açık artırmalar. Bitişi en yakın olan en üstte.</p>
+        </div>
+        <p class="sayfa-ozet mono">@Model.ToplamIlan ilan · sayfa @Model.Sayfa / @Model.ToplamSayfa</p>
+    </div>
+
+    <div class="liste-duzen">
+        <form method="get" class="filtre-panel" id="filtre-form">
+            <div class="alan">
+                <label for="arama" class="alan-etiket">Ara</label>
+                <input id="arama" name="Arama" value="@Model.Arama" class="girdi" placeholder="Başlık veya açıklama" />
+            </div>
+
+            <div class="alan">
+                <label for="kategori" class="alan-etiket">Kategori</label>
+                <select id="kategori" name="KategoriId" asp-items="Model.Kategoriler" class="girdi" data-otomatik-gonder>
+                    <option value="">Tüm kategoriler</option>
+                </select>
+            </div>
+
+            <div class="alan">
+                <span class="alan-etiket">Fiyat (₺)</span>
+                <div class="alan-ikili">
+                    <input name="MinFiyat" value="@Model.MinFiyat" type="number" min="0" step="1" class="girdi" placeholder="En az" aria-label="En az fiyat" />
+                    <input name="MaxFiyat" value="@Model.MaxFiyat" type="number" min="0" step="1" class="girdi" placeholder="En çok" aria-label="En çok fiyat" />
+                </div>
+            </div>
+
+            <div class="alan">
+                <label for="sehir" class="alan-etiket">Şehir</label>
+                <select id="sehir" name="Sehir" asp-items="Model.Sehirler" class="girdi">
+                    <option value="">Tüm şehirler</option>
+                </select>
+            </div>
+
+            <div class="alan">
+                <label for="urun-durumu" class="alan-etiket">Ürün durumu</label>
+                <select id="urun-durumu" name="UrunDurumu" asp-for="UrunDurumu" asp-items="Html.GetEnumSelectList<UrunDurumu>()" class="girdi">
+                    <option value="">Hepsi</option>
+                </select>
+            </div>
+
+            @if (Model.AracFiltreleriAcik)
+            {
+                <h2 class="bolum-baslik">Araç</h2>
+
+                <div class="alan">
+                    <label for="marka" class="alan-etiket">Marka</label>
+                    <select id="marka" name="MarkaId" asp-for="MarkaId" asp-items="Model.Markalar" class="girdi" data-otomatik-gonder>
+                        <option value="">Tüm markalar</option>
+                    </select>
+                </div>
+
+                <div class="alan">
+                    <label for="model" class="alan-etiket">Model</label>
+                    <select id="model" name="AracModeliId" asp-for="AracModeliId" asp-items="Model.Modeller" class="girdi" disabled="@(Model.MarkaId == null)">
+                        <option value="">@(Model.MarkaId == null ? "Önce marka seçin" : "Tüm modeller")</option>
+                    </select>
+                </div>
+
+                <div class="alan">
+                    <span class="alan-etiket">Yıl</span>
+                    <div class="alan-ikili">
+                        <input name="MinYil" value="@Model.MinYil" type="number" min="1950" class="girdi" placeholder="En eski" aria-label="En eski yıl" />
+                        <input name="MaxYil" value="@Model.MaxYil" type="number" min="1950" class="girdi" placeholder="En yeni" aria-label="En yeni yıl" />
+                    </div>
+                </div>
+
+                <div class="alan">
+                    <span class="alan-etiket">Kilometre</span>
+                    <div class="alan-ikili">
+                        <input name="MinKm" value="@Model.MinKm" type="number" min="0" step="1000" class="girdi" placeholder="En az" aria-label="En az kilometre" />
+                        <input name="MaxKm" value="@Model.MaxKm" type="number" min="0" step="1000" class="girdi" placeholder="En çok" aria-label="En çok kilometre" />
+                    </div>
+                </div>
+
+                <div class="alan-ikili">
+                    <div class="alan">
+                        <label for="yakit" class="alan-etiket">Yakıt</label>
+                        <select id="yakit" name="YakitTuru" asp-for="YakitTuru" asp-items="Html.GetEnumSelectList<YakitTuru>()" class="girdi">
+                            <option value="">Hepsi</option>
+                        </select>
+                    </div>
+                    <div class="alan">
+                        <label for="vites" class="alan-etiket">Vites</label>
+                        <select id="vites" name="VitesTuru" asp-for="VitesTuru" asp-items="Html.GetEnumSelectList<VitesTuru>()" class="girdi">
+                            <option value="">Hepsi</option>
+                        </select>
+                    </div>
+                </div>
+            }
+
+            <div class="filtre-dugmeler">
+                <button type="submit" class="dugme dugme-sari">Filtrele</button>
+                <a class="metin-link" asp-page="/Muzayedeler/Index">Temizle</a>
+            </div>
+        </form>
+
+        <div class="liste-sonuc">
+            @if (Model.Ilanlar.Count == 0)
+            {
+                <div class="liste-bos">
+                    <h2 class="bos-ilan-baslik">İlan bulunamadı</h2>
+                    <p>Filtreleri değiştirip tekrar deneyin.</p>
+                </div>
+            }
+            else
+            {
+                <div class="ilan-kartlari">
+                    @foreach (var ilan in Model.Ilanlar)
+                    {
+                        var kapak = ilan.MuzayedeResimleri.OrderByDescending(r => r.KapakMi).ThenBy(r => r.Sira).FirstOrDefault();
+                        var kategori = ilan.Kategori.UstKategori is null
+                            ? ilan.Kategori.KategoriAdi
+                            : $"{ilan.Kategori.UstKategori.KategoriAdi} › {ilan.Kategori.KategoriAdi}";
+                        var arac = ilan.AracDetaylari;
+                        <a class="ilan-kart" asp-page="/Muzayedeler/Detay" asp-route-id="@ilan.MuzayedeId">
+                            <span class="ilan-kart-resim">
+                                @if (kapak != null)
+                                {
+                                    <img src="@kapak.DosyaYolu" alt="" loading="lazy" />
+                                }
+                            </span>
+                            <span class="ilan-kart-bilgi">
+                                <span class="ilan-kart-kategori mono">@kategori</span>
+                                <span class="ilan-kart-baslik">@ilan.Baslik</span>
+                                @if (arac != null)
+                                {
+                                    <span class="ilan-kart-arac">@arac.Yil · @arac.Km.ToString("N0", tr) km · @arac.YakitTuru.GorunenAd() · @arac.VitesTuru.GorunenAd()</span>
+                                }
+                                <span class="ilan-kart-alt">
+                                    <span class="ilan-kart-fiyat">@ilan.BaslangicFiyati.ToString("N0", tr) ₺</span>
+                                    <span class="ilan-kart-sehir mono">@ilan.Sehir</span>
+                                </span>
+                                <span class="ilan-kart-sure mono" data-geri-sayim="@ilan.BitisZamani.ToString("o")">Bitiş @ilan.BitisZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</span>
+                            </span>
+                        </a>
+                    }
+                </div>
+
+                @if (Model.ToplamSayfa > 1)
+                {
+                    <nav class="sayfalama" aria-label="Sayfalar">
+                        @if (Model.Sayfa > 1)
+                        {
+                            <a class="sayfa-link" asp-page="/Muzayedeler/Index" asp-all-route-data="filtreler" asp-route-Sayfa="@(Model.Sayfa - 1)">‹ Önceki</a>
+                        }
+                        @for (var s = 1; s <= Model.ToplamSayfa; s++)
+                        {
+                            <a class="sayfa-link @(s == Model.Sayfa ? "aktif" : "")" asp-page="/Muzayedeler/Index" asp-all-route-data="filtreler" asp-route-Sayfa="@s"
+                               aria-current="@(s == Model.Sayfa ? "page" : null)">@s</a>
+                        }
+                        @if (Model.Sayfa < Model.ToplamSayfa)
+                        {
+                            <a class="sayfa-link" asp-page="/Muzayedeler/Index" asp-all-route-data="filtreler" asp-route-Sayfa="@(Model.Sayfa + 1)">Sonraki ›</a>
+                        }
+                    </nav>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Kategori veya marka değişince form gönderilir; araç filtreleri ve model listesi sunucudan gelir.
+        document.querySelectorAll("[data-otomatik-gonder]").forEach(function (secim) {
+            secim.addEventListener("change", function () {
+                if (secim.id === "kategori" || secim.id === "marka") {
+                    var model = document.getElementById("model");
+                    if (model) model.value = "";
+                }
+                secim.form.submit();
+            });
+        });
+    </script>
+}

@@ -2161,6 +2161,80 @@ a:hover { color: #000000; }
   .detay-fiyat { font-size: 40px; }
 }
 
+/* ---------- 4. hafta: ilan listeleme ---------- */
+.liste-duzen {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+.filtre-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: var(--gri-zemin);
+}
+.filtre-panel .alan-ikili { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.filtre-panel .bolum-baslik { margin: 8px 0 0; }
+.filtre-dugmeler { display: flex; align-items: center; gap: 16px; }
+
+.ilan-kartlari {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+.ilan-kart {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gri-cizgi);
+  background: #ffffff;
+  text-decoration: none;
+  color: var(--siyah);
+  transition: border-color .15s, box-shadow .15s;
+}
+.ilan-kart:hover { color: var(--siyah); border-color: var(--siyah); box-shadow: 4px 4px 0 var(--vurgu); }
+.ilan-kart-resim { aspect-ratio: 4 / 3; background: var(--gri-zemin); overflow: hidden; }
+.ilan-kart-resim img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ilan-kart-bilgi { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px 16px; flex-grow: 1; }
+.ilan-kart-kategori { font-size: 11px; color: var(--gri-yazi); text-transform: uppercase; letter-spacing: .06em; }
+.ilan-kart-baslik { font-weight: 600; font-size: 17px; line-height: 1.3; }
+.ilan-kart-arac { font-size: 14px; color: var(--gri-yazi); }
+.ilan-kart-alt { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: auto; padding-top: 8px; }
+.ilan-kart-fiyat { font-family: var(--baslik-font); font-weight: 700; font-size: 28px; line-height: 1; }
+.ilan-kart-sehir { color: var(--gri-yazi); }
+.ilan-kart-sure {
+  align-self: flex-start;
+  padding: 2px 8px;
+  background: var(--siyah);
+  color: var(--vurgu);
+}
+.ilan-kart-sure.son-dakikalar { background: var(--kirmizi); color: #ffffff; }
+.ilan-kart-sure.bitti { background: var(--gri-zemin); color: var(--gri-isaret); }
+
+.liste-bos { padding: 40px; border: 1px dashed var(--gri-girdi); }
+.liste-bos p { margin: 6px 0 0; color: var(--gri-yazi); }
+
+.sayfalama { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 32px; }
+.sayfa-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--gri-girdi);
+  font-family: var(--mono-font);
+  font-size: 14px;
+  text-decoration: none;
+}
+.sayfa-link:hover { border-color: var(--siyah); }
+.sayfa-link.aktif { background: var(--siyah); border-color: var(--siyah); color: var(--vurgu); }
+
+@media (max-width: 900px) {
+  .liste-duzen { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* Hareketi azaltmak isteyenlere animasyon yok */
 @media (prefers-reduced-motion: reduce) {
   .alt-link { transition: none; }
