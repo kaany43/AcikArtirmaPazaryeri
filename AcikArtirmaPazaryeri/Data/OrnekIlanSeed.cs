@@ -74,7 +74,7 @@ namespace AcikArtirmaPazaryeri.Data
 
             var egea = Ilan("2019 Fiat Egea 1.4 Fire Urban", "İlk sahibinden, bakımları yetkili serviste yapıldı. Sağ arka kapıda lokal boya var, başka işlem yok. Kışlık lastikler hediye.",
                 "Otomobil", "Ankara", UrunDurumu.IkinciEl, 485000, 5000, 540000, TimeSpan.FromDays(3), "egea-1.jpg", "egea-2.jpg");
-            egea.AracDetaylari = Arac("Fiat", "Egea", "1.4 Fire Urban", 2019, 98500, YakitTuru.Benzin, VitesTuru.Manuel, KasaTipi.Sedan, "Beyaz", "ZFA35600006K21457",
+            egea.AracDetaylari = Arac("Fiat", "Egea", "1.4 Fire Urban", 2019, 98500, YakitTuru.Benzin, VitesTuru.Manuel, KasaTipi.Sedan, "Bej", "ZFA35600006K21457",
                 new() { ["Sağ arka kapı"] = ParcaDurumu.LokalBoyali });
             ilanlar.Add(egea);
 
@@ -97,7 +97,7 @@ namespace AcikArtirmaPazaryeri.Data
 
             var tucson = Ilan("2018 Hyundai Tucson 1.6 CRDi Elite", "4x2, panoramik cam tavan, deri koltuk. Sol taraf kapılarda boya var. Lastikler yeni.",
                 "Arazi, SUV & Pickup", "Antalya", UrunDurumu.IkinciEl, 1050000, 10000, null, TimeSpan.FromDays(4), "tucson-1.jpg", "tucson-2.jpg");
-            tucson.AracDetaylari = Arac("Hyundai", "Tucson", "1.6 CRDi Elite", 2018, 118000, YakitTuru.Dizel, VitesTuru.Otomatik, KasaTipi.SUV, "Lacivert", "NLHJ381AAJZ420973",
+            tucson.AracDetaylari = Arac("Hyundai", "Tucson", "1.6 CRDi Elite", 2018, 118000, YakitTuru.Dizel, VitesTuru.Otomatik, KasaTipi.SUV, "Mavi", "NLHJ381AAJZ420973",
                 new() { ["Sol ön kapı"] = ParcaDurumu.Boyali, ["Sol arka kapı"] = ParcaDurumu.Boyali });
             ilanlar.Add(tucson);
 
@@ -108,7 +108,7 @@ namespace AcikArtirmaPazaryeri.Data
 
             var focus = Ilan("2015 Ford Focus 1.6 TDCi - Hasarlı", "Önden çarpma: kaput, ön tampon ve sağ ön çamurluk değişecek. Motor ve şanzıman sağlam, araç çalışır durumda. Çekici ile teslim.",
                 "Hasarlı Araçlar", "Kocaeli", UrunDurumu.IkinciEl, 210000, 2500, null, TimeSpan.FromDays(2), "focus-1.jpg", "focus-2.jpg");
-            focus.AracDetaylari = Arac("Ford", "Focus", "1.6 TDCi Trend X", 2015, 186000, YakitTuru.Dizel, VitesTuru.Manuel, KasaTipi.Sedan, "Gümüş", "WF05XXGCC5FU71836",
+            focus.AracDetaylari = Arac("Ford", "Focus", "1.6 TDCi Trend X", 2015, 186000, YakitTuru.Dizel, VitesTuru.Manuel, KasaTipi.Hatchback, "Gümüş", "WF05XXGCC5FU71836",
                 new() { ["Kaput"] = ParcaDurumu.Degisen, ["Ön tampon"] = ParcaDurumu.Degisen, ["Sağ ön çamurluk"] = ParcaDurumu.Degisen, ["Sol ön çamurluk"] = ParcaDurumu.Boyali });
             ilanlar.Add(focus);
 
@@ -120,7 +120,7 @@ namespace AcikArtirmaPazaryeri.Data
                 "Fotoğraf & Kamera", "İzmir", UrunDurumu.AzKullanilmis, 14000, 250, 16000, TimeSpan.FromDays(8), "canon-1.jpg"));
             ilanlar.Add(Ilan("Seiko Presage Otomatik Kol Saati", "Kutulu, belgeli. Kasa çapı 40,5 mm. Kayış orijinal, deri.",
                 "Saat", "İstanbul", UrunDurumu.AzKullanilmis, 9000, 200, null, TimeSpan.FromDays(10), "saat-1.jpg"));
-            ilanlar.Add(Ilan("PlayStation 5 Diskli + 2 Kol", "Az oynandı, fan sesi yok. İki DualSense kol ve şarj istasyonu ile.",
+            ilanlar.Add(Ilan("PlayStation 5 Diskli + Kol", "Az oynandı, fan sesi yok. DualSense kol ile birlikte.",
                 "Oyunculara Özel", "Eskişehir", UrunDurumu.IkinciEl, 16000, 250, 18500, TimeSpan.FromDays(1), "ps5-1.jpg"));
             ilanlar.Add(Ilan("Antika Bakır Cezve ve Tepsi Takımı", "Dededen kalma, el işçiliği. Kalaylı, kullanıma uygun. Yaklaşık 60 yıllık.",
                 "Antika", "Gaziantep", UrunDurumu.IkinciEl, 2500, 100, null, TimeSpan.FromDays(12), "antika-1.jpg"));
