@@ -40,5 +40,7 @@ namespace AcikArtirmaPazaryeri.Models
         public AracDetaylari? AracDetaylari { get; set; }
 
         public ICollection<MuzayedeResmi> MuzayedeResimleri { get; set; } = new List<MuzayedeResmi>();
+
+        public ICollection<OnayKaydi> OnayKayitlari { get; set; } = new List<OnayKaydi>();
     }
 }

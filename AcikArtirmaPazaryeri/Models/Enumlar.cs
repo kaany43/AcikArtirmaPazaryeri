@@ -82,4 +82,13 @@ namespace AcikArtirmaPazaryeri.Models
         [Display(Name = "Değişen")]
         Degisen = 4
     }
+    public enum OnaySonucu
+    {
+        [Display(Name = "Onaylandı")]
+        Onaylandi = 1,
+        [Display(Name = "Reddedildi")]
+        Reddedildi = 2,
+        [Display(Name = "Kuyruğa alındı")]
+        KuyrugaAlindi = 3
+    }
 }

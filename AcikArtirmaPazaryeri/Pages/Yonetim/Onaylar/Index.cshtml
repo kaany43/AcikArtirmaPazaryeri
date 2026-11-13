@@ -1,0 +1,92 @@
+﻿@page
+@model AcikArtirmaPazaryeri.Pages.Yonetim.Onaylar.IndexModel
+@using System.Globalization
+@{
+    ViewData["Title"] = "İlan Onayları";
+    var tr = CultureInfo.GetCultureInfo("tr-TR");
+}
+
+@section AltMenu {
+    <partial name="_YonetimMenu" />
+}
+
+<div class="sayfa sayfa-sik">
+    <div class="sayfa-basi">
+        <h1 class="sayfa-baslik">İlan Onayları</h1>
+        <p class="sayfa-aciklama">Satıcıların onaya gönderdiği ilanlar. Onaylanan ilan yayına alınır; reddederken satıcının göreceği bir gerekçe yaz.</p>
+    </div>
+
+    @if (TempData["Mesaj"] is not null)
+    {
+        <div class="bildirim" role="status">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffc400" stroke-width="2.5" stroke-linecap="square"><path d="M4 12.5l5 5L20 6.5" /></svg>
+            <span>@TempData["Mesaj"]</span>
+        </div>
+    }
+
+    <div class="istatistikler">
+        <div class="istatistik">
+            <span class="istatistik-sayi">@Model.Bekleyenler.Count</span>
+            <span class="istatistik-etiket">Onay bekleyen ilan</span>
+        </div>
+    </div>
+
+    @if (Model.Bekleyenler.Count == 0)
+    {
+        <p class="soluk-yazi">Onay bekleyen ilan yok.</p>
+    }
+    else
+    {
+        <div class="tablo-kap">
+            <table class="veri-tablosu onay-tablosu">
+                <thead>
+                    <tr>
+                        <th>İlan</th>
+                        <th>Satıcı</th>
+                        <th class="sutun-sag" style="width: 170px">Başlangıç fiyatı</th>
+                        <th style="width: 170px; padding-left: 24px">Gönderilme</th>
+                        <th class="sutun-sag" style="width: 330px">İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ilan in Model.Bekleyenler)
+                    {
+                        var kategori = ilan.Kategori.UstKategori is null
+                            ? ilan.Kategori.KategoriAdi
+                            : $"{ilan.Kategori.UstKategori.KategoriAdi} › {ilan.Kategori.KategoriAdi}";
+                        <tr>
+                            <td>
+                                <span class="hucre-baslik">@ilan.Baslik</span>
+                                <span class="hucre-kategori">@kategori</span>
+                            </td>
+                            <td>
+                                @ilan.Satici.Ad @ilan.Satici.Soyad
+                                @if (ilan.Satici.GuvenilirSaticiMi)
+                                {
+                                    <span class="guvenilir-evet">Güvenilir</span>
+                                }
+                            </td>
+                            <td class="sutun-sag hucre-mono">@(ilan.BaslangicFiyati.ToString("N2", tr)) ₺</td>
+                            <td class="hucre-mono" style="padding-left: 24px">@ilan.OlusturmaZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</td>
+                            <td class="sutun-sag">
+                                <div class="onay-islemler">
+                                    <form method="post" asp-page-handler="Onayla" asp-route-id="@ilan.MuzayedeId" class="tablo-form">
+                                        <button type="submit" class="tablo-dugme">Onayla</button>
+                                    </form>
+                                    <details class="red-kutu">
+                                        <summary class="tablo-dugme tablo-dugme-sade">Reddet</summary>
+                                        <form method="post" asp-page-handler="Reddet" asp-route-id="@ilan.MuzayedeId" class="red-form">
+                                            <label for="gerekce-@ilan.MuzayedeId" class="alan-etiket">Red gerekçesi</label>
+                                            <textarea id="gerekce-@ilan.MuzayedeId" name="gerekce" class="girdi" rows="3" maxlength="500" required></textarea>
+                                            <button type="submit" class="tablo-dugme tablo-link-kirmizi">Reddet</button>
+                                        </form>
+                                    </details>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

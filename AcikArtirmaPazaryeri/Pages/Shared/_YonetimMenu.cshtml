@@ -2,6 +2,7 @@
     var sayfa = ViewContext.RouteData.Values["page"]?.ToString() ?? "";
     var kategorilerAktif = sayfa.StartsWith("/Yonetim/Kategoriler");
     var kullanicilarAktif = sayfa.StartsWith("/Yonetim/Kullanicilar");
+    var onaylarAktif = sayfa.StartsWith("/Yonetim/Onaylar");
 }
 
 <div class="alt-menu-bar">
@@ -12,6 +13,8 @@
                aria-current="@(kategorilerAktif ? "page" : null)">Kategoriler</a>
             <a class="alt-menu-link @(kullanicilarAktif ? "aktif" : "")" asp-page="/Yonetim/Kullanicilar/Index"
                aria-current="@(kullanicilarAktif ? "page" : null)">Kullanıcılar</a>
+            <a class="alt-menu-link @(onaylarAktif ? "aktif" : "")" asp-page="/Yonetim/Onaylar/Index"
+               aria-current="@(onaylarAktif ? "page" : null)">İlan Onayları</a>
         </nav>
     </div>
 </div>

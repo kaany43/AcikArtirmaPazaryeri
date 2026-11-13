@@ -354,6 +354,43 @@ namespace AcikArtirmaPazaryeri.Migrations
                     b.ToTable("MuzayedeResimleri");
                 });
 
+            modelBuilder.Entity("AcikArtirmaPazaryeri.Models.OnayKaydi", b =>
+                {
+                    b.Property<int>("OnayKaydiId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OnayKaydiId"));
+
+                    b.Property<string>("Gerekce")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<int>("MuzayedeId")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("OtomatikMi")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Sonuc")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Tarih")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("YoneticiId")
+                        .HasColumnType("text");
+
+                    b.HasKey("OnayKaydiId");
+
+                    b.HasIndex("MuzayedeId");
+
+                    b.HasIndex("YoneticiId");
+
+                    b.ToTable("OnayKayitlari");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -566,6 +603,24 @@ namespace AcikArtirmaPazaryeri.Migrations
                     b.Navigation("Muzayede");
                 });
 
+            modelBuilder.Entity("AcikArtirmaPazaryeri.Models.OnayKaydi", b =>
+                {
+                    b.HasOne("AcikArtirmaPazaryeri.Models.Muzayede", "Muzayede")
+                        .WithMany("OnayKayitlari")
+                        .HasForeignKey("MuzayedeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AcikArtirmaPazaryeri.Models.Kullanici", "Yonetici")
+                        .WithMany()
+                        .HasForeignKey("YoneticiId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Muzayede");
+
+                    b.Navigation("Yonetici");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -637,6 +692,8 @@ namespace AcikArtirmaPazaryeri.Migrations
                     b.Navigation("AracDetaylari");
 
                     b.Navigation("MuzayedeResimleri");
+
+                    b.Navigation("OnayKayitlari");
                 });
 #pragma warning restore 612, 618
         }

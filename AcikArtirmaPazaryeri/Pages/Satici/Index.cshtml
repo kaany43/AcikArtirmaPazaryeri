@@ -25,7 +25,7 @@
                 <path d="M22 28 q8 -10 16 0" fill="none" stroke="#111111" stroke-width="2.8" stroke-linecap="round" />
                 <path d="M12 38 q6 7 13 0" fill="none" stroke="#111111" stroke-width="2.6" stroke-linecap="round" />
             </svg>
-            <span><strong>@mesaj</strong> <span class="fis-bildirim-not">Hazır olunca onaya gönderebilirsin.</span></span>
+            <span><strong>@mesaj</strong> <span class="fis-bildirim-not">@(mesaj.StartsWith("İlan taslak") ? "Hazır olunca onaya gönderebilirsin." : "Yönetici onaylayınca ilan yayına alınır.")</span></span>
         </div>
     }
 
@@ -61,6 +61,7 @@
                         <th class="sutun-sag">Başlangıç fiyatı</th>
                         <th>Bitiş</th>
                         <th>Durum</th>
+                        <th class="sutun-sag">İşlem</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -77,15 +78,32 @@
                             MuzayedeDurumu.Satilmadi => ("Satılmadı", "fis-taslak"),
                             _ => (ilan.Durum.ToString(), "fis-taslak")
                         };
+                        var redGerekcesi = ilan.Durum == MuzayedeDurumu.Reddedildi
+                            ? ilan.OnayKayitlari.Where(o => o.Sonuc == OnaySonucu.Reddedildi).OrderByDescending(o => o.Tarih).FirstOrDefault()?.Gerekce
+                            : null;
                         var kategori = ilan.Kategori.UstKategori is null
                             ? ilan.Kategori.KategoriAdi
                             : $"{ilan.Kategori.UstKategori.KategoriAdi} › {ilan.Kategori.KategoriAdi}";
                         <tr class="@(mesaj is not null && i == 0 ? "yeni-satir" : null)">
-                            <td class="hucre-baslik">@ilan.Baslik</td>
+                            <td class="hucre-baslik">
+                                @ilan.Baslik
+                                @if (redGerekcesi is not null)
+                                {
+                                    <span class="red-gerekce">Red gerekçesi: @redGerekcesi</span>
+                                }
+                            </td>
                             <td class="hucre-kategori">@kategori</td>
                             <td class="sutun-sag hucre-mono">@(ilan.BaslangicFiyati.ToString("N2", tr)) ₺</td>
                             <td class="hucre-mono">@ilan.BitisZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</td>
                             <td><span class="fis-rozet @durumSinif"><span class="fis-rozet-uc" aria-hidden="true"></span><span class="fis-rozet-yazi">@durumYazi</span></span></td>
+                            <td class="sutun-sag">
+                                @if (ilan.Durum == MuzayedeDurumu.Taslak)
+                                {
+                                    <form method="post" asp-page-handler="OnayaGonder" asp-route-id="@ilan.MuzayedeId" class="tablo-form">
+                                        <button type="submit" class="tablo-dugme">Onaya gönder</button>
+                                    </form>
+                                }
+                            </td>
                         </tr>
                     }
                 </tbody>

@@ -1,4 +1,4 @@
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+﻿.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
@@ -2003,6 +2003,46 @@ a:hover { color: #000000; }
 @media (max-width: 1000px) {
   .fis-onizleme { position: static; flex-basis: 100%; max-width: 420px; }
 }
+
+/* ---------- 4. hafta: onay akışı ---------- */
+.ilan-tablosu th:nth-child(6),
+.ilan-tablosu td:nth-child(6) { width: 160px; padding-right: 0; }
+.ilan-tablosu th:nth-child(5),
+.ilan-tablosu td:nth-child(5) { padding-right: 16px; }
+.red-gerekce {
+  display: block;
+  margin: 4px 0 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--kirmizi-koyu);
+}
+
+.onay-tablosu td { padding-top: 12px; padding-bottom: 12px; }
+.onay-tablosu .hucre-baslik,
+.onay-tablosu .hucre-kategori { display: block; }
+.onay-islemler {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
+}
+.red-kutu summary {
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+}
+.red-kutu summary::-webkit-details-marker { display: none; }
+.red-kutu[open] summary { background: var(--gri-zemin); color: var(--siyah); }
+.red-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 260px;
+  margin-top: 8px;
+  text-align: left;
+}
+.red-form .girdi { height: auto; padding: 10px 14px; }
+.red-form .tablo-dugme { align-self: flex-end; border-color: var(--kirmizi); }
 
 /* Hareketi azaltmak isteyenlere animasyon yok */
 @media (prefers-reduced-motion: reduce) {

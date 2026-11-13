@@ -39,6 +39,11 @@ namespace AcikArtirmaPazaryeri.Data
                 .HasOne(m => m.Marka)
                 .WithMany(k => k.Modeller).HasForeignKey(m => m.MarkaId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<OnayKaydi>()
+                .HasOne(o => o.Yonetici)
+                .WithMany().HasForeignKey(o => o.YoneticiId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
         protected override void ConfigureConventions(ModelConfigurationBuilder b)
         {
@@ -52,5 +57,6 @@ namespace AcikArtirmaPazaryeri.Data
         public DbSet<EkspertizKalemi> EkspertizKalemleri { get; set; }
         public DbSet<Muzayede> Muzayedeler { get; set; }
         public DbSet<MuzayedeResmi> MuzayedeResimleri { get; set; }
+        public DbSet<OnayKaydi> OnayKayitlari { get; set; }
     }
 }
