@@ -86,7 +86,7 @@
                             : $"{ilan.Kategori.UstKategori.KategoriAdi} › {ilan.Kategori.KategoriAdi}";
                         <tr class="@(mesaj is not null && i == 0 ? "yeni-satir" : null)">
                             <td class="hucre-baslik">
-                                @ilan.Baslik
+                                <a class="ilan-link" asp-page="/Muzayedeler/Detay" asp-route-id="@ilan.MuzayedeId">@ilan.Baslik</a>
                                 @if (redGerekcesi is not null)
                                 {
                                     <span class="red-gerekce">Red gerekçesi: @redGerekcesi</span>

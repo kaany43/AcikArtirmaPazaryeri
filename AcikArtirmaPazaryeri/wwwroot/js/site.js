@@ -45,3 +45,32 @@ document.querySelectorAll('.karsilama-kapat').forEach(function (dugme) {
         dugme.closest('.karsilama').hidden = true;
     });
 });
+
+// İlan kartı ve detay sayfasındaki geri sayım (data-geri-sayim: bitiş zamanı, UTC)
+var geriSayimlar = document.querySelectorAll('[data-geri-sayim]');
+function geriSayimGuncelle() {
+    var simdi = Date.now();
+    geriSayimlar.forEach(function (alan) {
+        var bitis = new Date(alan.getAttribute('data-geri-sayim')).getTime();
+        var baslangic = alan.hasAttribute('data-baslangic') ? new Date(alan.getAttribute('data-baslangic')).getTime() : 0;
+        var hedef = simdi < baslangic ? baslangic : bitis;
+        var kalan = Math.floor((hedef - simdi) / 1000);
+        if (kalan <= 0) {
+            alan.textContent = 'Süre doldu';
+            alan.classList.add('bitti');
+            return;
+        }
+        var gun = Math.floor(kalan / 86400);
+        var saat = Math.floor(kalan % 86400 / 3600);
+        var dakika = Math.floor(kalan % 3600 / 60);
+        var saniye = kalan % 60;
+        var yazi = (gun > 0 ? gun + 'g ' : '') + String(saat).padStart(2, '0') + ':' +
+            String(dakika).padStart(2, '0') + ':' + String(saniye).padStart(2, '0');
+        alan.textContent = (simdi < baslangic ? 'Başlamasına ' : '') + yazi;
+        alan.classList.toggle('son-dakikalar', simdi >= baslangic && kalan <= 120);
+    });
+}
+if (geriSayimlar.length > 0) {
+    geriSayimGuncelle();
+    setInterval(geriSayimGuncelle, 1000);
+}

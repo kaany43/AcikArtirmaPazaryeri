@@ -1,0 +1,131 @@
+﻿@page "{id:int}"
+@model AcikArtirmaPazaryeri.Pages.Muzayedeler.DetayModel
+@using System.Globalization
+@using AcikArtirmaPazaryeri.Models
+@{
+    var ilan = Model.Ilan;
+    ViewData["Title"] = ilan.Baslik;
+    var tr = CultureInfo.GetCultureInfo("tr-TR");
+    var arac = ilan.AracDetaylari;
+    var kapak = Model.Resimler.FirstOrDefault(r => r.KapakMi) ?? Model.Resimler.FirstOrDefault();
+    var satici = string.IsNullOrEmpty(ilan.Satici.FirmaAdi) ? $"{ilan.Satici.Ad} {ilan.Satici.Soyad}" : ilan.Satici.FirmaAdi;
+}
+
+<div class="sayfa sayfa-sik sayfa-detay">
+    <div class="sayfa-basi">
+        <a class="geri-link" asp-page="/Muzayedeler/Index" asp-route-KategoriId="@ilan.KategoriId">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M19 12H5" /><path d="M11 6l-6 6 6 6" /></svg>
+            @(ilan.Kategori.UstKategori is null ? ilan.Kategori.KategoriAdi : $"{ilan.Kategori.UstKategori.KategoriAdi} › {ilan.Kategori.KategoriAdi}")
+        </a>
+        <h1 class="detay-baslik">@ilan.Baslik</h1>
+        <p class="sayfa-ozet mono">İlan no @ilan.MuzayedeId · @ilan.Sehir · @ilan.UrunDurumu.GorunenAd()</p>
+        @if (ilan.Durum != MuzayedeDurumu.Aktif)
+        {
+            <div class="bildirim" role="status">
+                <span>Bu ilan yayında değil (@ilan.Durum.GorunenAd()). Sadece sen görebiliyorsun.</span>
+            </div>
+        }
+    </div>
+
+    <div class="detay-duzen">
+        <section class="galeri" aria-label="Fotoğraflar">
+            <div class="galeri-ana">
+                @if (kapak != null)
+                {
+                    <img id="galeri-buyuk" src="@kapak.DosyaYolu" alt="@ilan.Baslik" />
+                }
+            </div>
+            @if (Model.Resimler.Count > 1)
+            {
+                <div class="galeri-kucukler">
+                    @foreach (var resim in Model.Resimler)
+                    {
+                        <button type="button" class="galeri-kucuk @(resim == kapak ? "secili" : "")" data-resim="@resim.DosyaYolu"
+                                aria-label="Fotoğraf @(resim.Sira + 1)" aria-pressed="@(resim == kapak ? "true" : "false")">
+                            <img src="@resim.DosyaYolu" alt="" loading="lazy" />
+                        </button>
+                    }
+                </div>
+            }
+        </section>
+
+        <aside class="detay-fis">
+            <span class="fis-rozet @(ilan.Durum == MuzayedeDurumu.Aktif ? "fis-aktif" : "fis-onay")"><span class="fis-rozet-uc" aria-hidden="true"></span><span class="fis-rozet-yazi">@(ilan.Durum == MuzayedeDurumu.Aktif ? "Canlı" : ilan.Durum.GorunenAd())</span></span>
+            <div class="detay-fiyat-blok">
+                <span class="ust-etiket">Başlangıç fiyatı</span>
+                <span class="detay-fiyat">@ilan.BaslangicFiyati.ToString("N0", tr) ₺</span>
+                <span class="mono">Minimum artış @ilan.MinimumArtis.ToString("N0", tr) ₺ · @(ilan.RezervFiyati == null ? "Rezervsiz" : "Rezervli")</span>
+            </div>
+            <div class="detay-sure">
+                <span class="ust-etiket">Kalan süre</span>
+                <span class="geri-sayim" data-geri-sayim="@ilan.BitisZamani.ToString("o")" data-baslangic="@ilan.BaslangicZamani.ToString("o")">—</span>
+            </div>
+            <dl class="bilgi-listesi">
+                <div class="ozet-satir"><dt>Başlangıç</dt><dd class="deger-mono">@ilan.BaslangicZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</dd></div>
+                <div class="ozet-satir"><dt>Bitiş</dt><dd class="deger-mono">@ilan.BitisZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</dd></div>
+                <div class="ozet-satir"><dt>Satıcı</dt><dd>@satici @if (ilan.Satici.GuvenilirSaticiMi) { <span class="guvenilir-evet">Güvenilir</span> }</dd></div>
+                <div class="ozet-satir"><dt>Şehir</dt><dd>@ilan.Sehir</dd></div>
+            </dl>
+        </aside>
+    </div>
+
+    <div class="detay-bolumler">
+        @if (arac != null)
+        {
+            <section>
+                <h2 class="bolum-baslik">Araç bilgileri</h2>
+                <dl class="bilgi-listesi arac-bilgileri">
+                    <div class="bilgi-satir"><dt>Marka</dt><dd>@arac.AracModeli.Marka.MarkaAdi</dd></div>
+                    <div class="bilgi-satir"><dt>Model</dt><dd>@arac.AracModeli.ModelAdi @arac.Paket</dd></div>
+                    <div class="bilgi-satir"><dt>Yıl</dt><dd>@arac.Yil</dd></div>
+                    <div class="bilgi-satir"><dt>Kilometre</dt><dd>@arac.Km.ToString("N0", tr) km</dd></div>
+                    <div class="bilgi-satir"><dt>Yakıt</dt><dd>@arac.YakitTuru.GorunenAd()</dd></div>
+                    <div class="bilgi-satir"><dt>Vites</dt><dd>@arac.VitesTuru.GorunenAd()</dd></div>
+                    <div class="bilgi-satir"><dt>Kasa tipi</dt><dd>@arac.KasaTipi.GorunenAd()</dd></div>
+                    <div class="bilgi-satir"><dt>Renk</dt><dd>@arac.Renk</dd></div>
+                    <div class="bilgi-satir"><dt>Şasi no</dt><dd class="deger-mono">@arac.SasiNo</dd></div>
+                </dl>
+            </section>
+
+            <section>
+                <h2 class="bolum-baslik">Ekspertiz</h2>
+                <ul class="ekspertiz-lejant" aria-label="Renklerin anlamı">
+                    @foreach (var durum in Enum.GetValues<ParcaDurumu>())
+                    {
+                        <li><span class="ekspertiz-renk ekspertiz-@durum.ToString().ToLowerInvariant()" aria-hidden="true"></span>@durum.GorunenAd()</li>
+                    }
+                </ul>
+                <ul class="ekspertiz-listesi">
+                    @foreach (var kalem in arac.EkspertizKalemleri.OrderBy(k => k.EkspertizKalemiId))
+                    {
+                        <li class="ekspertiz-kalem ekspertiz-@kalem.Durum.ToString().ToLowerInvariant()">
+                            <span class="ekspertiz-parca">@kalem.Parca</span>
+                            <span class="ekspertiz-durum">@kalem.Durum.GorunenAd()</span>
+                        </li>
+                    }
+                </ul>
+            </section>
+        }
+
+        <section>
+            <h2 class="bolum-baslik">Açıklama</h2>
+            <p class="detay-aciklama">@ilan.Aciklama</p>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Galeri: küçük fotoğrafa tıklayınca büyük fotoğraf değişir.
+        var buyuk = document.getElementById("galeri-buyuk");
+        document.querySelectorAll(".galeri-kucuk").forEach(function (dugme) {
+            dugme.addEventListener("click", function () {
+                buyuk.src = dugme.dataset.resim;
+                document.querySelectorAll(".galeri-kucuk").forEach(function (d) {
+                    d.classList.toggle("secili", d === dugme);
+                    d.setAttribute("aria-pressed", d === dugme ? "true" : "false");
+                });
+            });
+        });
+    </script>
+}

@@ -56,7 +56,7 @@
                             : $"{ilan.Kategori.UstKategori.KategoriAdi} › {ilan.Kategori.KategoriAdi}";
                         <tr>
                             <td>
-                                <span class="hucre-baslik">@ilan.Baslik</span>
+                                <a class="hucre-baslik ilan-link" asp-page="/Muzayedeler/Detay" asp-route-id="@ilan.MuzayedeId">@ilan.Baslik</a>
                                 <span class="hucre-kategori">@kategori</span>
                             </td>
                             <td>

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 namespace AcikArtirmaPazaryeri.Models
 
 {
@@ -90,5 +91,15 @@ namespace AcikArtirmaPazaryeri.Models
         Reddedildi = 2,
         [Display(Name = "Kuyruğa alındı")]
         KuyrugaAlindi = 3
+    }
+
+    public static class EnumYardimci
+    {
+        // [Display(Name = "...")] içindeki Türkçe adı döndürür (ör. YariOtomatik → "Yarı Otomatik").
+        public static string GorunenAd(this Enum deger)
+        {
+            var alan = deger.GetType().GetField(deger.ToString());
+            return alan?.GetCustomAttribute<DisplayAttribute>()?.GetName() ?? deger.ToString();
+        }
     }
 }
