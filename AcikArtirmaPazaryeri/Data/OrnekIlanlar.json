@@ -1,0 +1,2486 @@
+{
+ "saticilar": [
+  {
+   "anahtar": "kuzey",
+   "eposta": "ornek.satici@acikartirma.local",
+   "ad": "Serkan",
+   "soyad": "Kuzey",
+   "firmaAdi": "Kuzey Otomotiv",
+   "guvenilirMi": true
+  },
+  {
+   "anahtar": "mehmet",
+   "eposta": "mehmet.yilmaz@ornek.acikartirma.local",
+   "ad": "Mehmet",
+   "soyad": "Yılmaz",
+   "firmaAdi": null,
+   "guvenilirMi": false
+  },
+  {
+   "anahtar": "zeynep",
+   "eposta": "zeynep.arslan@ornek.acikartirma.local",
+   "ad": "Zeynep",
+   "soyad": "Arslan",
+   "firmaAdi": null,
+   "guvenilirMi": true
+  },
+  {
+   "anahtar": "burak",
+   "eposta": "burak.demir@ornek.acikartirma.local",
+   "ad": "Burak",
+   "soyad": "Demir",
+   "firmaAdi": null,
+   "guvenilirMi": false
+  },
+  {
+   "anahtar": "ayse",
+   "eposta": "ayse.kaya@ornek.acikartirma.local",
+   "ad": "Ayşe",
+   "soyad": "Kaya",
+   "firmaAdi": null,
+   "guvenilirMi": true
+  },
+  {
+   "anahtar": "hasan",
+   "eposta": "hasan.celik@ornek.acikartirma.local",
+   "ad": "Hasan",
+   "soyad": "Çelik",
+   "firmaAdi": null,
+   "guvenilirMi": false
+  },
+  {
+   "anahtar": "elif",
+   "eposta": "elif.sahin@ornek.acikartirma.local",
+   "ad": "Elif",
+   "soyad": "Şahin",
+   "firmaAdi": null,
+   "guvenilirMi": false
+  },
+  {
+   "anahtar": "can",
+   "eposta": "can.ozturk@ornek.acikartirma.local",
+   "ad": "Can",
+   "soyad": "Öztürk",
+   "firmaAdi": null,
+   "guvenilirMi": true
+  },
+  {
+   "anahtar": "selin",
+   "eposta": "selin.koc@ornek.acikartirma.local",
+   "ad": "Selin",
+   "soyad": "Koç",
+   "firmaAdi": null,
+   "guvenilirMi": false
+  },
+  {
+   "anahtar": "riza",
+   "eposta": "riza.aydin@ornek.acikartirma.local",
+   "ad": "Rıza",
+   "soyad": "Aydın",
+   "firmaAdi": "Aydın Antika",
+   "guvenilirMi": true
+  },
+  {
+   "anahtar": "ekspres",
+   "eposta": "ekspres.ticari@ornek.acikartirma.local",
+   "ad": "Volkan",
+   "soyad": "Er",
+   "firmaAdi": "Ekspres Ticari Araç",
+   "guvenilirMi": true
+  },
+  {
+   "anahtar": "emre",
+   "eposta": "emre.gunes@ornek.acikartirma.local",
+   "ad": "Emre",
+   "soyad": "Güneş",
+   "firmaAdi": null,
+   "guvenilirMi": false
+  },
+  {
+   "anahtar": "gokhan",
+   "eposta": "gokhan.erdem@ornek.acikartirma.local",
+   "ad": "Gökhan",
+   "soyad": "Erdem",
+   "firmaAdi": null,
+   "guvenilirMi": false
+  }
+ ],
+ "ilanlar": [
+  {
+   "satici": "mehmet",
+   "kategori": "Otomobil",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2019 Fiat Egea 1.4 Fire Urban",
+   "aciklama": "ARAÇ İLK SAHİBİNDENDİR... bakımları hep yetkili serviste yapıldı faturaları duruyor. Sağ arka kapıda lokal boya var onun dışında işlem YOKTUR. Kışlık lastikler hediye. Emekli olduğum için az kullandım şehir içi. Ciddi alıcılar arasın lütfen",
+   "baslangicFiyati": 640000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 760000,
+   "kalanSaat": 72,
+   "baslayaliSaat": 26,
+   "fotograflar": [
+    "egea-1.jpg",
+    "egea-2.jpg"
+   ],
+   "arac": {
+    "marka": "Fiat",
+    "model": "Egea",
+    "paket": "1.4 Fire Urban",
+    "yil": 2019,
+    "km": 98500,
+    "yakit": "Benzin",
+    "vites": "Manuel",
+    "kasa": "Sedan",
+    "renk": "Bej",
+    "ekspertiz": {
+     "Sağ arka kapı": "LokalBoyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "ZFAB0AC0TUSE93YRF"
+   }
+  },
+  {
+   "satici": "burak",
+   "kategori": "Otomobil",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2017 Renault Clio 1.5 dCi Touch",
+   "aciklama": "araç şehir içi kullanıldı, yakıtı şaka gibi 100de 4.5 falan yakıyor. ön tampon boyalı kaputta lokal var, tramer 4.200 tl. triger seti 90binde değişti faturası var. iş değişikliğinden dolayı satıyorum, pazarlık açık artırmada artık :)",
+   "baslangicFiyati": 590000,
+   "minimumArtis": 5000,
+   "rezervFiyati": null,
+   "kalanSaat": 120,
+   "baslayaliSaat": 40,
+   "fotograflar": [
+    "clio-1.jpg",
+    "clio-2.jpg"
+   ],
+   "arac": {
+    "marka": "Renault",
+    "model": "Clio",
+    "paket": "1.5 dCi Touch",
+    "yil": 2017,
+    "km": 142000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Hatchback",
+    "renk": "Kırmızı",
+    "ekspertiz": {
+     "Ön tampon": "Boyali",
+     "Kaput": "LokalBoyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "VF1XLSLF13G0H5FXC"
+   }
+  },
+  {
+   "satici": "zeynep",
+   "kategori": "Otomobil",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2020 Volkswagen Golf 1.5 TSI Style",
+   "aciklama": "Merhaba, aracım hatasız ve boyasızdır. Dijital gösterge, adaptif hız sabitleyici ve geri görüş kamerası mevcut. Fabrika garantisi geçen ay bitti, tüm bakımları Doğuş Oto'da yapıldı. Sigara içilmemiştir. Ekspertiz için istediğiniz yere götürebilirim. Sorularınızı mesajla iletebilirsiniz.",
+   "baslangicFiyati": 1350000,
+   "minimumArtis": 10000,
+   "rezervFiyati": 1560000,
+   "kalanSaat": 168,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "golf-1.jpg",
+    "golf-2.jpg"
+   ],
+   "arac": {
+    "marka": "Volkswagen",
+    "model": "Golf",
+    "paket": "1.5 TSI Style",
+    "yil": 2020,
+    "km": 61000,
+    "yakit": "Benzin",
+    "vites": "YariOtomatik",
+    "kasa": "Hatchback",
+    "renk": "Gri",
+    "ekspertiz": {},
+    "ekspertizYok": false,
+    "sasiNo": "WVWKPRSRZ88F00MZN"
+   }
+  },
+  {
+   "satici": "ayse",
+   "kategori": "Otomobil",
+   "sehir": "Bursa",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2021 Toyota Corolla 1.5 Vision",
+   "aciklama": "Aile aracımızdı, çoğunlukla memleket yolunda kullanıldı. Geçen yıl park ederken arkadan vuruldu, bagaj kapağı değişti, arka tampon boyandı. Şasi ve airbag sağlam, ekspertiz raporunu paylaşabilirim. İkinci çocuk gelince daha büyük araca geçtik, o yüzden satıyoruz 🙂",
+   "baslangicFiyati": 1050000,
+   "minimumArtis": 7500,
+   "rezervFiyati": 1230000,
+   "kalanSaat": 5,
+   "baslayaliSaat": 50,
+   "fotograflar": [
+    "corolla-1.jpg",
+    "corolla-2.jpg"
+   ],
+   "arac": {
+    "marka": "Toyota",
+    "model": "Corolla",
+    "paket": "1.5 Vision",
+    "yil": 2021,
+    "km": 74000,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Sedan",
+    "renk": "Siyah",
+    "ekspertiz": {
+     "Bagaj": "Degisen",
+     "Arka tampon": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "NMTUD348SY5N6MXC1"
+   }
+  },
+  {
+   "satici": "kuzey",
+   "kategori": "Otomobil",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2016 Renault Megane 1.5 dCi Touch Sedan",
+   "aciklama": "Firmamızdan 2016 Megane Sedan.\n- Galeri garantili, 2 adet orijinal anahtar\n- Ağır bakımı yeni yapıldı (yağ, filtreler, balata)\n- Sol ön çamurluk boyalı, tramer 11.000 TL\n- Kredi ve takas imkânı vardır\nEkspertiz raporu ilan ekindedir.",
+   "baslangicFiyati": 610000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 700000,
+   "kalanSaat": 96,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "megane-1.jpg",
+    "megane-2.jpg"
+   ],
+   "arac": {
+    "marka": "Renault",
+    "model": "Megane",
+    "paket": "1.5 dCi Touch",
+    "yil": 2016,
+    "km": 168000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Sedan",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Sol ön çamurluk": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "VF1VJLZ9B6LDKRCTY"
+   }
+  },
+  {
+   "satici": "mehmet",
+   "kategori": "Otomobil",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2014 Opel Astra 1.4 Turbo Sport",
+   "aciklama": "ACİL SATILIK... oğlum askere gitti araç duruyor. Motor yürüyen SORUNSUZ. 2 parça boya var tavan temiz. Yağ bakımı yeni yaptırdım. Arayan kişiye detaylı bilgi veririm",
+   "baslangicFiyati": 455000,
+   "minimumArtis": 2500,
+   "rezervFiyati": null,
+   "kalanSaat": 48,
+   "baslayaliSaat": 8,
+   "fotograflar": [
+    "astra-1.jpg",
+    "astra-2.jpg"
+   ],
+   "arac": {
+    "marka": "Opel",
+    "model": "Astra",
+    "paket": "1.4 Turbo Sport",
+    "yil": 2014,
+    "km": 176000,
+    "yakit": "Benzin",
+    "vites": "Manuel",
+    "kasa": "Hatchback",
+    "renk": "Siyah",
+    "ekspertiz": {
+     "Sol ön kapı": "Boyali",
+     "Arka tampon": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "W0LD5EUZFR31L9YDY"
+   }
+  },
+  {
+   "satici": "hasan",
+   "kategori": "Otomobil",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2019 Honda Civic 1.6 i-VTEC Eco Elegance",
+   "aciklama": "Fabrikadan LPG'li. Değişen yok. Ön tampon boya. Muayene yeni. Takas yok. Yerinde görülür.",
+   "baslangicFiyati": 920000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 1020000,
+   "kalanSaat": 144,
+   "baslayaliSaat": 70,
+   "fotograflar": [
+    "civic-1.jpg",
+    "civic-2.jpg"
+   ],
+   "arac": {
+    "marka": "Honda",
+    "model": "Civic",
+    "paket": "1.6 i-VTEC Eco Elegance",
+    "yil": 2019,
+    "km": 131000,
+    "yakit": "LPG",
+    "vites": "Otomatik",
+    "kasa": "Sedan",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Ön tampon": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "JHM6ZY0UPFZHV2BJS"
+   }
+  },
+  {
+   "satici": "elif",
+   "kategori": "Otomobil",
+   "sehir": "Eskişehir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2022 Hyundai i20 1.4 MPI Jump Otomatik",
+   "aciklama": "mezuniyet hediyesiydi ama yurt dışına yüksek lisansa gidiyorum, o yüzden satıyorum. sadece eskişehir içinde kullandım, uzun yola çıkmadı. boyasız değişensiz, bir kere bile çarpmadım. bakımları serviste. araba çok tatlı gerçekten 😅",
+   "baslangicFiyati": 840000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 930000,
+   "kalanSaat": 216,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "i20-1.jpg",
+    "i20-2.jpg"
+   ],
+   "arac": {
+    "marka": "Hyundai",
+    "model": "i20",
+    "paket": "1.4 MPI Jump",
+    "yil": 2022,
+    "km": 23500,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Hatchback",
+    "renk": "Kırmızı",
+    "ekspertiz": {},
+    "ekspertizYok": false,
+    "sasiNo": "NLHL9WDD6WPJKSX9W"
+   }
+  },
+  {
+   "satici": "hasan",
+   "kategori": "Arazi, SUV & Pickup",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2018 Hyundai Tucson 1.6 CRDi Elite",
+   "aciklama": "4x2. Panoramik cam tavan. Deri koltuk. Sol kapılar boyalı. Lastikler yeni. Değişen yok. Fiyat belli, oyalamayın.",
+   "baslangicFiyati": 1250000,
+   "minimumArtis": 10000,
+   "rezervFiyati": null,
+   "kalanSaat": 96,
+   "baslayaliSaat": 48,
+   "fotograflar": [
+    "tucson-1.jpg",
+    "tucson-2.jpg"
+   ],
+   "arac": {
+    "marka": "Hyundai",
+    "model": "Tucson",
+    "paket": "1.6 CRDi Elite",
+    "yil": 2018,
+    "km": 118000,
+    "yakit": "Dizel",
+    "vites": "Otomatik",
+    "kasa": "SUV",
+    "renk": "Mavi",
+    "ekspertiz": {
+     "Sol ön kapı": "Boyali",
+     "Sol arka kapı": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "NLHD2TGJSU712NJT6"
+   }
+  },
+  {
+   "satici": "kuzey",
+   "kategori": "Arazi, SUV & Pickup",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2020 Dacia Duster 1.3 TCe Prestige",
+   "aciklama": "Firmamızdan temiz Duster.\n- 4x2, 150 HP TCe motor\n- Multiview kamera, navigasyon\n- Değişensiz, sağ arka çamurluk lokal boyalı\n- 2 yıl galeri garantisi verilir",
+   "baslangicFiyati": 890000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 990000,
+   "kalanSaat": 77,
+   "baslayaliSaat": 12,
+   "fotograflar": [
+    "duster-1.jpg",
+    "duster-2.jpg"
+   ],
+   "arac": {
+    "marka": "Dacia",
+    "model": "Duster",
+    "paket": "1.3 TCe Prestige",
+    "yil": 2020,
+    "km": 64000,
+    "yakit": "Benzin",
+    "vites": "Manuel",
+    "kasa": "SUV",
+    "renk": "Turuncu",
+    "ekspertiz": {
+     "Sağ arka çamurluk": "LokalBoyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "UU1DSMJDYSW7J6HV2"
+   }
+  },
+  {
+   "satici": "emre",
+   "kategori": "Arazi, SUV & Pickup",
+   "sehir": "Konya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2019 Ford Ranger 2.0 EcoBlue Wildtrak 4x4",
+   "aciklama": "Tarlada değil şehirde kullanıldı, kasası çizik değil. Kasa kapağı (roll bar) ve çeki demiri var. 10 ileri otomatik şanzıman. Sağ ön kapıda göçük düzeltme boya var. Konya içi test sürüşü yapılabilir.",
+   "baslangicFiyati": 1650000,
+   "minimumArtis": 10000,
+   "rezervFiyati": 1850000,
+   "kalanSaat": 192,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "ranger-1.jpg",
+    "ranger-2.jpg"
+   ],
+   "arac": {
+    "marka": "Ford",
+    "model": "Ranger",
+    "paket": "2.0 EcoBlue Wildtrak",
+    "yil": 2019,
+    "km": 142000,
+    "yakit": "Dizel",
+    "vites": "Otomatik",
+    "kasa": "Pickup",
+    "renk": "Turuncu",
+    "ekspertiz": {
+     "Sağ ön kapı": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "WF0NEKFL3PXE0FG0B"
+   }
+  },
+  {
+   "satici": "selin",
+   "kategori": "Arazi, SUV & Pickup",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2021 Peugeot 3008 1.5 BlueHDi GT",
+   "aciklama": "Kadın sürücüden ✨ Garajda yattı, haftada bir kullanıldı. Focal ses sistemi, masaj koltuk, panoramik tavan. Hatasız boyasız, tramer yok. Sadece ciddi alıcılar lütfen, gece mesaj atmayın 🙏",
+   "baslangicFiyati": 1550000,
+   "minimumArtis": 10000,
+   "rezervFiyati": 1720000,
+   "kalanSaat": 240,
+   "baslayaliSaat": 6,
+   "fotograflar": [
+    "3008-1.jpg",
+    "3008-2.jpg"
+   ],
+   "arac": {
+    "marka": "Peugeot",
+    "model": "3008",
+    "paket": "1.5 BlueHDi GT",
+    "yil": 2021,
+    "km": 39000,
+    "yakit": "Dizel",
+    "vites": "Otomatik",
+    "kasa": "SUV",
+    "renk": "Gri",
+    "ekspertiz": {},
+    "ekspertizYok": false,
+    "sasiNo": "VF3R9879L7GJ3K74F"
+   }
+  },
+  {
+   "satici": "kuzey",
+   "kategori": "Elektrikli Araçlar",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2022 Tesla Model 3 Long Range",
+   "aciklama": "Firmamızdan Model 3 Long Range AWD.\n- Batarya sağlığı %94 (rapor mevcut)\n- Ev tipi şarj ünitesi hediye\n- Yazılım güncel, Autopilot aktif\n- Hatasız, boyasız\nTakas değerlendirilir.",
+   "baslangicFiyati": 2050000,
+   "minimumArtis": 15000,
+   "rezervFiyati": 2350000,
+   "kalanSaat": 216,
+   "baslayaliSaat": 22,
+   "fotograflar": [
+    "tesla-1.jpg",
+    "tesla-2.jpg"
+   ],
+   "arac": {
+    "marka": "Tesla",
+    "model": "Model 3",
+    "paket": "Long Range AWD",
+    "yil": 2022,
+    "km": 38000,
+    "yakit": "Elektrik",
+    "vites": "Otomatik",
+    "kasa": "Sedan",
+    "renk": "Beyaz",
+    "ekspertiz": {},
+    "ekspertizYok": false,
+    "sasiNo": "5YJUVKTDC9VJLV8A5"
+   }
+  },
+  {
+   "satici": "kuzey",
+   "kategori": "Elektrikli Araçlar",
+   "sehir": "İstanbul",
+   "urunDurumu": "Sıfır",
+   "baslik": "2025 Togg T10X V2 RWD Uzun Menzil",
+   "aciklama": "Sıfır kilometre, plakasız teslim.\n- V2 donanım, 523 km menzil (WLTP)\n- Anadolu rengi\n- Ruhsat devri noterde yapılır\nStoktan teslim, beklemesiz.",
+   "baslangicFiyati": 2150000,
+   "minimumArtis": 10000,
+   "rezervFiyati": 2300000,
+   "kalanSaat": 288,
+   "baslayaliSaat": -6,
+   "fotograflar": [
+    "togg-1.jpg",
+    "togg-2.jpg"
+   ],
+   "arac": {
+    "marka": "Togg",
+    "model": "T10X",
+    "paket": "V2 RWD Uzun Menzil",
+    "yil": 2025,
+    "km": 0,
+    "yakit": "Elektrik",
+    "vites": "Otomatik",
+    "kasa": "SUV",
+    "renk": "Anadolu",
+    "ekspertiz": {},
+    "ekspertizYok": false,
+    "sasiNo": "NL15YS6TGVF6JB6RD"
+   }
+  },
+  {
+   "satici": "zeynep",
+   "kategori": "Elektrikli Araçlar",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2023 BYD Atto 3 Design",
+   "aciklama": "Merhaba, 1,5 yıldır kullandığım Atto 3'ümü şirket aracı verildiği için satıyorum. Batarya garantisi 8 yıl / 200.000 km, devam ediyor. Isı pompası ve 360° kamera var. Kendi evimde AC şarj ettim, hızlı şarj nadiren kullanıldı. Hatasızdır.",
+   "baslangicFiyati": 1180000,
+   "minimumArtis": 10000,
+   "rezervFiyati": 1300000,
+   "kalanSaat": 144,
+   "baslayaliSaat": 28,
+   "fotograflar": [
+    "atto3-1.jpg",
+    "atto3-2.jpg"
+   ],
+   "arac": {
+    "marka": "BYD",
+    "model": "Atto 3",
+    "paket": "Design",
+    "yil": 2023,
+    "km": 27000,
+    "yakit": "Elektrik",
+    "vites": "Otomatik",
+    "kasa": "SUV",
+    "renk": "Mavi",
+    "ekspertiz": {},
+    "ekspertizYok": false,
+    "sasiNo": "LGX0K9P1B3XVHZGF4"
+   }
+  },
+  {
+   "satici": "elif",
+   "kategori": "Motosiklet",
+   "sehir": "Eskişehir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2022 Honda PCX 125",
+   "aciklama": "kampüse gidip gelmek için aldım, yurt dışına gideceğim için satıyorum. top case + kilit hediye. bakımları yapıldı, bir kere bile düşmedi. B sınıfı ehliyetle kullanılabiliyor bu arada (125cc)",
+   "baslangicFiyati": 98000,
+   "minimumArtis": 1000,
+   "rezervFiyati": null,
+   "kalanSaat": 52,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "pcx-1.jpg",
+    "pcx-2.jpg"
+   ],
+   "arac": {
+    "marka": "Honda",
+    "model": "PCX 125",
+    "paket": null,
+    "yil": 2022,
+    "km": 8400,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Motosiklet",
+    "renk": "Beyaz",
+    "ekspertiz": {},
+    "ekspertizYok": true,
+    "sasiNo": "JHMX2ZYR6NHJC5LTL"
+   }
+  },
+  {
+   "satici": "burak",
+   "kategori": "Motosiklet",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2021 Yamaha MT-07",
+   "aciklama": "mt-07 abs. akrapovic egzoz (orjinali de duruyor), radyatör koruma, tank pad. lastikler yeni. hiç yatmadı, çizik yok. zincir seti 15binde değişti. ciddi olan yazsın, takas yok",
+   "baslangicFiyati": 345000,
+   "minimumArtis": 2500,
+   "rezervFiyati": 390000,
+   "kalanSaat": 30,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "mt07-1.jpg",
+    "mt07-2.jpg"
+   ],
+   "arac": {
+    "marka": "Yamaha",
+    "model": "MT-07",
+    "paket": "ABS",
+    "yil": 2021,
+    "km": 21000,
+    "yakit": "Benzin",
+    "vites": "Manuel",
+    "kasa": "Motosiklet",
+    "renk": "Siyah",
+    "ekspertiz": {},
+    "ekspertizYok": true,
+    "sasiNo": "JYAT3UR79U4SXNC48"
+   }
+  },
+  {
+   "satici": "selin",
+   "kategori": "Motosiklet",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2020 Vespa Primavera 150",
+   "aciklama": "Pastel mavi Vespa'm yeni sahibini arıyor 💙 Ön sepet ve windshield var. Sadece Moda–Kadıköy arası kullanıldı. Her yıl servis bakımlı. Çok fotojenik, Instagram'da ne kadar sevildiğini anlatamam 😄",
+   "baslangicFiyati": 165000,
+   "minimumArtis": 1000,
+   "rezervFiyati": 185000,
+   "kalanSaat": 96,
+   "baslayaliSaat": 10,
+   "fotograflar": [
+    "vespa-1.jpg",
+    "vespa-2.jpg"
+   ],
+   "arac": {
+    "marka": "Vespa",
+    "model": "Primavera 150",
+    "paket": null,
+    "yil": 2020,
+    "km": 9800,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Motosiklet",
+    "renk": "Mavi",
+    "ekspertiz": {},
+    "ekspertizYok": true,
+    "sasiNo": "ZAPYT2RLVA5THL1VG"
+   }
+  },
+  {
+   "satici": "can",
+   "kategori": "Motosiklet",
+   "sehir": "Muğla",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2023 Honda Africa Twin CRF1100L Adventure Sports DCT",
+   "aciklama": "Bu motorla geçen yaz Gürcistan ve Kapadokya turu yaptım, sorunsuz 26 bin km. DCT şanzıman, elektronik süspansiyon. Üstünde: Touratech alüminyum yan çantalar, sis farları, motor koruma demiri, Garmin tutucu. Tüm bakımlar yetkili serviste, son bakım 24.000 km'de. Arazi kullanımında bir kez yattı, sağ el koruması değişti; başka hasar yok. Bodrum'da görülebilir, detaylı fotoğraf isteyen olursa gönderirim.",
+   "baslangicFiyati": 980000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 1080000,
+   "kalanSaat": 192,
+   "baslayaliSaat": 40,
+   "fotograflar": [
+    "africa-1.jpg",
+    "africa-2.jpg"
+   ],
+   "arac": {
+    "marka": "Honda",
+    "model": "Africa Twin",
+    "paket": "CRF1100L Adventure Sports DCT",
+    "yil": 2023,
+    "km": 26000,
+    "yakit": "Benzin",
+    "vites": "YariOtomatik",
+    "kasa": "Motosiklet",
+    "renk": "Beyaz",
+    "ekspertiz": {},
+    "ekspertizYok": true,
+    "sasiNo": "JHM0WXS9R51M71ZUF"
+   }
+  },
+  {
+   "satici": "ekspres",
+   "kategori": "Minivan & Panelvan",
+   "sehir": "Kocaeli",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2019 Volkswagen Caddy 2.0 TDI Comfortline",
+   "aciklama": "EKSPRES TİCARİ ARAÇ'tan\n- 5 kişilik Comfortline, sürgülü kapı çift taraf\n- Değişensiz, sol arka çamurluk boyalı\n- Faturalı, KDV dahil\n- Ekspertizli teslim edilir\nFirmalara uygun ödeme seçenekleri mevcuttur.",
+   "baslangicFiyati": 870000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 960000,
+   "kalanSaat": 120,
+   "baslayaliSaat": 26,
+   "fotograflar": [
+    "caddy-1.jpg",
+    "caddy-2.jpg"
+   ],
+   "arac": {
+    "marka": "Volkswagen",
+    "model": "Caddy",
+    "paket": "2.0 TDI Comfortline",
+    "yil": 2019,
+    "km": 148000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Minivan",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Sol arka çamurluk": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "WVWF1KA4EXABJ7AAA"
+   }
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Minivan & Panelvan",
+   "sehir": "Samsun",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2020 Citroën Berlingo 1.5 BlueHDi Feel",
+   "aciklama": "Ailece kullandığımız aracımızı satıyoruz. Bagaj hacmi çok geniş, 3 çocuk koltuğu yan yana sığıyor. Bakımları zamanında yapıldı, tüm faturalar elimde. Sağ ön kapıda küçük bir boya var (otoparkta biri vurmuş). Kış lastikleri jantlarıyla birlikte verilecek. Samsun'da istediğiniz servise götürebiliriz.",
+   "baslangicFiyati": 830000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 910000,
+   "kalanSaat": 72,
+   "baslayaliSaat": 16,
+   "fotograflar": [
+    "berlingo-1.jpg",
+    "berlingo-2.jpg"
+   ],
+   "arac": {
+    "marka": "Citroën",
+    "model": "Berlingo",
+    "paket": "1.5 BlueHDi Feel",
+    "yil": 2020,
+    "km": 96000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Minivan",
+    "renk": "Gri",
+    "ekspertiz": {
+     "Sağ ön kapı": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "VF717FYN66L960RM3"
+   }
+  },
+  {
+   "satici": "kuzey",
+   "kategori": "Minivan & Panelvan",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2021 Peugeot Rifter 1.5 BlueHDi GT Line",
+   "aciklama": "Firmamızdan Rifter GT Line.\n- Otomatik (EAT8), panoramik tavan\n- Hatasız, boyasız, tramer yok\n- Servis bakımlı\nKredi kartına 6 taksit imkânı.",
+   "baslangicFiyati": 1020000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 1110000,
+   "kalanSaat": 144,
+   "baslayaliSaat": 4,
+   "fotograflar": [
+    "rifter-1.jpg",
+    "rifter-2.jpg"
+   ],
+   "arac": {
+    "marka": "Peugeot",
+    "model": "Rifter",
+    "paket": "1.5 BlueHDi GT Line",
+    "yil": 2021,
+    "km": 71000,
+    "yakit": "Dizel",
+    "vites": "Otomatik",
+    "kasa": "Minivan",
+    "renk": "Kırmızı",
+    "ekspertiz": {},
+    "ekspertizYok": false,
+    "sasiNo": "VF39NK4XFWPYGX3HN"
+   }
+  },
+  {
+   "satici": "ekspres",
+   "kategori": "Ticari Araçlar",
+   "sehir": "Kocaeli",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2018 Ford Transit 350 L 2.2 TDCi Kamyonet",
+   "aciklama": "EKSPRES TİCARİ ARAÇ'tan\n- Tek kabin, açık kasa, 3,5 ton\n- Kasa ölçüsü 4,20 x 2,10\n- Motor yeni revizyon (faturalı)\n- Muayene 2027'ye kadar\nKDV dahil fatura kesilir.",
+   "baslangicFiyati": 980000,
+   "minimumArtis": 5000,
+   "rezervFiyati": null,
+   "kalanSaat": 168,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "transit-1.jpg",
+    "transit-2.jpg"
+   ],
+   "arac": {
+    "marka": "Ford",
+    "model": "Transit",
+    "paket": "350 L 2.2 TDCi",
+    "yil": 2018,
+    "km": 312000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Pickup",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Kaput": "Boyali",
+     "Ön tampon": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "WF0EPP0WBA687VEEU"
+   }
+  },
+  {
+   "satici": "hasan",
+   "kategori": "Ticari Araçlar",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2016 Fiat Fiorino 1.3 Multijet Panelvan",
+   "aciklama": "Dükkan aracı. Her gün çalıştı ama bakımı aksatmadım. Kasa içi kaplamalı. 2 parça boya. Motor sağlam. Pazarlık yok.",
+   "baslangicFiyati": 395000,
+   "minimumArtis": 2500,
+   "rezervFiyati": 440000,
+   "kalanSaat": 26,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "fiorino-1.jpg",
+    "fiorino-2.jpg"
+   ],
+   "arac": {
+    "marka": "Fiat",
+    "model": "Fiorino",
+    "paket": "1.3 Multijet Panelvan",
+    "yil": 2016,
+    "km": 256000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Minivan",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Sol ön çamurluk": "Boyali",
+     "Arka tampon": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "ZFAK8080MZZ342WND"
+   }
+  },
+  {
+   "satici": "ekspres",
+   "kategori": "Ticari Araçlar",
+   "sehir": "Kocaeli",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2015 Iveco Daily 35C13 Kapalı Kasa",
+   "aciklama": "EKSPRES TİCARİ ARAÇ'tan\n- 16 m³ kapalı kasa, yükleme rampası\n- Kargo firmasından çıkma, filo bakımlı\n- Klima çalışır durumda\nAraç ekspertizlidir, görmeden karar vermeyin.",
+   "baslangicFiyati": 720000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 800000,
+   "kalanSaat": 216,
+   "baslayaliSaat": 15,
+   "fotograflar": [
+    "daily-1.jpg",
+    "daily-2.jpg"
+   ],
+   "arac": {
+    "marka": "Iveco",
+    "model": "Daily",
+    "paket": "35C13",
+    "yil": 2015,
+    "km": 404000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Minivan",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Sağ ön kapı": "Boyali",
+     "Sol arka çamurluk": "Degisen"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "ZCFTRAT67FUWHKNST"
+   }
+  },
+  {
+   "satici": "can",
+   "kategori": "Deniz Araçları",
+   "sehir": "Muğla",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2008 Jeanneau Sun Odyssey 36i Yelkenli",
+   "aciklama": "11 metre, 2 kabin + salon. Yanmar 29 HP motor, 2.900 saat. 2023'te yelkenler yenilendi (North Sails), 2024 kışında karina zehirlendi ve anot değişti. Otopilot, plotter, VHF, güneş paneli var. Bodrum Turgutreis Marina'da bağlı, deneme seyri yapılabilir. Teknenin bütün kayıtları ve bakım defteri elimde, merak eden ayrıntı sorsun.",
+   "baslangicFiyati": 4100000,
+   "minimumArtis": 25000,
+   "rezervFiyati": 4600000,
+   "kalanSaat": 264,
+   "baslayaliSaat": 60,
+   "fotograflar": [
+    "yelkenli-1.jpg",
+    "yelkenli-2.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "hasan",
+   "kategori": "Deniz Araçları",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "5,5 m Fiber Balıkçı Teknesi + Yamaha 40 HP",
+   "aciklama": "Kaş'ta bağlı. Motor 2019 model 40 beygir. Ruhsatlı. Römork dahil değil. Gelen görsün.",
+   "baslangicFiyati": 385000,
+   "minimumArtis": 2500,
+   "rezervFiyati": null,
+   "kalanSaat": 80,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "balikci-1.jpg",
+    "balikci-2.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Deniz Araçları",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2021 Sea-Doo Spark Trixx Jet Ski",
+   "aciklama": "2 kişilik spark trixx, 90 hp. sadece 45 saatte, 3 yaz kullandık. römorku ve brandası var. çeşme'de görülebilir. kış geldi bakmaya vakit yok, satıyorum",
+   "baslangicFiyati": 420000,
+   "minimumArtis": 2500,
+   "rezervFiyati": 470000,
+   "kalanSaat": 48,
+   "baslayaliSaat": 10,
+   "fotograflar": [
+    "jetski-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "ekspres",
+   "kategori": "Hasarlı Araçlar",
+   "sehir": "Kocaeli",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2015 Ford Focus 1.6 TDCi - Önden Hasarlı",
+   "aciklama": "HASARLI ARAÇ – EKSPRES TİCARİ ARAÇ'tan\n- Önden çarpma: kaput, ön tampon, sağ ön çamurluk değişti\n- Sol ön çamurluk boyalı\n- Motor ve şanzıman sağlam, araç çalışır durumda\n- Airbag açmadı\nÇekici ile teslim, nakliye alıcıya aittir.",
+   "baslangicFiyati": 260000,
+   "minimumArtis": 2500,
+   "rezervFiyati": null,
+   "kalanSaat": 48,
+   "baslayaliSaat": 36,
+   "fotograflar": [
+    "focus-1.jpg",
+    "focus-2.jpg"
+   ],
+   "arac": {
+    "marka": "Ford",
+    "model": "Focus",
+    "paket": "1.6 TDCi Trend X",
+    "yil": 2015,
+    "km": 186000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Hatchback",
+    "renk": "Gümüş",
+    "ekspertiz": {
+     "Kaput": "Degisen",
+     "Ön tampon": "Degisen",
+     "Sağ ön çamurluk": "Degisen",
+     "Sol ön çamurluk": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "WF0YSJBVXGHDXGD7G"
+   }
+  },
+  {
+   "satici": "kuzey",
+   "kategori": "Hasarlı Araçlar",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2018 Toyota Yaris 1.5 Hybrid - Yan Hasarlı",
+   "aciklama": "Sigortadan pert kayıtlı değil, onarıma uygun.\n- Sağ taraf iki kapı ve sağ arka çamurluk hasarlı\n- Hibrit sistem ve batarya sağlam\n- Araç yürür durumda\nOnarım fiyat teklifi ilan ekinde mevcuttur.",
+   "baslangicFiyati": 340000,
+   "minimumArtis": 2500,
+   "rezervFiyati": null,
+   "kalanSaat": 99,
+   "baslayaliSaat": 9,
+   "fotograflar": [
+    "yaris-1.jpg",
+    "yaris-2.jpg"
+   ],
+   "arac": {
+    "marka": "Toyota",
+    "model": "Yaris",
+    "paket": "1.5 Hybrid Dream",
+    "yil": 2018,
+    "km": 98000,
+    "yakit": "Hibrit",
+    "vites": "Otomatik",
+    "kasa": "Hatchback",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Sağ ön kapı": "Degisen",
+     "Sağ arka kapı": "Degisen",
+     "Sağ arka çamurluk": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "NMTLXJSDABTV0KYJP"
+   }
+  },
+  {
+   "satici": "can",
+   "kategori": "Karavan",
+   "sehir": "Muğla",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2017 Fiat Ducato Motokaravan 4 Kişilik",
+   "aciklama": "Ducato 2.3 Multijet üzerine fabrika çıkışlı motokaravan. 4 yatak, duş-WC, 100 L temiz su, 2 adet 100 Ah lityum akü ve 400 W güneş paneli. Webasto ısıtıcı kışın bile sıcacık tutuyor. Avrupa'ya iki kez gittik, hiç yarı yolda bırakmadı. Tente ve bisiklet taşıyıcı dahil. Satış sebebi tekne aldık, ikisine birden zaman yetmiyor :)",
+   "baslangicFiyati": 2350000,
+   "minimumArtis": 10000,
+   "rezervFiyati": 2600000,
+   "kalanSaat": 240,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "karavan-1.jpg",
+    "karavan-2.jpg"
+   ],
+   "arac": {
+    "marka": "Fiat",
+    "model": "Ducato",
+    "paket": "2.3 Multijet Motokaravan",
+    "yil": 2017,
+    "km": 112000,
+    "yakit": "Dizel",
+    "vites": "Manuel",
+    "kasa": "Minivan",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Arka tampon": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "ZFANZMASXRUL5PS3V"
+   }
+  },
+  {
+   "satici": "emre",
+   "kategori": "Karavan",
+   "sehir": "Konya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2020 Çekme Karavan 4 Kişilik (Ruhsatlı)",
+   "aciklama": "750 kg altı olduğu için B ehliyetle çekilebiliyor. İçinde mutfak, buzdolabı, portatif WC var. Su tankı 80 litre. Tenteli. Üç sezon kullandık, iyi durumda. Konya'da yerinde görülebilir.",
+   "baslangicFiyati": 360000,
+   "minimumArtis": 2500,
+   "rezervFiyati": null,
+   "kalanSaat": 144,
+   "baslayaliSaat": 5,
+   "fotograflar": [
+    "cekme-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "mehmet",
+   "kategori": "Klasik Araçlar",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "1986 Tofaş Şahin 1.6",
+   "aciklama": "BABADAN KALMA ŞAHİN... orijinal boyası duruyor sadece sol çamurluk boyalı. Motor 1.6 LPG yok. Muayenesi yeni. Kapı fitilleri yenilendi. Koleksiyonerlere duyurulur. Hatıra olduğu için kolay vermiyorum ama artık bakamıyorum",
+   "baslangicFiyati": 260000,
+   "minimumArtis": 2500,
+   "rezervFiyati": 320000,
+   "kalanSaat": 120,
+   "baslayaliSaat": 48,
+   "fotograflar": [
+    "sahin-1.jpg",
+    "sahin-2.jpg"
+   ],
+   "arac": {
+    "marka": "Tofaş",
+    "model": "Şahin",
+    "paket": "1.6",
+    "yil": 1986,
+    "km": 214000,
+    "yakit": "Benzin",
+    "vites": "Manuel",
+    "kasa": "Sedan",
+    "renk": "Beyaz",
+    "ekspertiz": {
+     "Sol ön çamurluk": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "NM4HZLDMU6SXA59K1"
+   }
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Klasik Araçlar",
+   "sehir": "Samsun",
+   "urunDurumu": "IkinciEl",
+   "baslik": "1972 Volkswagen Beetle 1200 (Vosvos)",
+   "aciklama": "Rahmetli dedemin vosvosu. 2019'da kaportası komple yapıldı, motoru elden geçti. Orijinal direksiyon ve göstergeler duruyor. Hafta sonları gezmek için kullandım. Belgeleri tam, klasik plakası alınabilir. Sadece gerçekten değer verecek birine satmak istiyorum.",
+   "baslangicFiyati": 410000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 480000,
+   "kalanSaat": 168,
+   "baslayaliSaat": 40,
+   "fotograflar": [
+    "vosvos-1.jpg",
+    "vosvos-2.jpg"
+   ],
+   "arac": {
+    "marka": "Volkswagen",
+    "model": "Beetle",
+    "paket": "1200",
+    "yil": 1972,
+    "km": 98000,
+    "yakit": "Benzin",
+    "vites": "Manuel",
+    "kasa": "Coupe",
+    "renk": "Sarı",
+    "ekspertiz": {
+     "Kaput": "Boyali",
+     "Bagaj": "Boyali",
+     "Tavan": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "WVWKEW51L71P7BENU"
+   }
+  },
+  {
+   "satici": "kuzey",
+   "kategori": "Klasik Araçlar",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "1983 Mercedes-Benz 200 (W123)",
+   "aciklama": "Koleksiyonluk W123.\n- Orijinal 2.0 benzinli motor, 4 ileri manuel\n- İç döşeme orijinal, çatlaksız\n- Alt takım ve fren sistemi yenilendi\n- Klasik araç plakalı\nÖzel müşterilerimize kapalı showroom'da gösterilir.",
+   "baslangicFiyati": 890000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 1000000,
+   "kalanSaat": 288,
+   "baslayaliSaat": 72,
+   "fotograflar": [
+    "w123-1.jpg",
+    "w123-2.jpg"
+   ],
+   "arac": {
+    "marka": "Mercedes-Benz",
+    "model": "W123",
+    "paket": "200",
+    "yil": 1983,
+    "km": 287000,
+    "yakit": "Benzin",
+    "vites": "Manuel",
+    "kasa": "Sedan",
+    "renk": "Bej",
+    "ekspertiz": {
+     "Sol arka çamurluk": "Boyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "WDBJNPKXC2Y72DKEF"
+   }
+  },
+  {
+   "satici": "can",
+   "kategori": "Hava Araçları",
+   "sehir": "Muğla",
+   "urunDurumu": "IkinciEl",
+   "baslik": "1978 Cessna 172N Skyhawk",
+   "aciklama": "Toplam gövde saati 6.850, motor (Lycoming O-320) SMOH 640 saat. Garmin GNS 430, transponder Mode S. Yıllık bakımı Eylül 2026'da yapıldı, uçuşa elverişlilik belgesi geçerli. Milas-Bodrum'da hangarda. Kulüp üyeliğimiz bitti, uçağı yeni sahibine devretmek istiyoruz. Ciddi alıcılar için tüm loglar ve bakım kayıtları hazır.",
+   "baslangicFiyati": 3900000,
+   "minimumArtis": 25000,
+   "rezervFiyati": 4400000,
+   "kalanSaat": 288,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "cessna-1.jpg",
+    "cessna-2.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "emre",
+   "kategori": "Hava Araçları",
+   "sehir": "Konya",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Paramotor Seti (Kanat + Motor + Yedek Paraşüt)",
+   "aciklama": "Moster 185 motorlu paramotor, 22 m² kanat ve yedek paraşüt. Toplam 40 saat uçtu. Konya'da SHGM eğitimli pilotlara satılır, eğitimi olmayana satmam, güvenlik önemli.",
+   "baslangicFiyati": 210000,
+   "minimumArtis": 2500,
+   "rezervFiyati": null,
+   "kalanSaat": 72,
+   "baslayaliSaat": 24,
+   "fotograflar": [
+    "paramotor-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "emre",
+   "kategori": "ATV",
+   "sehir": "Konya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2022 CFMoto CForce 450 L ATV",
+   "aciklama": "4x4, çeki demirli, tarla işinde kullandım. Vinç (winch) takılı. Ön arka çanta var. Bakımları yapıldı, motor tıkır tıkır. 1.900 km'de.",
+   "baslangicFiyati": 245000,
+   "minimumArtis": 2500,
+   "rezervFiyati": 275000,
+   "kalanSaat": 96,
+   "baslayaliSaat": 18,
+   "fotograflar": [
+    "cforce-1.jpg"
+   ],
+   "arac": {
+    "marka": "CFMoto",
+    "model": "CForce 450",
+    "paket": "L",
+    "yil": 2022,
+    "km": 1900,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Diger",
+    "renk": "Yeşil",
+    "ekspertiz": {},
+    "ekspertizYok": true,
+    "sasiNo": "LCEP4Y55Z0PSZPR51"
+   }
+  },
+  {
+   "satici": "hasan",
+   "kategori": "ATV",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2019 Polaris Sportsman 570 EPS",
+   "aciklama": "Otelde safari için kullanıldı. 4x4. Direksiyon hidrolik. Lastikler iyi. Toplu alana indirim yok.",
+   "baslangicFiyati": 230000,
+   "minimumArtis": 2500,
+   "rezervFiyati": null,
+   "kalanSaat": 58,
+   "baslayaliSaat": 40,
+   "fotograflar": [
+    "sportsman-1.jpg"
+   ],
+   "arac": {
+    "marka": "Polaris",
+    "model": "Sportsman 570",
+    "paket": "EPS",
+    "yil": 2019,
+    "km": 6200,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Diger",
+    "renk": "Kırmızı",
+    "ekspertiz": {},
+    "ekspertizYok": true,
+    "sasiNo": "4XARV8BXKF6FRWVRD"
+   }
+  },
+  {
+   "satici": "kuzey",
+   "kategori": "UTV",
+   "sehir": "İstanbul",
+   "urunDurumu": "Sıfır",
+   "baslik": "2025 CFMoto ZForce 950 Sport",
+   "aciklama": "Sıfır, kutusundan yeni çıkmış.\n- 2 kişilik, 80 HP V-Twin\n- 4x4, elektronik diferansiyel kilidi\n- Bayi garantili, ruhsat işlemleri tarafımızdan yapılır",
+   "baslangicFiyati": 720000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 780000,
+   "kalanSaat": 192,
+   "baslayaliSaat": -3,
+   "fotograflar": [
+    "zforce-1.jpg"
+   ],
+   "arac": {
+    "marka": "CFMoto",
+    "model": "ZForce 950",
+    "paket": "Sport",
+    "yil": 2025,
+    "km": 0,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Diger",
+    "renk": "Gri",
+    "ekspertiz": {},
+    "ekspertizYok": true,
+    "sasiNo": "LCEE9FBZ3YWF6UL7J"
+   }
+  },
+  {
+   "satici": "can",
+   "kategori": "UTV",
+   "sehir": "Muğla",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2020 Polaris RZR XP 1000",
+   "aciklama": "Arka koltuk yok, iki kişilik. Fox amortisörler, LED bar, kapılar ve tavan eklendi. Dağ yollarında kullanıldı, şasi ve süspansiyon kontrol ettirildi. Römorku ile birlikte satılık.",
+   "baslangicFiyati": 640000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 720000,
+   "kalanSaat": 120,
+   "baslayaliSaat": 32,
+   "fotograflar": [
+    "rzr-1.jpg"
+   ],
+   "arac": {
+    "marka": "Polaris",
+    "model": "RZR XP 1000",
+    "paket": null,
+    "yil": 2020,
+    "km": 7800,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Diger",
+    "renk": "Turuncu",
+    "ekspertiz": {},
+    "ekspertizYok": true,
+    "sasiNo": "4XAAD7KZ0AFP489CA"
+   }
+  },
+  {
+   "satici": "ayse",
+   "kategori": "Engelli Plakalı Araçlar",
+   "sehir": "Bursa",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2023 Renault Clio 1.0 TCe X-Tronic Joy (Engelli Raporlu)",
+   "aciklama": "Annem için ÖTV muafiyetiyle almıştık, kendisi artık araç kullanamıyor. 5 yılı dolmadığı için sadece %90 ve üzeri engelli raporu olan alıcılara devredilebilir, noterde sorulabilir. Hatasız, boyasız, 11 bin km'de. Bakımları serviste yapıldı.",
+   "baslangicFiyati": 690000,
+   "minimumArtis": 5000,
+   "rezervFiyati": null,
+   "kalanSaat": 168,
+   "baslayaliSaat": 22,
+   "fotograflar": [
+    "clio5-1.jpg",
+    "clio5-2.jpg"
+   ],
+   "arac": {
+    "marka": "Renault",
+    "model": "Clio",
+    "paket": "1.0 TCe X-Tronic Joy",
+    "yil": 2023,
+    "km": 11000,
+    "yakit": "Benzin",
+    "vites": "Otomatik",
+    "kasa": "Hatchback",
+    "renk": "Gri",
+    "ekspertiz": {},
+    "ekspertizYok": false,
+    "sasiNo": "VF12ZHLTGH2094HC4"
+   }
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Engelli Plakalı Araçlar",
+   "sehir": "Samsun",
+   "urunDurumu": "IkinciEl",
+   "baslik": "2022 Fiat Egea Cross 1.6 Multijet DCT (Engelli)",
+   "aciklama": "Eşim için almıştık. Engelli devrine uygundur, raporlu alıcı noterde işlemi yapabilir. Kol gaz sistemi takılı (istenirse sökülür). Bakımları zamanında, faturalı. Sadece sağ arka kapıda küçük bir lokal boya var.",
+   "baslangicFiyati": 880000,
+   "minimumArtis": 5000,
+   "rezervFiyati": 950000,
+   "kalanSaat": 126,
+   "baslayaliSaat": 16,
+   "fotograflar": [
+    "egeacross-1.jpg",
+    "egeacross-2.jpg"
+   ],
+   "arac": {
+    "marka": "Fiat",
+    "model": "Egea Cross",
+    "paket": "1.6 Multijet DCT Urban Plus",
+    "yil": 2022,
+    "km": 47000,
+    "yakit": "Dizel",
+    "vites": "Otomatik",
+    "kasa": "Hatchback",
+    "renk": "Gri",
+    "ekspertiz": {
+     "Sağ arka kapı": "LokalBoyali"
+    },
+    "ekspertizYok": false,
+    "sasiNo": "ZFALPZWHKAY52X69C"
+   }
+  },
+  {
+   "satici": "zeynep",
+   "kategori": "Bilgisayar",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "MacBook Air M2 13\" 8 GB / 256 GB",
+   "aciklama": "Merhaba, 2023'te aldığım MacBook Air'imi iş bilgisayarı verildiği için satıyorum. Pil döngüsü 112, pil sağlığı %96. Kutusu, şarj aleti ve faturası duruyor. Ekranda ve kasada çizik yoktur. Kadıköy'de elden teslim edebilirim, kargo da olur.",
+   "baslangicFiyati": 26000,
+   "minimumArtis": 500,
+   "rezervFiyati": 31000,
+   "kalanSaat": 144,
+   "baslayaliSaat": 14,
+   "fotograflar": [
+    "macbook-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Bilgisayar",
+   "sehir": "Samsun",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Lenovo ThinkPad T14 Gen 2 i5 / 16 GB / 512 GB",
+   "aciklama": "Şirketten çıkma, sağlam iş bilgisayarı. Klavye ışıklı, parmak izi okuyucu var. Pil hâlâ 6-7 saat gidiyor. Windows 11 Pro lisanslı, format atıldı. Şarj aleti orijinal.",
+   "baslangicFiyati": 13500,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 72,
+   "baslayaliSaat": 9,
+   "fotograflar": [
+    "thinkpad-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Bilgisayar",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Oyuncu Bilgisayarı Ryzen 7 7700 / RTX 4070 / 32 GB DDR5",
+   "aciklama": "kendi topladığım sistem, 1.5 yıllık. ryzen 7 7700, rtx 4070 12gb, 32gb ddr5 6000mhz, 1tb nvme, 750w gold psu. 1440p de her oyunu ultra açıyor. kasa lian li, rgb fanlar dahil. monitör dahil değil. kutuları duruyor. test etmeye gelebilirsiniz",
+   "baslangicFiyati": 52000,
+   "minimumArtis": 1000,
+   "rezervFiyati": 60000,
+   "kalanSaat": 27,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "oyuncupc-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "elif",
+   "kategori": "Bilgisayar",
+   "sehir": "Eskişehir",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Asus Zenbook 14 OLED (Ryzen 7, 16 GB)",
+   "aciklama": "tez yazmak için almıştım, tezim bitti 🎓 ekranı çok güzel, oled. kılıfıyla kullandım çizik falan yok. kutusu duruyor. yurt dışına gideceğim için satıyorum",
+   "baslangicFiyati": 21000,
+   "minimumArtis": 500,
+   "rezervFiyati": 24500,
+   "kalanSaat": 104,
+   "baslayaliSaat": 6,
+   "fotograflar": [
+    "zenbook-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "mehmet",
+   "kategori": "Cep Telefonu & Aksesuar",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "iPhone 13 128 GB",
+   "aciklama": "KIZIMIN TELEFONU yenisini aldı bunu satıyoruz. Pil sağlığı %88. Hep kılıfla kullanıldı ekranda çizik yok. Faturası kutusu mevcut. Değişim yok",
+   "baslangicFiyati": 19000,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 20,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "iphone-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "selin",
+   "kategori": "Cep Telefonu & Aksesuar",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Samsung Galaxy S23 256 GB Lavanta",
+   "aciklama": "Lavanta renk S23 💜 Sadece 1 yıl kullandım, ekran koruyucu ilk günden beri takılı. Kamerası harika, gece çekimleri şahane. Kutu + orijinal kablo var. iPhone'a geçtiğim için satıyorum.",
+   "baslangicFiyati": 22000,
+   "minimumArtis": 250,
+   "rezervFiyati": 25500,
+   "kalanSaat": 50,
+   "baslayaliSaat": 12,
+   "fotograflar": [
+    "s23-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "emre",
+   "kategori": "Cep Telefonu & Aksesuar",
+   "sehir": "Konya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Xiaomi Redmi Note 13 Pro 8/256",
+   "aciklama": "Babama aldım ama alışamadı, 2 ay kullanıldı. Kutusunda şarj aleti dahil her şeyi tam. Garanti devam ediyor.",
+   "baslangicFiyati": 9500,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 120,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "redmi-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "zeynep",
+   "kategori": "Cep Telefonu & Aksesuar",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "iPhone 15 Pro 256 GB Natural Titanium",
+   "aciklama": "Merhaba, iPhone 15 Pro'mu 16 Pro'ya geçtiğim için satıyorum. Pil sağlığı %93, Apple garantisi Mart 2027'ye kadar devam ediyor. Kutu, kablo ve fatura mevcut. Ekran ve kasa kusursuz; ilk günden beri kılıf ve cam koruyucuyla kullanıldı.",
+   "baslangicFiyati": 54000,
+   "minimumArtis": 500,
+   "rezervFiyati": 61000,
+   "kalanSaat": 192,
+   "baslayaliSaat": 2,
+   "fotograflar": [
+    "iphone15-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Fotoğraf & Kamera",
+   "sehir": "İzmir",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Canon EOS 250D + 18-55 mm Kit",
+   "aciklama": "youtube için aldım ama devam etmedim :) deklanşör 6 bin civarı. yedek batarya ve 64gb kart hediye. çanta da veririm. kutusu var",
+   "baslangicFiyati": 15000,
+   "minimumArtis": 250,
+   "rezervFiyati": 17500,
+   "kalanSaat": 192,
+   "baslayaliSaat": 25,
+   "fotograflar": [
+    "canon-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "can",
+   "kategori": "Fotoğraf & Kamera",
+   "sehir": "Muğla",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Sony A7 III Gövde + Sony FE 24-105 mm f/4 G",
+   "aciklama": "Full frame A7 III gövde, deklanşör sayısı yaklaşık 38.000. 24-105 G lens çok net, sorunsuz. Yanında 2 orijinal batarya, SmallRig kafes ve L plaka veriyorum. Sensör temizliği iki ay önce yetkili serviste yapıldı. Seyahat fotoğrafçılığı için birebir; Fuji'ye geçtiğim için satıyorum.",
+   "baslangicFiyati": 68000,
+   "minimumArtis": 1000,
+   "rezervFiyati": 78000,
+   "kalanSaat": 149,
+   "baslayaliSaat": 36,
+   "fotograflar": [
+    "a7iii-1.jpg",
+    "a7iii-2.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "selin",
+   "kategori": "Fotoğraf & Kamera",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Fujifilm X100V Gümüş",
+   "aciklama": "Bu kameradan daha estetik bir şey yok bence 📷 Çok az kullandım, kutusu ve yedek bataryasıyla. Deri kılıf hediye. Fiyatı artık her yerde uçtu, kaçırmayın.",
+   "baslangicFiyati": 58000,
+   "minimumArtis": 1000,
+   "rezervFiyati": 66000,
+   "kalanSaat": 72,
+   "baslayaliSaat": 8,
+   "fotograflar": [
+    "x100v-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Ev Elektroniği",
+   "sehir": "Samsun",
+   "urunDurumu": "IkinciEl",
+   "baslik": "LG OLED55C24 55\" 4K OLED TV",
+   "aciklama": "Evi taşıdık, yeni salonda daha büyük TV aldık. 2 yıllık, yanma (burn-in) yok, ekran kusursuz. Orijinal kumanda ve ayaklarıyla birlikte. Samsun'da elden teslim, kargo riskli olduğu için göndermiyorum.",
+   "baslangicFiyati": 32000,
+   "minimumArtis": 500,
+   "rezervFiyati": 37000,
+   "kalanSaat": 96,
+   "baslayaliSaat": 10,
+   "fotograflar": [
+    "lgoled-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "zeynep",
+   "kategori": "Ev Elektroniği",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Sonos Beam (Gen 2) Soundbar Siyah",
+   "aciklama": "Merhaba, 1 yıllık Sonos Beam Gen 2. Dolby Atmos destekli, HDMI eARC ile bağlanıyor. Kutusu ve kabloları eksiksiz. Taşınma nedeniyle satılıktır.",
+   "baslangicFiyati": 17500,
+   "minimumArtis": 250,
+   "rezervFiyati": 20000,
+   "kalanSaat": 123,
+   "baslayaliSaat": 7,
+   "fotograflar": [
+    "sonos-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "mehmet",
+   "kategori": "Ev Elektroniği",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Samsung 50\" Crystal UHD 4K Smart TV",
+   "aciklama": "Televizyon 3 yıllık SORUNSUZ çalışıyor. Kumandası var. Duvar aparatı hediye. Ankara içi kendim getiririm",
+   "baslangicFiyati": 11000,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 25,
+   "baslayaliSaat": 14,
+   "fotograflar": [
+    "samsungtv-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "ayse",
+   "kategori": "Elektrikli Ev Aletleri",
+   "sehir": "Bursa",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Dyson V11 Absolute Kablosuz Süpürge",
+   "aciklama": "Çok iyi çeken bir süpürge, bataryası hâlâ 45 dk gidiyor. Bütün başlıkları ve duvar askısı var. Daha büyük bir model aldığımız için satıyorum. Filtresi yıkandı, tertemiz.",
+   "baslangicFiyati": 12500,
+   "minimumArtis": 250,
+   "rezervFiyati": 14500,
+   "kalanSaat": 78,
+   "baslayaliSaat": 15,
+   "fotograflar": [
+    "dyson-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "selin",
+   "kategori": "Elektrikli Ev Aletleri",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "De'Longhi Magnifica S Tam Otomatik Espresso Makinesi",
+   "aciklama": "Her sabahımın kahramanı ☕ ama yeni modele geçtim. Kireç temizliği düzenli yapıldı. Süt köpürtme çubuğu var. Kutusu yok ama sağlam şekilde paketlerim.",
+   "baslangicFiyati": 11000,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 48,
+   "baslayaliSaat": 4,
+   "fotograflar": [
+    "delonghi-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "hasan",
+   "kategori": "Elektrikli Ev Aletleri",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Arçelik 9 kg Çamaşır Makinesi A+++",
+   "aciklama": "Çalışıyor. Ses yok. Kapakta küçük çizik. Kendin alacaksın, nakliye yok.",
+   "baslangicFiyati": 6500,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 144,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "camasir-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "elif",
+   "kategori": "Oyunculara Özel",
+   "sehir": "Eskişehir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "PlayStation 5 Diskli + DualSense",
+   "aciklama": "ev arkadaşımla ortak almıştık, mezun olduk bölüşemedik satıyoruz 😂 az oynandı, fan sesi yok. 1 kol ve kutusu var. fifa ve spiderman diskleri hediye",
+   "baslangicFiyati": 17000,
+   "minimumArtis": 250,
+   "rezervFiyati": 20500,
+   "kalanSaat": 24,
+   "baslayaliSaat": 23,
+   "fotograflar": [
+    "ps5-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Oyunculara Özel",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Xbox Series X 1 TB + 2 Kol",
+   "aciklama": "series x, 2 kol (biri elite değil normal), şarjlı pil seti. game pass bitti artık pc'de oynuyorum. kutusu var, hiç açılmadı tamir görmedi",
+   "baslangicFiyati": 16500,
+   "minimumArtis": 250,
+   "rezervFiyati": 19000,
+   "kalanSaat": 76,
+   "baslayaliSaat": 16,
+   "fotograflar": [
+    "xbox-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "elif",
+   "kategori": "Oyunculara Özel",
+   "sehir": "Eskişehir",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Nintendo Switch OLED Beyaz + Zelda TOTK",
+   "aciklama": "switch oled, sadece bir yaz oynadım. zelda tears of the kingdom ve mario kart 8 dijital hesapta değil kartuş olarak dahil. taşıma çantası hediye 🎮",
+   "baslangicFiyati": 12000,
+   "minimumArtis": 250,
+   "rezervFiyati": 14000,
+   "kalanSaat": 168,
+   "baslayaliSaat": 3,
+   "fotograflar": [
+    "switch-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Teknik Elektronik",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Rigol DS1054Z 4 Kanal Osiloskop",
+   "aciklama": "üniversitede elektronik projeler için almıştım. 4 kanal, 50 mhz (hack açılmamış :) ). probları tam. kutusu yok ama sağlam paketlerim",
+   "baslangicFiyati": 9500,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 120,
+   "baslayaliSaat": 22,
+   "fotograflar": [
+    "osiloskop-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "hasan",
+   "kategori": "Teknik Elektronik",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Fluke 117 Multimetre",
+   "aciklama": "Elektrikçiyim. Yedek aldım, kullanılmadı sayılır. Çanta ile beraber. Orijinal.",
+   "baslangicFiyati": 6000,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 54,
+   "baslayaliSaat": 12,
+   "fotograflar": [
+    "fluke-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "selin",
+   "kategori": "Saat",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Seiko Presage Cocktail Time Otomatik",
+   "aciklama": "Kutulu, belgeli 💫 Kasa 40,5 mm, kadranı ışıkta harika görünüyor. Orijinal deri kayış. Erkek arkadaşıma hediye almıştım ama... neyse, saat güzel 😅",
+   "baslangicFiyati": 13000,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 240,
+   "baslayaliSaat": 18,
+   "fotograflar": [
+    "saat-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "riza",
+   "kategori": "Saat",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "1964 Omega Seamaster Otomatik (Cal. 552)",
+   "aciklama": "Efendim, dükkânımıza gelen bu Seamaster 1964 imalatıdır. Kalibre 552, 24 taşlı. Kadran orijinaldir, restore edilmemiştir; kasada yaşına uygun ufak izler mevcuttur. Saat ustamız tarafından bakımı yapılmış olup günlük ±8 saniye ile çalışmaktadır. Çukurcuma'daki mağazamızda görebilirsiniz.",
+   "baslangicFiyati": 62000,
+   "minimumArtis": 1000,
+   "rezervFiyati": 72000,
+   "kalanSaat": 218,
+   "baslayaliSaat": 50,
+   "fotograflar": [
+    "omega-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Saat",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Casio G-Shock GA-2100 'CasiOak' Siyah",
+   "aciklama": "casioak siyah, 1 yıllık. kayışı biraz yıprandı ama saat sağlam. kutusu yok",
+   "baslangicFiyati": 2400,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 14,
+   "baslayaliSaat": 4,
+   "fotograflar": [
+    "gshock-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Saat",
+   "sehir": "Samsun",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Tissot PRX Powermatic 80 40 mm Mavi Kadran",
+   "aciklama": "Düğün hediyesiydi, çok az taktım çünkü iş yerinde akıllı saat kullanıyorum. Garanti belgesi ve kutusu mevcut. Bilezik ayarı yapıldı, sökülen baklalar da veriliyor.",
+   "baslangicFiyati": 24000,
+   "minimumArtis": 500,
+   "rezervFiyati": 28000,
+   "kalanSaat": 148,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "tissot-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "riza",
+   "kategori": "Antika",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Antika Bakır Cezve ve Tepsi Takımı",
+   "aciklama": "Efendim, Anadolu el işçiliği bakır cezve ve tepsi takımıdır, tahminen 60 yıllıktır. Kalaylı olup kullanıma uygundur. Antika meraklılarına ve kafe dekorasyonuna tavsiye ederiz.",
+   "baslangicFiyati": 3200,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 288,
+   "baslayaliSaat": 60,
+   "fotograflar": [
+    "antika-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "riza",
+   "kategori": "Antika",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "His Master's Voice Kurmalı Gramofon (1930'lar)",
+   "aciklama": "Efendim, kurmalı portatif gramofon, 1930'lu yıllar İngiliz imalatı. Mekanizması çalışır vaziyettedir, iğne kutusu ve 4 adet taş plak hediyedir. Deri kaplamada yaşına uygun aşınmalar vardır. Koleksiyonunuza nadide bir parça.",
+   "baslangicFiyati": 18500,
+   "minimumArtis": 500,
+   "rezervFiyati": 22000,
+   "kalanSaat": 192,
+   "baslayaliSaat": 40,
+   "fotograflar": [
+    "gramofon-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "riza",
+   "kategori": "Antika",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Osmanlı Dönemi Kalaylı Bakır Sahan (19. yy)",
+   "aciklama": "Efendim, 19. yüzyıl sonuna tarihlenen, üzerinde kazıma bitki motifleri bulunan bakır sahandır. Çap 34 cm. Dibinde okunaklı olmayan bir mühür vardır. Kalayı yenilenmiştir.",
+   "baslangicFiyati": 7500,
+   "minimumArtis": 250,
+   "rezervFiyati": 9000,
+   "kalanSaat": 125,
+   "baslayaliSaat": 35,
+   "fotograflar": [
+    "sahan-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "mehmet",
+   "kategori": "Antika",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Eski Türk Madeni Para Koleksiyonu (1934-1980, 120 adet)",
+   "aciklama": "BABAMDAN KALMA paralar... 1934den 1980e kadar kuruşlar liralar var. Bazıları gümüş. Albümle birlikte veriyorum tek tek satmıyorum. Ankara içi elden",
+   "baslangicFiyati": 4500,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 96,
+   "baslayaliSaat": 22,
+   "fotograflar": [
+    "paralar-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "ayse",
+   "kategori": "Ev Dekorasyon",
+   "sehir": "Bursa",
+   "urunDurumu": "IkinciEl",
+   "baslik": "El Dokuma Uşak Halı 200 x 300 cm",
+   "aciklama": "Kayınvalidemden kalan el dokuma Uşak halısı. Yün, kök boya. Profesyonel yıkamadan yeni geldi, kenar püskülleri sağlam. Evimiz değişti, salona uymuyor maalesef. Gerçekten çok emek var içinde.",
+   "baslangicFiyati": 28000,
+   "minimumArtis": 500,
+   "rezervFiyati": 34000,
+   "kalanSaat": 216,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "hali-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "elif",
+   "kategori": "Ev Dekorasyon",
+   "sehir": "Eskişehir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Kadife Tekli Berjer Koltuk (Hardal)",
+   "aciklama": "öğrenci evimin en sevdiğim köşesiydi 🥲 1 yıllık, kedi yok sigara yok. ölçü 80x85. eskişehir içi kendiniz alırsanız sevinirim",
+   "baslangicFiyati": 3500,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 49,
+   "baslayaliSaat": 10,
+   "fotograflar": [
+    "berjer-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "selin",
+   "kategori": "Ev Dekorasyon",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Pirinç Ayaklı Lambader (Mid-Century)",
+   "aciklama": "Mid-century pirinç ayaklı lambader ✨ Ev konseptimi değiştirdim, buna yer kalmadı. Kumaş abajurlu, ampulü dahil. Çok şık durur.",
+   "baslangicFiyati": 4200,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 72,
+   "baslayaliSaat": 12,
+   "fotograflar": [
+    "lambader-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "hasan",
+   "kategori": "Bahçe & Yapı Market",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Bosch Professional GSB 18V-55 Akülü Darbeli Matkap",
+   "aciklama": "2 akü 1 şarj. Çantalı. 1 yıllık. Sorunsuz.",
+   "baslangicFiyati": 4800,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 96,
+   "baslayaliSaat": 18,
+   "fotograflar": [
+    "matkap-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "emre",
+   "kategori": "Bahçe & Yapı Market",
+   "sehir": "Konya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Benzinli Çim Biçme Makinesi 46 cm (Honda Motor)",
+   "aciklama": "Bahçeli evden apartmana geçtik, gerek kalmadı. Honda motorlu, ilk çekişte çalışıyor. Toplama sepeti sağlam. Bıçağı bu sezon bileylendi.",
+   "baslangicFiyati": 7500,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 144,
+   "baslayaliSaat": 9,
+   "fotograflar": [
+    "cim-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Bahçe & Yapı Market",
+   "sehir": "Samsun",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Rattan Bahçe Oturma Grubu (4 Kişilik + Sehpa)",
+   "aciklama": "Balkon için almıştık, yazın kullandık kışın içeri aldık. Minderler yıkanabilir, kılıfları çıkıyor. Cam sehpa dahil. Samsun Atakum'da elden teslim.",
+   "baslangicFiyati": 9000,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 120,
+   "baslayaliSaat": 26,
+   "fotograflar": [
+    "rattan-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Ofis & Kırtasiye",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Ergonomik File Sırtlı Ofis Koltuğu",
+   "aciklama": "bel destekli, kolçaklar ayarlanıyor, başlık var. evden çalışırken 2 yıl kullandım hiç ağrı yapmadı. tekerlekler sağlam",
+   "baslangicFiyati": 3800,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 29,
+   "baslayaliSaat": 14,
+   "fotograflar": [
+    "ofiskoltuk-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "mehmet",
+   "kategori": "Ofis & Kırtasiye",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "HP LaserJet Pro M404dn Lazer Yazıcı",
+   "aciklama": "Dükkânda kullandım kapattım. ÇİFT TARAFLI baskı yapıyor. Toneri yarı dolu. Kablosu var",
+   "baslangicFiyati": 4200,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 74,
+   "baslayaliSaat": 8,
+   "fotograflar": [
+    "yazici-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "ayse",
+   "kategori": "Anne & Bebek",
+   "sehir": "Bursa",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Chicco Trio Travel Sistem Bebek Arabası",
+   "aciklama": "Kızım büyüdü, artık bebek arabasından inmek istiyor 🙂 Ana kucağı, puset ve portbebe takımı. Yağmurluğu ve çantası da var. Kumaşları yıkadım, tekerlekler sağlam. Sigara içilmeyen evden.",
+   "baslangicFiyati": 5500,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 98,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "bebekarabasi-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "ayse",
+   "kategori": "Anne & Bebek",
+   "sehir": "Bursa",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Ahşap Sallanır Beşik + Ortopedik Yatak",
+   "aciklama": "Doğal ahşap, boyasız beşik. Kilitlenebilir sallanma özelliği var. Ortopedik yatağı sadece 4 ay kullanıldı, alezli kullandık. Söküp verebilirim.",
+   "baslangicFiyati": 3800,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 168,
+   "baslayaliSaat": 9,
+   "fotograflar": [
+    "besik-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Anne & Bebek",
+   "sehir": "Samsun",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Britax Römer Dualfix i-Size Oto Koltuğu",
+   "aciklama": "360 derece dönebilen, ISOFIX bağlantılı oto koltuğu. 0-4 yaş. Hiç kaza geçirmedi (bunu sormak çok önemli bence). Kılıfı yıkandı.",
+   "baslangicFiyati": 6500,
+   "minimumArtis": 100,
+   "rezervFiyati": 7500,
+   "kalanSaat": 56,
+   "baslayaliSaat": 15,
+   "fotograflar": [
+    "otokoltugu-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "selin",
+   "kategori": "Giyim & Aksesuar",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Massimo Dutti Kaşmir Karışımlı Palto (Kadın, 38)",
+   "aciklama": "Bej kaşmir karışımlı palto, 38 beden 🤍 Sadece 3-4 kez giyildi, kuru temizlemeden yeni geldi. Etiketi sakladım. Çok zamansız bir parça.",
+   "baslangicFiyati": 5200,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 77,
+   "baslayaliSaat": 6,
+   "fotograflar": [
+    "palto-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Giyim & Aksesuar",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Hakiki Deri Biker Ceket (Erkek, L)",
+   "aciklama": "kuzu derisi biker ceket, L beden. 2 kış giydim, deri yumuşadı tam kıvamında. astarında yırtık yok",
+   "baslangicFiyati": 4000,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 120,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "dericeket-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "emre",
+   "kategori": "Giyim & Aksesuar",
+   "sehir": "Konya",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "The North Face McMurdo Kaz Tüyü Mont (Erkek, M)",
+   "aciklama": "Konya ayazına birebir. 1 sezon giyildi, kapüşon kürkü çıkarılabiliyor. Orijinaldir, mağaza faturası var.",
+   "baslangicFiyati": 7800,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 144,
+   "baslayaliSaat": 12,
+   "fotograflar": [
+    "mont-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "selin",
+   "kategori": "Takı & Mücevher",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "14 Ayar Altın İnce Zincir Kolye (3,2 gr)",
+   "aciklama": "14 ayar, 45 cm ince zincir kolye ✨ Faturalı, kutusu var. Gün içinde tek taşıdığım kolyeydi ama artık gümüş kullanıyorum.",
+   "baslangicFiyati": 11500,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 48,
+   "baslayaliSaat": 8,
+   "fotograflar": [
+    "kolye-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "riza",
+   "kategori": "Takı & Mücevher",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Gümüş Telkari Küpe (Midyat İşçiliği)",
+   "aciklama": "Efendim, 925 ayar gümüş Midyat telkari küpedir. Usta işidir, el yapımıdır. Hediye kutusunda gönderilir.",
+   "baslangicFiyati": 1800,
+   "minimumArtis": 50,
+   "rezervFiyati": null,
+   "kalanSaat": 192,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "telkari-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "zeynep",
+   "kategori": "Takı & Mücevher",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "0,30 Karat Pırlanta Tektaş Yüzük (14 Ayar Beyaz Altın)",
+   "aciklama": "Merhaba, 0,30 ct G renk VS2 berraklıkta pırlanta tektaş yüzüğümü satıyorum. Sertifikası ve faturası mevcuttur. Yüzük ölçüsü 13; kuyumcuda ücretsiz ayarlatılabilir. Ciddi alıcılarla Nişantaşı'ndaki kuyumcuda buluşup kontrol ettirebiliriz.",
+   "baslangicFiyati": 38000,
+   "minimumArtis": 1000,
+   "rezervFiyati": 44000,
+   "kalanSaat": 264,
+   "baslayaliSaat": 16,
+   "fotograflar": [
+    "tektas-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Hobi & Oyuncak",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "LEGO Technic 42115 Lamborghini Sián FKP 37",
+   "aciklama": "kurdum, vitrinde durdu. eksik parça yok, kutusu ve kitapçıkları var. tozlanmadı camekan içindeydi",
+   "baslangicFiyati": 13500,
+   "minimumArtis": 250,
+   "rezervFiyati": 16000,
+   "kalanSaat": 96,
+   "baslayaliSaat": 10,
+   "fotograflar": [
+    "lego-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "ayse",
+   "kategori": "Hobi & Oyuncak",
+   "sehir": "Bursa",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Ahşap Tren Seti (80 Parça, Raylar + Köprü)",
+   "aciklama": "Oğlumun en sevdiği oyuncaktı, artık legolara geçti 🙂 Raylar, köprü, 6 vagon, istasyon binası var. Tamamı ahşap, boyaları dökülmedi.",
+   "baslangicFiyati": 1500,
+   "minimumArtis": 50,
+   "rezervFiyati": null,
+   "kalanSaat": 32,
+   "baslayaliSaat": 6,
+   "fotograflar": [
+    "tren-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "emre",
+   "kategori": "Hobi & Oyuncak",
+   "sehir": "Konya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Traxxas Slash 4x4 VXL Uzaktan Kumandalı Araba",
+   "aciklama": "Fırçasız motorlu, 2 adet 3S lipo pil ve şarj cihazıyla birlikte. Saatte 90 km'yi görüyor. Yedek lastik ve salıncak kolları da veriyorum.",
+   "baslangicFiyati": 14000,
+   "minimumArtis": 250,
+   "rezervFiyati": 16500,
+   "kalanSaat": 123,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "traxxas-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "elif",
+   "kategori": "Kitap, Dergi & Film",
+   "sehir": "Eskişehir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Harry Potter Serisi 7 Kitap (YKY, Türkçe)",
+   "aciklama": "lise yıllarımın serisi 🥹 7 kitap tam, YKY baskı. sayfaları sararmadı, sadece 4. kitabın kapağında ufak bir kıvrım var.",
+   "baslangicFiyati": 1400,
+   "minimumArtis": 50,
+   "rezervFiyati": null,
+   "kalanSaat": 72,
+   "baslayaliSaat": 15,
+   "fotograflar": [
+    "harrypotter-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "riza",
+   "kategori": "Kitap, Dergi & Film",
+   "sehir": "İstanbul",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Hayat Mecmuası 1962-1964 (48 Sayı)",
+   "aciklama": "Efendim, Hayat mecmuasının 1962-1964 yıllarına ait 48 sayısıdır. Kapaklar sağlamdır, bazı sayfalarda yaşına uygun sararma mevcuttur. Dönem reklamları ve fotoğraflarıyla eşsiz bir arşiv.",
+   "baslangicFiyati": 6500,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 240,
+   "baslayaliSaat": 45,
+   "fotograflar": [
+    "hayat-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "mehmet",
+   "kategori": "Kitap, Dergi & Film",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "DVD Film Arşivi 200 Adet (Yeşilçam + Yabancı)",
+   "aciklama": "200 DVD FİLM... Kemal Sunal filmleri, Yeşilçam klasikleri, yabancı filmler var. Hepsi orijinal kutulu. Toplu satılır",
+   "baslangicFiyati": 2200,
+   "minimumArtis": 50,
+   "rezervFiyati": null,
+   "kalanSaat": 145,
+   "baslayaliSaat": 30,
+   "fotograflar": [
+    "dvd-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "elif",
+   "kategori": "Müzik",
+   "sehir": "Eskişehir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Yamaha F310 Akustik Gitar",
+   "aciklama": "ilk gitarım ♡ yeni tel taktım, kılıfı ile birlikte veriyorum. başlangıç için çok iyi, akordu kaçmıyor.",
+   "baslangicFiyati": 3800,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 120,
+   "baslayaliSaat": 20,
+   "fotograflar": [
+    "gitar-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "zeynep",
+   "kategori": "Müzik",
+   "sehir": "İstanbul",
+   "urunDurumu": "AzKullanilmis",
+   "baslik": "Yamaha P-45 Dijital Piyano + Stand + Pedal",
+   "aciklama": "Merhaba, 88 tuşlu, ağırlıklı tuşlu Yamaha P-45. Ahşap X stand, sustain pedalı ve kulaklık hediyedir. Piyano dersine ara verdiğim için satıyorum. Çalışmayan tuş yoktur.",
+   "baslangicFiyati": 14500,
+   "minimumArtis": 250,
+   "rezervFiyati": 17000,
+   "kalanSaat": 173,
+   "baslayaliSaat": 26,
+   "fotograflar": [
+    "piyano-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Müzik",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Fender Player Stratocaster (Meksika) + Amfi",
+   "aciklama": "player strat, 3 tonlu sunburst. fender frontman 20g amfi ve kablo dahil. perdeler iyi, eşik ayarı yeni yaptırıldı",
+   "baslangicFiyati": 32000,
+   "minimumArtis": 500,
+   "rezervFiyati": 37000,
+   "kalanSaat": 51,
+   "baslayaliSaat": 12,
+   "fotograflar": [
+    "strat-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "mehmet",
+   "kategori": "Müzik",
+   "sehir": "Ankara",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Kısa Sap Bağlama (Usta İşi, Dut Gövde)",
+   "aciklama": "USTA İŞİ BAĞLAMA... dut gövde ladin kapak. Sesi çok güzel. Kılıfı var. Torunum için almıştım çalmadı",
+   "baslangicFiyati": 4500,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 79,
+   "baslayaliSaat": 10,
+   "fotograflar": [
+    "baglama-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "can",
+   "kategori": "Spor",
+   "sehir": "Muğla",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Bianchi Via Nirone 7 Yol Bisikleti (Shimano 105, 55 cm)",
+   "aciklama": "Alüminyum kadro, karbon ön çatal, Shimano 105 grup set. 55 cm kadro, 1,75-1,82 boy aralığına uygun. Son bakımda zincir ve dış lastikler değişti. Bodrum yarımadasında haftada 3 gün sürdüm; triatlon için karbon bisiklete geçtiğim için satıyorum. Pedallar dahil değildir.",
+   "baslangicFiyati": 38000,
+   "minimumArtis": 500,
+   "rezervFiyati": 44000,
+   "kalanSaat": 101,
+   "baslayaliSaat": 18,
+   "fotograflar": [
+    "bianchi-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "gokhan",
+   "kategori": "Spor",
+   "sehir": "Samsun",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Katlanabilir Koşu Bandı (2,5 HP, 14 km/s)",
+   "aciklama": "Pandemide almıştık, kullanım az. Eğim ayarı ve nabız ölçer var. Katlanınca yatak altına bile sığıyor. Söküp kurmayı ben yapabilirim.",
+   "baslangicFiyati": 9500,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 144,
+   "baslayaliSaat": 22,
+   "fotograflar": [
+    "kosubandi-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "emre",
+   "kategori": "Spor",
+   "sehir": "Konya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Ayarlanabilir Dambıl Seti 2 x 20 kg",
+   "aciklama": "Ayarlanabilir dambıl, 2 adet, plakalar dahil toplam 40 kg. Çantası var. Spor salonuna yazıldım, evde yer kaplıyor.",
+   "baslangicFiyati": 2500,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 28,
+   "baslayaliSaat": 6,
+   "fotograflar": [
+    "dambil-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "hasan",
+   "kategori": "Diğer Her Şey",
+   "sehir": "Antalya",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Hidrolik Berber Koltuğu (2 Adet)",
+   "aciklama": "Dükkan kapandı. İki koltuk. Hidrolik çalışıyor. Deri sağlam. Tek tek de olur ama ikisi birden öncelik.",
+   "baslangicFiyati": 12000,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 120,
+   "baslayaliSaat": 16,
+   "fotograflar": [
+    "berber-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "elif",
+   "kategori": "Diğer Her Şey",
+   "sehir": "Eskişehir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "100 Litre Akvaryum Komple (Filtre + Isıtıcı + Işık)",
+   "aciklama": "balıklarımı arkadaşım aldı, akvaryum boşta kaldı. filtre, ısıtıcı, led ışık, dolabı dahil. su kaçağı yok, test ettim.",
+   "baslangicFiyati": 3000,
+   "minimumArtis": 100,
+   "rezervFiyati": null,
+   "kalanSaat": 50,
+   "baslayaliSaat": 9,
+   "fotograflar": [
+    "akvaryum-1.jpg"
+   ],
+   "arac": null
+  },
+  {
+   "satici": "burak",
+   "kategori": "Diğer Her Şey",
+   "sehir": "İzmir",
+   "urunDurumu": "IkinciEl",
+   "baslik": "Creality Ender 3 V3 SE 3D Yazıcı + 3 Makara Filament",
+   "aciklama": "otomatik seviyeleme var, kurulumu 15 dakika. 3 makara pla filament hediye. figür bastım genelde. nozzle yeni değişti",
+   "baslangicFiyati": 7000,
+   "minimumArtis": 250,
+   "rezervFiyati": null,
+   "kalanSaat": 73,
+   "baslayaliSaat": 11,
+   "fotograflar": [
+    "3dyazici-1.jpg"
+   ],
+   "arac": null
+  }
+ ]
+}

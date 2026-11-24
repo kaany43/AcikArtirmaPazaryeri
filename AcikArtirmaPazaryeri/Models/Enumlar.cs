@@ -69,7 +69,11 @@ namespace AcikArtirmaPazaryeri.Models
         [Display(Name = "Minivan")]
         Minivan = 7,
         [Display(Name = "Pickup")]
-        Pickup = 8
+        Pickup = 8,
+        [Display(Name = "Motosiklet")]
+        Motosiklet = 9,
+        [Display(Name = "Diğer")]
+        Diger = 10
     }
     public enum ParcaDurumu
     {
