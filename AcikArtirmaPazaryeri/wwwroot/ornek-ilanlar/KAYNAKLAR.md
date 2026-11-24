@@ -1,6 +1,6 @@
 # Örnek ilan fotoğrafları — kaynaklar
 
-Fotoğrafların hepsi Wikimedia Commons'tan alındı. Genişlikleri en fazla 1200 px olacak şekilde küçültüldü.
+Fotoğraflar Wikimedia Commons ve Openverse (Flickr vb.) üzerinden, yalnızca CC0 / kamu malı / CC BY / CC BY-SA lisanslı olanlardan alındı. Genişlikleri en fazla 1200 px olacak şekilde küçültüldü.
 
 | dosya | kaynak sayfası URL | yazar | lisans |
 |---|---|---|---|
@@ -74,3 +74,23 @@ Fotoğrafların hepsi Wikimedia Commons'tan alındı. Genişlikleri en fazla 120
 | duster-2.jpg | https://commons.wikimedia.org/wiki/File:Dacia_Duster_Mk2_-_Rear_View.jpg | (G)jabz | CC BY 4.0 |
 | ranger-2.jpg | https://commons.wikimedia.org/wiki/File:Ford_Ranger_(T6,_P703)_Wildtrak_IMG_7323.jpg | Alexander-93 | CC BY-SA 4.0 |
 | mont-1.jpg | https://commons.wikimedia.org/wiki/File:Jacket%27s_Field_Long_Barrow_(North_Face_-_03).jpg | Doyle of London | CC BY-SA 4.0 |
+| tektas-1.jpg | https://commons.wikimedia.org/wiki/File:Chelsea-solitaire-engagement-ring-oval-3-rows-pave-18k-white-gold.jpg | Orcax2023 | CC BY-SA 4.0 |
+| lego-1.jpg | https://commons.wikimedia.org/wiki/File:LEGO_Technic_John_Deere_6130R.jpg | Lasse Deleuran | Public domain |
+| pcx-1.jpg | https://commons.wikimedia.org/w/index.php?curid=24370017 | Khaosaming | CC BY-SA 3.0 |
+| caddy-1.jpg | https://www.flickr.com/photos/70981241@N00/29223192713 | Kecko | CC BY 2.0 |
+| balikci-1.jpg | https://www.flickr.com/photos/55293400@N07/10056795783 | Ömer Ünlü | CC BY 2.0 |
+| yaris-1.jpg | https://www.flickr.com/photos/65265630@N03/37358419602 | Janitors | CC BY 2.0 |
+| karavan-1.jpg | https://www.flickr.com/photos/83468718@N06/52004123389 | Rutger van der Maar | CC BY 2.0 |
+| karavan-2.jpg | https://www.flickr.com/photos/39075787@N02/5355618724 | Stradablog | CC BY 2.0 |
+| sahin-1.jpg | https://www.flickr.com/photos/83468718@N06/11907631603 | rvandermaar | CC BY 2.0 |
+| vosvos-2.jpg | https://www.flickr.com/photos/65517846@N03/16204943737 | photobeppus | CC BY-SA 2.0 |
+| egeacross-1.jpg | https://www.flickr.com/photos/43494963@N03/52164061848 | usf1fan2 | CC BY 2.0 |
+| egeacross-2.jpg | https://www.flickr.com/photos/43494963@N03/52164546765 | usf1fan2 | CC BY 2.0 |
+| thinkpad-1.jpg | https://www.flickr.com/photos/184613180@N08/50379777211 | originaldaniel | CC BY-SA 2.0 |
+| sonos-1.jpg | https://www.flickr.com/photos/30182398@N00/36282495562 | ecastro | CC BY 2.0 |
+| gshock-1.jpg | https://www.flickr.com/photos/76491533@N00/5090839386 | GuySie | CC BY-SA 2.0 |
+| hali-1.jpg | https://www.flickr.com/photos/10559879@N00/3060376049 | avlxyz | CC BY-SA 2.0 |
+| traxxas-1.jpg | https://www.flickr.com/photos/11906655@N08/5431200513 | maxcom | CC BY 2.0 |
+| dvd-1.jpg | https://www.flickr.com/photos/92461652@N07/40723930454 | AntMan3001 | CC BY-SA 2.0 |
+| strat-1.jpg | https://www.flickr.com/photos/41894185093@N01/3397238567 | Jon_Aquino | CC BY 2.0 |
+| bianchi-1.jpg | https://www.flickr.com/photos/96073201@N02/35085134243 | Ziggy_62 | Public domain |
