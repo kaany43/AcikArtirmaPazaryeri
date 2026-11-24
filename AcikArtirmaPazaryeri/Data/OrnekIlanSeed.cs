@@ -1,4 +1,4 @@
-﻿﻿using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 using AcikArtirmaPazaryeri.Models;
 using AcikArtirmaPazaryeri.Pages.Satici;
