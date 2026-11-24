@@ -87,6 +87,8 @@
                 </dl>
             </section>
 
+            @if (arac.EkspertizKalemleri.Count > 0)
+            {
             <section>
                 <h2 class="bolum-baslik">Ekspertiz</h2>
                 <ul class="ekspertiz-lejant" aria-label="Renklerin anlamı">
@@ -105,6 +107,7 @@
                     }
                 </ul>
             </section>
+            }
         }
 
         <section>

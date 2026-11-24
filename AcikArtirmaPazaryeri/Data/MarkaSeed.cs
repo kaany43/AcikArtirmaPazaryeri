@@ -3,7 +3,9 @@
 namespace AcikArtirmaPazaryeri.Data
 {
     // Müzayede portalı için Marka / AracModeli seed verisi
-    // Türkiye ikinci el pazarında yaygın marka ve modeller (alfabetik)
+    // Türkiye ikinci el pazarında yaygın marka ve modeller (alfabetik).
+    // Motosiklet, ATV/UTV ve ticari araç markaları da var. Program.cs listede olup
+    // veritabanında olmayan marka ve modelleri her açılışta ekler.
     public static class MarkaSeed
     {
         public static List<Marka> Getir() => new List<Marka>
@@ -38,6 +40,12 @@ namespace AcikArtirmaPazaryeri.Data
                 new AracModeli { ModelAdi = "Seal U" }
             }},
 
+            new Marka { MarkaAdi = "CFMoto", Modeller =
+            {
+                new AracModeli { ModelAdi = "CForce 450" },
+                new AracModeli { ModelAdi = "ZForce 950" }
+            }},
+
             new Marka { MarkaAdi = "Chery", Modeller =
             {
                 new AracModeli { ModelAdi = "Omoda 5" },
@@ -70,6 +78,7 @@ namespace AcikArtirmaPazaryeri.Data
                 new AracModeli { ModelAdi = "500" },
                 new AracModeli { ModelAdi = "Albea" },
                 new AracModeli { ModelAdi = "Doblo" },
+                new AracModeli { ModelAdi = "Ducato" },
                 new AracModeli { ModelAdi = "Egea" },
                 new AracModeli { ModelAdi = "Egea Cross" },
                 new AracModeli { ModelAdi = "Fiorino" },
@@ -92,11 +101,13 @@ namespace AcikArtirmaPazaryeri.Data
             new Marka { MarkaAdi = "Honda", Modeller =
             {
                 new AracModeli { ModelAdi = "Accord" },
+                new AracModeli { ModelAdi = "Africa Twin" },
                 new AracModeli { ModelAdi = "City" },
                 new AracModeli { ModelAdi = "Civic" },
                 new AracModeli { ModelAdi = "CR-V" },
                 new AracModeli { ModelAdi = "HR-V" },
-                new AracModeli { ModelAdi = "Jazz" }
+                new AracModeli { ModelAdi = "Jazz" },
+                new AracModeli { ModelAdi = "PCX 125" }
             }},
 
             new Marka { MarkaAdi = "Hyundai", Modeller =
@@ -108,6 +119,11 @@ namespace AcikArtirmaPazaryeri.Data
                 new AracModeli { ModelAdi = "i20" },
                 new AracModeli { ModelAdi = "Kona" },
                 new AracModeli { ModelAdi = "Tucson" }
+            }},
+
+            new Marka { MarkaAdi = "Iveco", Modeller =
+            {
+                new AracModeli { ModelAdi = "Daily" }
             }},
 
             new Marka { MarkaAdi = "Kia", Modeller =
@@ -129,7 +145,8 @@ namespace AcikArtirmaPazaryeri.Data
                 new AracModeli { ModelAdi = "GLA" },
                 new AracModeli { ModelAdi = "GLC" },
                 new AracModeli { ModelAdi = "S Serisi" },
-                new AracModeli { ModelAdi = "Vito" }
+                new AracModeli { ModelAdi = "Vito" },
+                new AracModeli { ModelAdi = "W123" }
             }},
 
             new Marka { MarkaAdi = "Nissan", Modeller =
@@ -162,6 +179,12 @@ namespace AcikArtirmaPazaryeri.Data
                 new AracModeli { ModelAdi = "5008" },
                 new AracModeli { ModelAdi = "Partner" },
                 new AracModeli { ModelAdi = "Rifter" }
+            }},
+
+            new Marka { MarkaAdi = "Polaris", Modeller =
+            {
+                new AracModeli { ModelAdi = "RZR XP 1000" },
+                new AracModeli { ModelAdi = "Sportsman 570" }
             }},
 
             new Marka { MarkaAdi = "Renault", Modeller =
@@ -203,6 +226,13 @@ namespace AcikArtirmaPazaryeri.Data
                 new AracModeli { ModelAdi = "Model Y" }
             }},
 
+            new Marka { MarkaAdi = "Tofaş", Modeller =
+            {
+                new AracModeli { ModelAdi = "Doğan" },
+                new AracModeli { ModelAdi = "Kartal" },
+                new AracModeli { ModelAdi = "Şahin" }
+            }},
+
             new Marka { MarkaAdi = "Togg", Modeller =
             {
                 new AracModeli { ModelAdi = "T10F" },
@@ -221,8 +251,14 @@ namespace AcikArtirmaPazaryeri.Data
                 new AracModeli { ModelAdi = "Yaris Cross" }
             }},
 
+            new Marka { MarkaAdi = "Vespa", Modeller =
+            {
+                new AracModeli { ModelAdi = "Primavera 150" }
+            }},
+
             new Marka { MarkaAdi = "Volkswagen", Modeller =
             {
+                new AracModeli { ModelAdi = "Beetle" },
                 new AracModeli { ModelAdi = "Caddy" },
                 new AracModeli { ModelAdi = "Golf" },
                 new AracModeli { ModelAdi = "Jetta" },
@@ -241,6 +277,13 @@ namespace AcikArtirmaPazaryeri.Data
                 new AracModeli { ModelAdi = "XC40" },
                 new AracModeli { ModelAdi = "XC60" },
                 new AracModeli { ModelAdi = "XC90" }
+            }},
+
+            new Marka { MarkaAdi = "Yamaha", Modeller =
+            {
+                new AracModeli { ModelAdi = "MT-07" },
+                new AracModeli { ModelAdi = "NMAX 155" },
+                new AracModeli { ModelAdi = "Tracer 9 GT" }
             }}
         };
     }

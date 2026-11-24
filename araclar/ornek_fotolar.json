@@ -1,0 +1,622 @@
+[
+ {
+  "dosya": "iphone-1.jpg",
+  "arama": "iPhone 13 smartphone",
+  "baslik": "iPhone 13 128 GB"
+ },
+ {
+  "dosya": "macbook-1.jpg",
+  "arama": "MacBook Air M2 laptop",
+  "baslik": "MacBook Air M2 13\" 8 GB / 256 GB"
+ },
+ {
+  "dosya": "megane-1.jpg",
+  "arama": "Renault Megane IV sedan white",
+  "baslik": "2016 Renault Megane 1.5 dCi Touch Sedan"
+ },
+ {
+  "dosya": "megane-2.jpg",
+  "arama": "Renault Megane IV interior dashboard",
+  "baslik": "2016 Renault Megane 1.5 dCi Touch Sedan"
+ },
+ {
+  "dosya": "astra-1.jpg",
+  "arama": "Opel Astra J hatchback",
+  "baslik": "2014 Opel Astra 1.4 Turbo Sport"
+ },
+ {
+  "dosya": "astra-2.jpg",
+  "arama": "Opel Astra J rear",
+  "baslik": "2014 Opel Astra 1.4 Turbo Sport"
+ },
+ {
+  "dosya": "civic-1.jpg",
+  "arama": "Honda Civic FC sedan",
+  "baslik": "2019 Honda Civic 1.6 i-VTEC Eco Elegance"
+ },
+ {
+  "dosya": "civic-2.jpg",
+  "arama": "Honda Civic FC sedan rear",
+  "baslik": "2019 Honda Civic 1.6 i-VTEC Eco Elegance"
+ },
+ {
+  "dosya": "i20-1.jpg",
+  "arama": "Hyundai i20 2021 third generation",
+  "baslik": "2022 Hyundai i20 1.4 MPI Jump Otomatik"
+ },
+ {
+  "dosya": "i20-2.jpg",
+  "arama": "Hyundai i20 2021 interior",
+  "baslik": "2022 Hyundai i20 1.4 MPI Jump Otomatik"
+ },
+ {
+  "dosya": "duster-1.jpg",
+  "arama": "Dacia Duster II orange",
+  "baslik": "2020 Dacia Duster 1.3 TCe Prestige"
+ },
+ {
+  "dosya": "duster-2.jpg",
+  "arama": "Dacia Duster II rear",
+  "baslik": "2020 Dacia Duster 1.3 TCe Prestige"
+ },
+ {
+  "dosya": "ranger-1.jpg",
+  "arama": "Ford Ranger Wildtrak 2019",
+  "baslik": "2019 Ford Ranger 2.0 EcoBlue Wildtrak 4x4"
+ },
+ {
+  "dosya": "ranger-2.jpg",
+  "arama": "Ford Ranger Wildtrak rear",
+  "baslik": "2019 Ford Ranger 2.0 EcoBlue Wildtrak 4x4"
+ },
+ {
+  "dosya": "3008-1.jpg",
+  "arama": "Peugeot 3008 II GT",
+  "baslik": "2021 Peugeot 3008 1.5 BlueHDi GT"
+ },
+ {
+  "dosya": "3008-2.jpg",
+  "arama": "Peugeot 3008 II i-Cockpit interior",
+  "baslik": "2021 Peugeot 3008 1.5 BlueHDi GT"
+ },
+ {
+  "dosya": "togg-1.jpg",
+  "arama": "Togg T10X",
+  "baslik": "2025 Togg T10X V2 RWD Uzun Menzil"
+ },
+ {
+  "dosya": "togg-2.jpg",
+  "arama": "Togg T10X interior",
+  "baslik": "2025 Togg T10X V2 RWD Uzun Menzil"
+ },
+ {
+  "dosya": "atto3-1.jpg",
+  "arama": "BYD Atto 3",
+  "baslik": "2023 BYD Atto 3 Design"
+ },
+ {
+  "dosya": "atto3-2.jpg",
+  "arama": "BYD Atto 3 rear",
+  "baslik": "2023 BYD Atto 3 Design"
+ },
+ {
+  "dosya": "pcx-1.jpg",
+  "arama": "Honda PCX 125 2021",
+  "baslik": "2022 Honda PCX 125"
+ },
+ {
+  "dosya": "pcx-2.jpg",
+  "arama": "Honda PCX 125 side",
+  "baslik": "2022 Honda PCX 125"
+ },
+ {
+  "dosya": "mt07-1.jpg",
+  "arama": "Yamaha MT-07 2021",
+  "baslik": "2021 Yamaha MT-07"
+ },
+ {
+  "dosya": "mt07-2.jpg",
+  "arama": "Yamaha MT-07 side view",
+  "baslik": "2021 Yamaha MT-07"
+ },
+ {
+  "dosya": "vespa-1.jpg",
+  "arama": "Vespa Primavera 150 light blue",
+  "baslik": "2020 Vespa Primavera 150"
+ },
+ {
+  "dosya": "vespa-2.jpg",
+  "arama": "Vespa Primavera rear",
+  "baslik": "2020 Vespa Primavera 150"
+ },
+ {
+  "dosya": "africa-1.jpg",
+  "arama": "Honda Africa Twin CRF1100L Adventure Sports",
+  "baslik": "2023 Honda Africa Twin CRF1100L Adventure Sports DCT"
+ },
+ {
+  "dosya": "africa-2.jpg",
+  "arama": "Honda Africa Twin CRF1100L luggage",
+  "baslik": "2023 Honda Africa Twin CRF1100L Adventure Sports DCT"
+ },
+ {
+  "dosya": "caddy-1.jpg",
+  "arama": "Volkswagen Caddy 4 2019",
+  "baslik": "2019 Volkswagen Caddy 2.0 TDI Comfortline"
+ },
+ {
+  "dosya": "caddy-2.jpg",
+  "arama": "Volkswagen Caddy 4 interior",
+  "baslik": "2019 Volkswagen Caddy 2.0 TDI Comfortline"
+ },
+ {
+  "dosya": "berlingo-1.jpg",
+  "arama": "Citroen Berlingo III 2019",
+  "baslik": "2020 Citroën Berlingo 1.5 BlueHDi Feel"
+ },
+ {
+  "dosya": "berlingo-2.jpg",
+  "arama": "Citroen Berlingo III rear",
+  "baslik": "2020 Citroën Berlingo 1.5 BlueHDi Feel"
+ },
+ {
+  "dosya": "rifter-1.jpg",
+  "arama": "Peugeot Rifter GT Line",
+  "baslik": "2021 Peugeot Rifter 1.5 BlueHDi GT Line"
+ },
+ {
+  "dosya": "rifter-2.jpg",
+  "arama": "Peugeot Rifter interior",
+  "baslik": "2021 Peugeot Rifter 1.5 BlueHDi GT Line"
+ },
+ {
+  "dosya": "transit-1.jpg",
+  "arama": "Ford Transit single cab dropside truck",
+  "baslik": "2018 Ford Transit 350 L 2.2 TDCi Kamyonet"
+ },
+ {
+  "dosya": "transit-2.jpg",
+  "arama": "Ford Transit dropside",
+  "baslik": "2018 Ford Transit 350 L 2.2 TDCi Kamyonet"
+ },
+ {
+  "dosya": "fiorino-1.jpg",
+  "arama": "Fiat Fiorino panel van",
+  "baslik": "2016 Fiat Fiorino 1.3 Multijet Panelvan"
+ },
+ {
+  "dosya": "fiorino-2.jpg",
+  "arama": "Fiat Fiorino rear doors",
+  "baslik": "2016 Fiat Fiorino 1.3 Multijet Panelvan"
+ },
+ {
+  "dosya": "daily-1.jpg",
+  "arama": "Iveco Daily van white",
+  "baslik": "2015 Iveco Daily 35C13 Kapalı Kasa"
+ },
+ {
+  "dosya": "daily-2.jpg",
+  "arama": "Iveco Daily van rear",
+  "baslik": "2015 Iveco Daily 35C13 Kapalı Kasa"
+ },
+ {
+  "dosya": "yelkenli-1.jpg",
+  "arama": "Jeanneau Sun Odyssey 36i sailboat",
+  "baslik": "2008 Jeanneau Sun Odyssey 36i Yelkenli"
+ },
+ {
+  "dosya": "yelkenli-2.jpg",
+  "arama": "sailboat cockpit Jeanneau",
+  "baslik": "2008 Jeanneau Sun Odyssey 36i Yelkenli"
+ },
+ {
+  "dosya": "balikci-1.jpg",
+  "arama": "small fiberglass fishing boat outboard Turkey",
+  "baslik": "5,5 m Fiber Balıkçı Teknesi + Yamaha 40 HP"
+ },
+ {
+  "dosya": "balikci-2.jpg",
+  "arama": "Yamaha outboard motor 40",
+  "baslik": "5,5 m Fiber Balıkçı Teknesi + Yamaha 40 HP"
+ },
+ {
+  "dosya": "jetski-1.jpg",
+  "arama": "Sea-Doo Spark jet ski",
+  "baslik": "2021 Sea-Doo Spark Trixx Jet Ski"
+ },
+ {
+  "dosya": "yaris-1.jpg",
+  "arama": "Toyota Yaris Hybrid 2018 damaged side",
+  "baslik": "2018 Toyota Yaris 1.5 Hybrid - Yan Hasarlı"
+ },
+ {
+  "dosya": "yaris-2.jpg",
+  "arama": "Toyota Yaris Hybrid 2018",
+  "baslik": "2018 Toyota Yaris 1.5 Hybrid - Yan Hasarlı"
+ },
+ {
+  "dosya": "karavan-1.jpg",
+  "arama": "Fiat Ducato motorhome camper",
+  "baslik": "2017 Fiat Ducato Motokaravan 4 Kişilik"
+ },
+ {
+  "dosya": "karavan-2.jpg",
+  "arama": "motorhome interior camper van",
+  "baslik": "2017 Fiat Ducato Motokaravan 4 Kişilik"
+ },
+ {
+  "dosya": "cekme-1.jpg",
+  "arama": "small travel trailer caravan",
+  "baslik": "2020 Çekme Karavan 4 Kişilik (Ruhsatlı)"
+ },
+ {
+  "dosya": "sahin-1.jpg",
+  "arama": "Tofaş Şahin",
+  "baslik": "1986 Tofaş Şahin 1.6"
+ },
+ {
+  "dosya": "sahin-2.jpg",
+  "arama": "Tofaş Şahin rear",
+  "baslik": "1986 Tofaş Şahin 1.6"
+ },
+ {
+  "dosya": "vosvos-1.jpg",
+  "arama": "Volkswagen Beetle 1972 classic",
+  "baslik": "1972 Volkswagen Beetle 1200 (Vosvos)"
+ },
+ {
+  "dosya": "vosvos-2.jpg",
+  "arama": "Volkswagen Beetle classic rear",
+  "baslik": "1972 Volkswagen Beetle 1200 (Vosvos)"
+ },
+ {
+  "dosya": "w123-1.jpg",
+  "arama": "Mercedes-Benz W123 200 sedan",
+  "baslik": "1983 Mercedes-Benz 200 (W123)"
+ },
+ {
+  "dosya": "w123-2.jpg",
+  "arama": "Mercedes-Benz W123 interior",
+  "baslik": "1983 Mercedes-Benz 200 (W123)"
+ },
+ {
+  "dosya": "cessna-1.jpg",
+  "arama": "Cessna 172N Skyhawk",
+  "baslik": "1978 Cessna 172N Skyhawk"
+ },
+ {
+  "dosya": "cessna-2.jpg",
+  "arama": "Cessna 172 cockpit",
+  "baslik": "1978 Cessna 172N Skyhawk"
+ },
+ {
+  "dosya": "paramotor-1.jpg",
+  "arama": "paramotor powered paragliding",
+  "baslik": "Paramotor Seti (Kanat + Motor + Yedek Paraşüt)"
+ },
+ {
+  "dosya": "cforce-1.jpg",
+  "arama": "CFMoto CForce 450 ATV",
+  "baslik": "2022 CFMoto CForce 450 L ATV"
+ },
+ {
+  "dosya": "sportsman-1.jpg",
+  "arama": "Polaris Sportsman 570 ATV",
+  "baslik": "2019 Polaris Sportsman 570 EPS"
+ },
+ {
+  "dosya": "zforce-1.jpg",
+  "arama": "CFMoto ZForce 950 UTV",
+  "baslik": "2025 CFMoto ZForce 950 Sport"
+ },
+ {
+  "dosya": "rzr-1.jpg",
+  "arama": "Polaris RZR XP 1000",
+  "baslik": "2020 Polaris RZR XP 1000"
+ },
+ {
+  "dosya": "clio5-1.jpg",
+  "arama": "Renault Clio V 2023",
+  "baslik": "2023 Renault Clio 1.0 TCe X-Tronic Joy (Engelli Raporlu)"
+ },
+ {
+  "dosya": "clio5-2.jpg",
+  "arama": "Renault Clio V interior",
+  "baslik": "2023 Renault Clio 1.0 TCe X-Tronic Joy (Engelli Raporlu)"
+ },
+ {
+  "dosya": "egeacross-1.jpg",
+  "arama": "Fiat Egea Cross",
+  "baslik": "2022 Fiat Egea Cross 1.6 Multijet DCT (Engelli)"
+ },
+ {
+  "dosya": "egeacross-2.jpg",
+  "arama": "Fiat Egea Cross rear",
+  "baslik": "2022 Fiat Egea Cross 1.6 Multijet DCT (Engelli)"
+ },
+ {
+  "dosya": "thinkpad-1.jpg",
+  "arama": "Lenovo ThinkPad T14 laptop",
+  "baslik": "Lenovo ThinkPad T14 Gen 2 i5 / 16 GB / 512 GB"
+ },
+ {
+  "dosya": "oyuncupc-1.jpg",
+  "arama": "gaming PC RGB case",
+  "baslik": "Oyuncu Bilgisayarı Ryzen 7 7700 / RTX 4070 / 32 GB DDR5"
+ },
+ {
+  "dosya": "zenbook-1.jpg",
+  "arama": "Asus Zenbook 14 OLED laptop",
+  "baslik": "Asus Zenbook 14 OLED (Ryzen 7, 16 GB)"
+ },
+ {
+  "dosya": "s23-1.jpg",
+  "arama": "Samsung Galaxy S23 lavender",
+  "baslik": "Samsung Galaxy S23 256 GB Lavanta"
+ },
+ {
+  "dosya": "redmi-1.jpg",
+  "arama": "Xiaomi Redmi Note 13 Pro smartphone",
+  "baslik": "Xiaomi Redmi Note 13 Pro 8/256"
+ },
+ {
+  "dosya": "iphone15-1.jpg",
+  "arama": "iPhone 15 Pro natural titanium",
+  "baslik": "iPhone 15 Pro 256 GB Natural Titanium"
+ },
+ {
+  "dosya": "a7iii-1.jpg",
+  "arama": "Sony Alpha 7 III camera",
+  "baslik": "Sony A7 III Gövde + Sony FE 24-105 mm f/4 G"
+ },
+ {
+  "dosya": "a7iii-2.jpg",
+  "arama": "Sony FE 24-105mm f/4 G lens",
+  "baslik": "Sony A7 III Gövde + Sony FE 24-105 mm f/4 G"
+ },
+ {
+  "dosya": "x100v-1.jpg",
+  "arama": "Fujifilm X100V silver camera",
+  "baslik": "Fujifilm X100V Gümüş"
+ },
+ {
+  "dosya": "lgoled-1.jpg",
+  "arama": "LG OLED C2 television",
+  "baslik": "LG OLED55C24 55\" 4K OLED TV"
+ },
+ {
+  "dosya": "sonos-1.jpg",
+  "arama": "Sonos Beam soundbar",
+  "baslik": "Sonos Beam (Gen 2) Soundbar Siyah"
+ },
+ {
+  "dosya": "samsungtv-1.jpg",
+  "arama": "Samsung LED television living room",
+  "baslik": "Samsung 50\" Crystal UHD 4K Smart TV"
+ },
+ {
+  "dosya": "dyson-1.jpg",
+  "arama": "Dyson V11 cordless vacuum",
+  "baslik": "Dyson V11 Absolute Kablosuz Süpürge"
+ },
+ {
+  "dosya": "delonghi-1.jpg",
+  "arama": "DeLonghi Magnifica espresso machine",
+  "baslik": "De'Longhi Magnifica S Tam Otomatik Espresso Makinesi"
+ },
+ {
+  "dosya": "camasir-1.jpg",
+  "arama": "front load washing machine white",
+  "baslik": "Arçelik 9 kg Çamaşır Makinesi A+++"
+ },
+ {
+  "dosya": "xbox-1.jpg",
+  "arama": "Xbox Series X console controller",
+  "baslik": "Xbox Series X 1 TB + 2 Kol"
+ },
+ {
+  "dosya": "switch-1.jpg",
+  "arama": "Nintendo Switch OLED white",
+  "baslik": "Nintendo Switch OLED Beyaz + Zelda TOTK"
+ },
+ {
+  "dosya": "osiloskop-1.jpg",
+  "arama": "Rigol DS1054Z oscilloscope",
+  "baslik": "Rigol DS1054Z 4 Kanal Osiloskop"
+ },
+ {
+  "dosya": "fluke-1.jpg",
+  "arama": "Fluke 117 multimeter",
+  "baslik": "Fluke 117 Multimetre"
+ },
+ {
+  "dosya": "omega-1.jpg",
+  "arama": "vintage Omega Seamaster 1960s wristwatch",
+  "baslik": "1964 Omega Seamaster Otomatik (Cal. 552)"
+ },
+ {
+  "dosya": "gshock-1.jpg",
+  "arama": "Casio G-Shock GA-2100 black",
+  "baslik": "Casio G-Shock GA-2100 'CasiOak' Siyah"
+ },
+ {
+  "dosya": "tissot-1.jpg",
+  "arama": "Tissot PRX blue dial watch",
+  "baslik": "Tissot PRX Powermatic 80 40 mm Mavi Kadran"
+ },
+ {
+  "dosya": "gramofon-1.jpg",
+  "arama": "His Master's Voice portable gramophone",
+  "baslik": "His Master's Voice Kurmalı Gramofon (1930'lar)"
+ },
+ {
+  "dosya": "sahan-1.jpg",
+  "arama": "Ottoman copper bowl engraved",
+  "baslik": "Osmanlı Dönemi Kalaylı Bakır Sahan (19. yy)"
+ },
+ {
+  "dosya": "paralar-1.jpg",
+  "arama": "old Turkish coins collection kuruş",
+  "baslik": "Eski Türk Madeni Para Koleksiyonu (1934-1980, 120 adet)"
+ },
+ {
+  "dosya": "hali-1.jpg",
+  "arama": "Uşak carpet hand woven red",
+  "baslik": "El Dokuma Uşak Halı 200 x 300 cm"
+ },
+ {
+  "dosya": "berjer-1.jpg",
+  "arama": "mustard velvet armchair",
+  "baslik": "Kadife Tekli Berjer Koltuk (Hardal)"
+ },
+ {
+  "dosya": "lambader-1.jpg",
+  "arama": "brass floor lamp mid century",
+  "baslik": "Pirinç Ayaklı Lambader (Mid-Century)"
+ },
+ {
+  "dosya": "matkap-1.jpg",
+  "arama": "Bosch Professional cordless drill blue",
+  "baslik": "Bosch Professional GSB 18V-55 Akülü Darbeli Matkap"
+ },
+ {
+  "dosya": "cim-1.jpg",
+  "arama": "petrol lawn mower",
+  "baslik": "Benzinli Çim Biçme Makinesi 46 cm (Honda Motor)"
+ },
+ {
+  "dosya": "rattan-1.jpg",
+  "arama": "rattan garden furniture set",
+  "baslik": "Rattan Bahçe Oturma Grubu (4 Kişilik + Sehpa)"
+ },
+ {
+  "dosya": "ofiskoltuk-1.jpg",
+  "arama": "ergonomic mesh office chair",
+  "baslik": "Ergonomik File Sırtlı Ofis Koltuğu"
+ },
+ {
+  "dosya": "yazici-1.jpg",
+  "arama": "HP LaserJet Pro printer",
+  "baslik": "HP LaserJet Pro M404dn Lazer Yazıcı"
+ },
+ {
+  "dosya": "bebekarabasi-1.jpg",
+  "arama": "Chicco baby stroller travel system",
+  "baslik": "Chicco Trio Travel Sistem Bebek Arabası"
+ },
+ {
+  "dosya": "besik-1.jpg",
+  "arama": "wooden baby crib cradle",
+  "baslik": "Ahşap Sallanır Beşik + Ortopedik Yatak"
+ },
+ {
+  "dosya": "otokoltugu-1.jpg",
+  "arama": "Britax Römer car seat",
+  "baslik": "Britax Römer Dualfix i-Size Oto Koltuğu"
+ },
+ {
+  "dosya": "palto-1.jpg",
+  "arama": "beige wool coat women",
+  "baslik": "Massimo Dutti Kaşmir Karışımlı Palto (Kadın, 38)"
+ },
+ {
+  "dosya": "dericeket-1.jpg",
+  "arama": "black leather biker jacket",
+  "baslik": "Hakiki Deri Biker Ceket (Erkek, L)"
+ },
+ {
+  "dosya": "mont-1.jpg",
+  "arama": "The North Face parka down jacket",
+  "baslik": "The North Face McMurdo Kaz Tüyü Mont (Erkek, M)"
+ },
+ {
+  "dosya": "kolye-1.jpg",
+  "arama": "thin gold chain necklace",
+  "baslik": "14 Ayar Altın İnce Zincir Kolye (3,2 gr)"
+ },
+ {
+  "dosya": "telkari-1.jpg",
+  "arama": "silver filigree earrings Midyat",
+  "baslik": "Gümüş Telkari Küpe (Midyat İşçiliği)"
+ },
+ {
+  "dosya": "tektas-1.jpg",
+  "arama": "diamond solitaire ring white gold",
+  "baslik": "0,30 Karat Pırlanta Tektaş Yüzük (14 Ayar Beyaz Altın)"
+ },
+ {
+  "dosya": "lego-1.jpg",
+  "arama": "LEGO Technic Lamborghini Sian 42115",
+  "baslik": "LEGO Technic 42115 Lamborghini Sián FKP 37"
+ },
+ {
+  "dosya": "tren-1.jpg",
+  "arama": "wooden toy train set tracks",
+  "baslik": "Ahşap Tren Seti (80 Parça, Raylar + Köprü)"
+ },
+ {
+  "dosya": "traxxas-1.jpg",
+  "arama": "Traxxas Slash RC truck",
+  "baslik": "Traxxas Slash 4x4 VXL Uzaktan Kumandalı Araba"
+ },
+ {
+  "dosya": "harrypotter-1.jpg",
+  "arama": "Harry Potter books set",
+  "baslik": "Harry Potter Serisi 7 Kitap (YKY, Türkçe)"
+ },
+ {
+  "dosya": "hayat-1.jpg",
+  "arama": "old Turkish magazine Hayat 1960s",
+  "baslik": "Hayat Mecmuası 1962-1964 (48 Sayı)"
+ },
+ {
+  "dosya": "dvd-1.jpg",
+  "arama": "DVD movie collection shelf",
+  "baslik": "DVD Film Arşivi 200 Adet (Yeşilçam + Yabancı)"
+ },
+ {
+  "dosya": "piyano-1.jpg",
+  "arama": "Yamaha P-45 digital piano",
+  "baslik": "Yamaha P-45 Dijital Piyano + Stand + Pedal"
+ },
+ {
+  "dosya": "strat-1.jpg",
+  "arama": "Fender Stratocaster sunburst",
+  "baslik": "Fender Player Stratocaster (Meksika) + Amfi"
+ },
+ {
+  "dosya": "baglama-1.jpg",
+  "arama": "Turkish bağlama saz",
+  "baslik": "Kısa Sap Bağlama (Usta İşi, Dut Gövde)"
+ },
+ {
+  "dosya": "bianchi-1.jpg",
+  "arama": "Bianchi Via Nirone road bike celeste",
+  "baslik": "Bianchi Via Nirone 7 Yol Bisikleti (Shimano 105, 55 cm)"
+ },
+ {
+  "dosya": "kosubandi-1.jpg",
+  "arama": "home treadmill",
+  "baslik": "Katlanabilir Koşu Bandı (2,5 HP, 14 km/s)"
+ },
+ {
+  "dosya": "dambil-1.jpg",
+  "arama": "adjustable dumbbells set",
+  "baslik": "Ayarlanabilir Dambıl Seti 2 x 20 kg"
+ },
+ {
+  "dosya": "berber-1.jpg",
+  "arama": "barber chair vintage hydraulic",
+  "baslik": "Hidrolik Berber Koltuğu (2 Adet)"
+ },
+ {
+  "dosya": "akvaryum-1.jpg",
+  "arama": "home aquarium tank fish",
+  "baslik": "100 Litre Akvaryum Komple (Filtre + Isıtıcı + Işık)"
+ },
+ {
+  "dosya": "3dyazici-1.jpg",
+  "arama": "Creality Ender 3 3D printer",
+  "baslik": "Creality Ender 3 V3 SE 3D Yazıcı + 3 Makara Filament"
+ }
+]

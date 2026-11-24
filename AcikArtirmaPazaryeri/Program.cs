@@ -100,11 +100,21 @@ foreach (var k in context.Kategoriler.ToList())
     }
     context.SaveChanges();
 
-    if (!context.Markalar.Any())
+    // MarkaSeed'deki marka ve modellerden veritabanında olmayanlar eklenir.
+    foreach (var marka in MarkaSeed.Getir())
     {
-        context.Markalar.AddRange(MarkaSeed.Getir());
-        context.SaveChanges();
+        var kayitliMarka = context.Markalar.Include(m => m.Modeller).FirstOrDefault(m => m.MarkaAdi == marka.MarkaAdi);
+        if (kayitliMarka == null)
+        {
+            context.Markalar.Add(marka);
+            continue;
+        }
+        foreach (var model in marka.Modeller.Where(m => !kayitliMarka.Modeller.Any(k => k.ModelAdi == m.ModelAdi)))
+        {
+            kayitliMarka.Modeller.Add(new AracModeli { ModelAdi = model.ModelAdi });
+        }
     }
+    context.SaveChanges();
 
     var roller = new List<string> { "Yonetici", "Satici", "Alici" };
     foreach (var rol in roller)
@@ -140,31 +150,8 @@ foreach (var k in context.Kategoriler.ToList())
         }
     }
 
-    // Örnek ilanlar bu satıcıya ait; şifresi olmadığı için bu hesapla giriş yapılamaz.
-    var ornekSatici = await userManager.FindByEmailAsync("ornek.satici@acikartirma.local");
-    if (ornekSatici == null)
-    {
-        ornekSatici = new Kullanici
-        {
-            UserName = "ornek.satici@acikartirma.local",
-            Email = "ornek.satici@acikartirma.local",
-            Ad = "Örnek",
-            Soyad = "Satıcı",
-            FirmaAdi = "Örnek Galeri",
-            EmailConfirmed = true
-        };
-        var sonuc = await userManager.CreateAsync(ornekSatici);
-        if (!sonuc.Succeeded)
-        {
-            throw new Exception($"Örnek satıcı oluşturulamadı: {string.Join(", ", sonuc.Errors.Select(e => e.Description))}");
-        }
-        await userManager.AddToRolesAsync(ornekSatici, new[] { "Alici", "Satici" });
-    }
-    if (!context.Muzayedeler.Any(m => m.SaticiId == ornekSatici.Id))
-    {
-        context.Muzayedeler.AddRange(OrnekIlanSeed.Getir(ornekSatici.Id, context));
-        context.SaveChanges();
-    }
+    // Sunum için örnek satıcılar ve ilanlar (Data/OrnekIlanlar.json)
+    await OrnekIlanSeed.HazirlaAsync(context, userManager, app.Environment.ContentRootPath, app.Environment.WebRootPath);
 }
 
 
