@@ -36,6 +36,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddHttpClient<VinServisi>();
+builder.Services.AddScoped<TeklifServisi>();
 
 var app = builder.Build();
 
