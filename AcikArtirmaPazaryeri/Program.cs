@@ -1,7 +1,10 @@
 ﻿using AcikArtirmaPazaryeri.Data;
 using AcikArtirmaPazaryeri.Models;
 using AcikArtirmaPazaryeri.Servisler;
+using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -37,6 +40,26 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 builder.Services.AddHttpClient<VinServisi>();
 builder.Services.AddScoped<TeklifServisi>();
+
+// Teklif uç noktası için rate limiting: aynı kullanıcı 10 saniyede en fazla 3 teklif gönderebilir.
+builder.Services.AddRateLimiter(options =>
+{
+    options.AddPolicy("teklif", http => RateLimitPartition.GetFixedWindowLimiter(
+        http.User.Identity?.Name ?? http.Connection.RemoteIpAddress?.ToString() ?? "anonim",
+        _ => new FixedWindowRateLimiterOptions { PermitLimit = 3, Window = TimeSpan.FromSeconds(10), QueueLimit = 0 }));
+
+    // Sınır aşılınca boş bir hata sayfası yerine detay sayfasına mesajla dönülür.
+    options.OnRejected = (context, _) =>
+    {
+        var http = context.HttpContext;
+        var tempData = http.RequestServices.GetRequiredService<ITempDataDictionaryFactory>().GetTempData(http);
+        tempData["TeklifMesaj"] = "Çok sık teklif veriyorsunuz. Birkaç saniye bekleyip tekrar deneyin.";
+        tempData["TeklifBasarili"] = false;
+        tempData.Save();
+        http.Response.Redirect(http.Request.Path.Value!.Replace("TeklifVer", "Detay"));
+        return ValueTask.CompletedTask;
+    };
+});
 
 var app = builder.Build();
 
@@ -173,6 +196,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseRateLimiter();
 
 app.MapStaticAssets();
 app.MapRazorPages()

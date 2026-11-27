@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace AcikArtirmaPazaryeri.Pages.Muzayedeler
 {
     // Detay sayfasındaki teklif formu buraya gönderilir. Kendi sayfası yok, sonuç detay sayfasında gösterilir.
     [Authorize]
+    [EnableRateLimiting("teklif")]
     public class TeklifVerModel : PageModel
     {
         private readonly TeklifServisi _teklifServisi;
