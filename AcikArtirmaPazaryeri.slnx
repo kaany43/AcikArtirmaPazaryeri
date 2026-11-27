@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="AcikArtirmaPazaryeri.Tests/AcikArtirmaPazaryeri.Tests.csproj" />
   <Project Path="AcikArtirmaPazaryeri/AcikArtirmaPazaryeri.csproj" />
 </Solution>
