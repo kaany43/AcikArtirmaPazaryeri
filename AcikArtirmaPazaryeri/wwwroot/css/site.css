@@ -2161,6 +2161,54 @@ a:hover { color: #000000; }
   .detay-fiyat { font-size: 40px; }
 }
 
+/* ---------- 5. hafta: teklif ---------- */
+.teklif-form { display: flex; flex-direction: column; gap: 6px; }
+.teklif-satir { display: flex; gap: 8px; }
+.teklif-satir .dugme { white-space: nowrap; }
+.teklif-satir .girdi { flex-grow: 1; min-width: 0; font-family: var(--mono-font); font-size: 18px; }
+.teklif-mesaj {
+  margin: 0;
+  padding: 10px 14px;
+  font-weight: 500;
+}
+.teklif-mesaj-tamam { background: var(--siyah); color: #ffffff; border-left: 6px solid var(--vurgu); }
+.teklif-mesaj-hata { background: var(--kirmizi-zemin); color: var(--kirmizi-koyu); border-left: 6px solid var(--kirmizi); }
+
+.teklif-gecmisi {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--siyah);
+  border-bottom: 2px solid var(--siyah);
+}
+.teklif-gecmisi li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 48px;
+  padding: 0 8px;
+  border-top: 1px solid var(--gri-cizgi-acik);
+}
+.teklif-gecmisi li:first-child { border-top: 0; }
+.teklif-zaman { font-size: 13px; color: var(--gri-yazi); }
+.teklif-tutar { font-family: var(--baslik-font); font-weight: 700; font-size: 22px; text-align: right; min-width: 120px; }
+.teklif-en-yuksek { background: #fff6cc; }
+.teklif-en-yuksek .teklif-veren::after {
+  content: "En yüksek";
+  margin-left: 10px;
+  padding: 2px 8px;
+  background: var(--vurgu);
+  font-family: var(--mono-font);
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+@media (max-width: 560px) {
+  .teklif-gecmisi li { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 8px; }
+  .teklif-zaman { grid-row: 2; }
+}
+
 /* ---------- 4. hafta: ilan listeleme ---------- */
 .liste-duzen {
   display: grid;

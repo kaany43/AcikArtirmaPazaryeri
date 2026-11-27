@@ -1,4 +1,5 @@
-﻿using AcikArtirmaPazaryeri.Data;
+﻿using System.Globalization;
+using AcikArtirmaPazaryeri.Data;
 using AcikArtirmaPazaryeri.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ namespace AcikArtirmaPazaryeri.Servisler
 
     public class TeklifServisi
     {
+        private static readonly CultureInfo Tr = CultureInfo.GetCultureInfo("tr-TR");
         private readonly AcikArtirmaPazaryeriDbContext _context;
 
         public TeklifServisi(AcikArtirmaPazaryeriDbContext context)
@@ -51,7 +53,7 @@ namespace AcikArtirmaPazaryeri.Servisler
             var enAz = EnAzTeklif(muzayede);
             if (tutar < enAz)
             {
-                return $"Teklifiniz en az {enAz:N0} ₺ olmalı.";
+                return $"Teklifiniz en az {enAz.ToString("N0", Tr)} ₺ olmalı.";
             }
             return null;
         }
@@ -88,7 +90,7 @@ namespace AcikArtirmaPazaryeri.Servisler
                 return new TeklifSonucu(false, "Aynı anda başka bir teklif geldi ve fiyat değişti. Güncel fiyata bakıp tekrar deneyin.");
             }
 
-            return new TeklifSonucu(true, $"{tutar:N0} ₺ teklifiniz alındı.");
+            return new TeklifSonucu(true, $"{tutar.ToString("N0", Tr)} ₺ teklifiniz alındı.");
         }
     }
 }

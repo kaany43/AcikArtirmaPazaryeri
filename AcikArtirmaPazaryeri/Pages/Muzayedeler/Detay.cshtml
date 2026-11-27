@@ -9,6 +9,21 @@
     var arac = ilan.AracDetaylari;
     var kapak = Model.Resimler.FirstOrDefault(r => r.KapakMi) ?? Model.Resimler.FirstOrDefault();
     var satici = string.IsNullOrEmpty(ilan.Satici.FirmaAdi) ? $"{ilan.Satici.Ad} {ilan.Satici.Soyad}" : ilan.Satici.FirmaAdi;
+    var simdi = DateTime.UtcNow;
+    var teklifAcik = ilan.Durum == MuzayedeDurumu.Aktif && simdi >= ilan.BaslangicZamani && simdi < ilan.BitisZamani;
+    var enAz = AcikArtirmaPazaryeri.Servisler.TeklifServisi.EnAzTeklif(ilan);
+    var teklifMesaj = TempData["TeklifMesaj"] as string;
+    var teklifBasarili = TempData["TeklifBasarili"] as bool? == true;
+}
+
+@functions {
+    // Teklif verenin adı gizlenir: "Kaan Yorgun" → "K*** Y."
+    string GizliAd(Kullanici k)
+    {
+        var ad = k.Ad.Length > 0 ? k.Ad.Substring(0, 1) + "***" : "***";
+        var soyad = k.Soyad.Length > 0 ? " " + k.Soyad.Substring(0, 1) + "." : "";
+        return ad + soyad;
+    }
 }
 
 <div class="sayfa sayfa-sik sayfa-detay">
@@ -52,14 +67,40 @@
         <aside class="detay-fis">
             <span class="fis-rozet @(ilan.Durum == MuzayedeDurumu.Aktif ? "fis-aktif" : "fis-onay")"><span class="fis-rozet-uc" aria-hidden="true"></span><span class="fis-rozet-yazi">@(ilan.Durum == MuzayedeDurumu.Aktif ? "Canlı" : ilan.Durum.GorunenAd())</span></span>
             <div class="detay-fiyat-blok">
-                <span class="ust-etiket">Başlangıç fiyatı</span>
-                <span class="detay-fiyat">@ilan.BaslangicFiyati.ToString("N0", tr) ₺</span>
-                <span class="mono">Minimum artış @ilan.MinimumArtis.ToString("N0", tr) ₺ · @(ilan.RezervFiyati == null ? "Rezervsiz" : "Rezervli")</span>
+                <span class="ust-etiket">@(ilan.GuncelFiyat == null ? "Başlangıç fiyatı" : "Güncel teklif")</span>
+                <span class="detay-fiyat">@((ilan.GuncelFiyat ?? ilan.BaslangicFiyati).ToString("N0", tr)) ₺</span>
+                <span class="mono">@(Model.Teklifler.Count == 0 ? "Henüz teklif yok" : $"{Model.Teklifler.Count} teklif") · Minimum artış @ilan.MinimumArtis.ToString("N0", tr) ₺ · @(ilan.RezervFiyati == null ? "Rezervsiz" : "Rezervli")</span>
             </div>
             <div class="detay-sure">
                 <span class="ust-etiket">Kalan süre</span>
                 <span class="geri-sayim" data-geri-sayim="@ilan.BitisZamani.ToString("o")" data-baslangic="@ilan.BaslangicZamani.ToString("o")">—</span>
             </div>
+            @if (teklifMesaj != null)
+            {
+                <p class="teklif-mesaj @(teklifBasarili ? "teklif-mesaj-tamam" : "teklif-mesaj-hata")" role="status">@teklifMesaj</p>
+            }
+            @if (teklifAcik)
+            {
+                if (Model.KullaniciId == null)
+                {
+                    <a class="dugme dugme-sari dugme-tam" asp-page="/Hesap/Giris" asp-route-ReturnUrl="@Url.Page("/Muzayedeler/Detay", new { id = ilan.MuzayedeId })">Teklif vermek için giriş yap</a>
+                }
+                else if (Model.KullaniciId == ilan.SaticiId)
+                {
+                    <p class="alan-not">Bu senin ilanın, kendi ilanına teklif veremezsin.</p>
+                }
+                else
+                {
+                    <form method="post" asp-page="/Muzayedeler/TeklifVer" asp-route-id="@ilan.MuzayedeId" class="teklif-form">
+                        <label class="alan-etiket" for="tutar">Teklifin (₺)</label>
+                        <div class="teklif-satir">
+                            <input id="tutar" name="tutar" type="number" class="girdi" min="@enAz.ToString("0")" step="1" value="@enAz.ToString("0")" required />
+                            <button type="submit" class="dugme dugme-sari">Teklif ver</button>
+                        </div>
+                        <span class="alan-not">En az @enAz.ToString("N0", tr) ₺</span>
+                    </form>
+                }
+            }
             <dl class="bilgi-listesi">
                 <div class="ozet-satir"><dt>Başlangıç</dt><dd class="deger-mono">@ilan.BaslangicZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</dd></div>
                 <div class="ozet-satir"><dt>Bitiş</dt><dd class="deger-mono">@ilan.BitisZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</dd></div>
@@ -70,6 +111,27 @@
     </div>
 
     <div class="detay-bolumler">
+        <section>
+            <h2 class="bolum-baslik">Teklif geçmişi</h2>
+            @if (Model.Teklifler.Count == 0)
+            {
+                <p class="alan-not">Bu ilana henüz teklif verilmedi. İlk teklif en az @ilan.BaslangicFiyati.ToString("N0", tr) ₺ olabilir.</p>
+            }
+            else
+            {
+                <ol class="teklif-gecmisi">
+                    @foreach (var teklif in Model.Teklifler)
+                    {
+                        <li class="@(teklif == Model.Teklifler[0] ? "teklif-en-yuksek" : "")">
+                            <span class="teklif-veren">@(teklif.KullaniciId == Model.KullaniciId ? "Sen" : GizliAd(teklif.Kullanici))</span>
+                            <span class="teklif-zaman mono">@teklif.Zaman.ToLocalTime().ToString("dd.MM.yyyy HH:mm:ss", tr)</span>
+                            <span class="teklif-tutar">@teklif.Tutar.ToString("N0", tr) ₺</span>
+                        </li>
+                    }
+                </ol>
+            }
+        </section>
+
         @if (arac != null)
         {
             <section>
