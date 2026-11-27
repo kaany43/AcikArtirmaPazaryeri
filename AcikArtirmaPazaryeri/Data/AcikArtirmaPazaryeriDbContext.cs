@@ -44,6 +44,11 @@ namespace AcikArtirmaPazaryeri.Data
                 .HasOne(o => o.Yonetici)
                 .WithMany().HasForeignKey(o => o.YoneticiId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Teklif>()
+                .HasOne(t => t.Kullanici)
+                .WithMany().HasForeignKey(t => t.KullaniciId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
         protected override void ConfigureConventions(ModelConfigurationBuilder b)
         {
@@ -58,5 +63,6 @@ namespace AcikArtirmaPazaryeri.Data
         public DbSet<Muzayede> Muzayedeler { get; set; }
         public DbSet<MuzayedeResmi> MuzayedeResimleri { get; set; }
         public DbSet<OnayKaydi> OnayKayitlari { get; set; }
+        public DbSet<Teklif> Teklifler { get; set; }
     }
 }

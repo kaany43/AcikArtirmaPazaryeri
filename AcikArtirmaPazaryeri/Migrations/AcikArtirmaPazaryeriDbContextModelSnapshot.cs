@@ -289,6 +289,10 @@ namespace AcikArtirmaPazaryeri.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<decimal?>("GuncelFiyat")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("numeric(18,2)");
+
                     b.Property<int>("KategoriId")
                         .HasColumnType("integer");
 
@@ -311,6 +315,12 @@ namespace AcikArtirmaPazaryeri.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<uint>("Surum")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("xid")
+                        .HasColumnName("xmin");
 
                     b.Property<string>("UrunDurumu")
                         .IsRequired()
@@ -389,6 +399,37 @@ namespace AcikArtirmaPazaryeri.Migrations
                     b.HasIndex("YoneticiId");
 
                     b.ToTable("OnayKayitlari");
+                });
+
+            modelBuilder.Entity("AcikArtirmaPazaryeri.Models.Teklif", b =>
+                {
+                    b.Property<int>("TeklifId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("TeklifId"));
+
+                    b.Property<string>("KullaniciId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("MuzayedeId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Tutar")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("numeric(18,2)");
+
+                    b.Property<DateTime>("Zaman")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("TeklifId");
+
+                    b.HasIndex("KullaniciId");
+
+                    b.HasIndex("MuzayedeId");
+
+                    b.ToTable("Teklifler");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -621,6 +662,25 @@ namespace AcikArtirmaPazaryeri.Migrations
                     b.Navigation("Yonetici");
                 });
 
+            modelBuilder.Entity("AcikArtirmaPazaryeri.Models.Teklif", b =>
+                {
+                    b.HasOne("AcikArtirmaPazaryeri.Models.Kullanici", "Kullanici")
+                        .WithMany()
+                        .HasForeignKey("KullaniciId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("AcikArtirmaPazaryeri.Models.Muzayede", "Muzayede")
+                        .WithMany("Teklifler")
+                        .HasForeignKey("MuzayedeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Kullanici");
+
+                    b.Navigation("Muzayede");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -694,6 +754,8 @@ namespace AcikArtirmaPazaryeri.Migrations
                     b.Navigation("MuzayedeResimleri");
 
                     b.Navigation("OnayKayitlari");
+
+                    b.Navigation("Teklifler");
                 });
 #pragma warning restore 612, 618
         }

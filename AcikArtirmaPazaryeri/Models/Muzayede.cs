@@ -26,6 +26,13 @@ namespace AcikArtirmaPazaryeri.Models
 
         public decimal MinimumArtis { get; set; }
 
+        // Teklif yoksa null, varsa en yüksek teklif
+        public decimal? GuncelFiyat { get; set; }
+
+        // Eşzamanlılık belirteci: PostgreSQL'in xmin sütunu, satır her güncellendiğinde değişir.
+        [Timestamp]
+        public uint Surum { get; set; }
+
         public DateTime BaslangicZamani { get; set; }
 
         public DateTime BitisZamani { get; set; }
@@ -42,5 +49,7 @@ namespace AcikArtirmaPazaryeri.Models
         public ICollection<MuzayedeResmi> MuzayedeResimleri { get; set; } = new List<MuzayedeResmi>();
 
         public ICollection<OnayKaydi> OnayKayitlari { get; set; } = new List<OnayKaydi>();
+
+        public ICollection<Teklif> Teklifler { get; set; } = new List<Teklif>();
     }
 }
