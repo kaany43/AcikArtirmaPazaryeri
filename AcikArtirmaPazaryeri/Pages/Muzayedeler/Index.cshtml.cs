@@ -68,14 +68,14 @@ namespace AcikArtirmaPazaryeri.Pages.Muzayedeler
                 var aranan = $"%{Arama.Trim()}%";
                 sorgu = sorgu.Where(m => EF.Functions.ILike(m.Baslik, aranan) || EF.Functions.ILike(m.Aciklama, aranan));
             }
-            // 5. haftada teklifler gelince fiyat filtresi güncel fiyata göre yapılacak.
+            // Fiyat filtresi güncel fiyata göre, teklif yoksa başlangıç fiyatına göre yapılır.
             if (MinFiyat != null)
             {
-                sorgu = sorgu.Where(m => m.BaslangicFiyati >= MinFiyat);
+                sorgu = sorgu.Where(m => (m.GuncelFiyat ?? m.BaslangicFiyati) >= MinFiyat);
             }
             if (MaxFiyat != null)
             {
-                sorgu = sorgu.Where(m => m.BaslangicFiyati <= MaxFiyat);
+                sorgu = sorgu.Where(m => (m.GuncelFiyat ?? m.BaslangicFiyati) <= MaxFiyat);
             }
             if (!string.IsNullOrWhiteSpace(Sehir))
             {

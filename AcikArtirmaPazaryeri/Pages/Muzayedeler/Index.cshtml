@@ -145,7 +145,7 @@
                                     <span class="ilan-kart-arac">@arac.Yil · @arac.Km.ToString("N0", tr) km · @arac.YakitTuru.GorunenAd() · @arac.VitesTuru.GorunenAd()</span>
                                 }
                                 <span class="ilan-kart-alt">
-                                    <span class="ilan-kart-fiyat">@ilan.BaslangicFiyati.ToString("N0", tr) ₺</span>
+                                    <span class="ilan-kart-fiyat">@((ilan.GuncelFiyat ?? ilan.BaslangicFiyati).ToString("N0", tr)) ₺</span>
                                     <span class="ilan-kart-sehir mono">@ilan.Sehir</span>
                                 </span>
                                 <span class="ilan-kart-sure mono" data-geri-sayim="@ilan.BitisZamani.ToString("o")">Bitiş @ilan.BitisZamani.ToLocalTime().ToString("dd.MM.yyyy HH:mm", tr)</span>
